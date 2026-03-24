@@ -1,0 +1,252 @@
+{
+  "header": {
+    "about": "Chi Sono",
+    "experience": "Esperienza",
+    "skills": "Competenze",
+    "services": "Servizi",
+    "projects": "Progetti",
+    "contact": "Contatto"
+  },
+  "hero": {
+    "greeting": "Ciao, sono",
+    "role": "Frontend Developer / Web Engineer",
+    "description": "Oltre 6 anni di esperienza nella creazione di applicazioni web moderne, performanti e incentrate sull'utente. Specializzato in Vue.js, Nuxt.js, TypeScript — appassionato di codice pulito, animazioni e interfacce pixel-perfect.",
+    "cta": "Contattami"
+  },
+  "about": {
+    "title": "Chi Sono",
+    "subtitle": "Una breve panoramica su chi sono e cosa faccio.",
+    "p1Before": "Sono un ",
+    "p1Emphasis": "Frontend Developer",
+    "p1After": " con oltre 6 anni di esperienza nella progettazione e sviluppo di applicazioni web moderne, performanti e orientate all'utente.",
+    "p2Before": "Specializzato in ",
+    "p2Emphasis": "Vue.js, Nuxt.js e TypeScript",
+    "p2After": ", con forte attenzione al codice pulito, all'accessibilità e all'ottimizzazione delle performance. Mi piace collaborare con designer e team backend per trasformare design system in interfacce fluide, scalabili e responsive.",
+    "p3Before": "Appassionato di animazioni, componenti riutilizzabili e best practice frontend. Possiedo una ",
+    "p3Emphasis": "laurea in Informatica",
+    "p3After": " dall'UCI (Cuba) con specializzazione in Java e OOP, e ho partecipato a competizioni ACM-ICPC.",
+    "locationTitle": "Sede",
+    "locationValue": "Italia (Remoto)",
+    "experienceTitle": "Esperienza",
+    "experienceValue": "6+ Anni",
+    "educationTitle": "Formazione",
+    "educationValue": "Laurea in Informatica — UCI",
+    "languagesTitle": "Lingue",
+    "languagesValue": "ES / EN / IT"
+  },
+  "experience": {
+    "title": "Esperienza",
+    "subtitle": "Il mio percorso professionale attraverso diverse aziende e paesi.",
+    "jobs": [
+      {
+        "company": "Dacomat (Reply)",
+        "role": "Frontend Developer",
+        "type": "Contratto",
+        "period": "Lug 2025 — Presente",
+        "location": "Remoto, Italia",
+        "highlights": [
+          "Sviluppo di dashboard interattive per la gestione dati con Vue 3 e TypeScript",
+          "Tabelle dinamiche con filtri, paginazione e ordinamento ottimizzato",
+          "Import/export di file e gestione di grandi dataset",
+          "Ottimizzazione delle performance tramite lazy loading, code splitting e componenti riutilizzabili"
+        ]
+      },
+      {
+        "company": "BattleBucks",
+        "role": "Frontend Developer",
+        "type": "Freelance",
+        "period": "Feb 2025 — Giu 2025",
+        "location": "Remoto, Costa Rica",
+        "highlights": [
+          "Integrazione blockchain Solana tramite Reown per autenticazione e transazioni",
+          "Chat in tempo reale con WebSocket e REST API",
+          "Configurazione PWA e strategie di caching per migliorare le performance"
+        ]
+      },
+      {
+        "company": "Gitfast",
+        "role": "Frontend Developer",
+        "type": "Contratto",
+        "period": "Lug 2024 — Set 2024",
+        "location": "Remoto, Messico",
+        "highlights": [
+          "Sviluppo di nuove funzionalità e libreria di componenti UI",
+          "Ottimizzazione delle performance di rendering e gestione dello stato",
+          "Refactoring frontend per migliorare scalabilità e leggibilità"
+        ]
+      },
+      {
+        "company": "Elkanodata",
+        "role": "Frontend Developer",
+        "type": "Tempo pieno",
+        "period": "Set 2023 — Giu 2024",
+        "location": "Remoto, Spagna",
+        "highlights": [
+          "Interfacce animate e interattive con Canvas e SVG",
+          "Da Figma/Zeplin a layout responsive e cross-browser",
+          "Contenuti dinamici tramite Prismic CMS e WordPress"
+        ]
+      },
+      {
+        "company": "Teavaro",
+        "role": "Frontend Developer",
+        "type": "Tempo pieno",
+        "period": "Ago 2022 — Set 2023",
+        "location": "Remoto, Regno Unito",
+        "highlights": [
+          "Piattaforma amministrativa per gestione utenti e dati",
+          "Migrazione da JavaScript a TypeScript",
+          "Componenti Vue riutilizzabili e testing automatizzato"
+        ]
+      },
+      {
+        "company": "JADE Solutions",
+        "role": "Frontend Developer",
+        "type": "Tempo pieno",
+        "period": "Nov 2022 — Lug 2023",
+        "location": "Remoto, Cuba",
+        "highlights": [
+          "Pagine CMS, ottimizzazione SEO e Google OAuth",
+          "Layout mobile con Ionic e Capacitor",
+          "Pannelli di amministrazione e-commerce"
+        ]
+      },
+      {
+        "company": "ONAT",
+        "role": "Frontend Developer",
+        "type": "Tempo pieno",
+        "period": "Set 2019 — Ago 2022",
+        "location": "Ibrido, Cuba",
+        "highlights": [
+          "Progettazione e sviluppo UI per sistemi amministrativi",
+          "Integrazione API REST e GraphQL",
+          "Miglioramenti UX basati su feedback degli utenti"
+        ]
+      },
+      {
+        "company": "El Catre",
+        "role": "Frontend Developer",
+        "type": "Tempo pieno",
+        "period": "Ago 2019 — Set 2020",
+        "location": "Remoto, Cuba",
+        "highlights": [
+          "Componenti UI interattivi con Vue.js e Nuxt.js",
+          "Integrazione API GraphQL e aggiornamenti in tempo reale",
+          "Ambienti Docker per il deployment frontend"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Competenze",
+    "subtitle": "Tecnologie e strumenti con cui lavoro quotidianamente.",
+    "frontend": "Frontend",
+    "designUi": "Design e UI",
+    "performanceTools": "Performance e Strumenti",
+    "backend": "Backend",
+    "otherTools": "Altri Strumenti"
+  },
+  "services": {
+    "title": "Servizi",
+    "subtitle": "Come posso aiutarti a realizzare il tuo progetto — dall'idea alla produzione.",
+    "cta": "Parliamone",
+    "items": [
+      {
+        "title": "Sviluppo Web Full-Stack",
+        "description": "Applicazioni web end-to-end — dalle interfacce frontend con Vue.js, React o Next.js alle API backend con Go, Python, Django, GraphQL e REST. Consegno sistemi completi e pronti per la produzione.",
+        "features": [
+          "SPA, SSR e progressive web app",
+          "Sviluppo API REST e GraphQL",
+          "Progettazione e integrazione database",
+          "Autenticazione e servizi di terze parti"
+        ]
+      },
+      {
+        "title": "Implementazione UI/UX",
+        "description": "Traduzione pixel-perfect di design Figma, Zeplin o Sketch in codice pronto per la produzione con animazioni e interazioni fluide.",
+        "features": [
+          "Design-to-code (Figma/Zeplin)",
+          "Animazioni CSS e grafica Canvas/SVG",
+          "Layout responsive e cross-browser",
+          "Accessibilità (conforme WCAG)"
+        ]
+      },
+      {
+        "title": "DevOps e Deployment",
+        "description": "Non mi limito a sviluppare — porto in produzione. Containerizzazione Docker, pipeline CI/CD, deployment cloud e setup infrastrutturale per far funzionare la tua app senza problemi.",
+        "features": [
+          "Docker e ambienti containerizzati",
+          "Setup pipeline CI/CD",
+          "Deployment cloud e hosting",
+          "Monitoraggio performance e caching"
+        ]
+      },
+      {
+        "title": "Consulenza Tecnica",
+        "description": "Revisione architetturale, migrazione JavaScript-TypeScript, audit del codice e mentoring per team di sviluppo su tutto lo stack.",
+        "features": [
+          "Pianificazione architettura di sistema",
+          "Audit e refactoring del codice",
+          "Migrazione JS a TypeScript",
+          "Mentoring e best practice per il team"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Progetti",
+    "subtitle": "Una selezione di progetti personali e side project dal mio GitHub.",
+    "viewAll": "Vedi Tutti su GitHub",
+    "items": [
+      {
+        "name": "Chat for Team",
+        "description": "Un'applicazione di chat collaborativa per team sviluppata con TypeScript per comunicazione in tempo reale."
+      },
+      {
+        "name": "WhatsApp Chat Integration",
+        "description": "Integrazione API WhatsApp tramite Twilio per messaggistica automatizzata e flussi di comunicazione."
+      },
+      {
+        "name": "Festival Concert Scraper",
+        "description": "Uno scraper web sviluppato con Vue.js per raccogliere e visualizzare informazioni su festival e concerti."
+      },
+      {
+        "name": "Google Maps Scraper",
+        "description": "Uno scraper basato su Python per estrarre informazioni aziendali e recensioni da Google Maps."
+      },
+      {
+        "name": "Cubita Producciones",
+        "description": "Sito web di una casa di produzione sviluppato con TypeScript, con gestione dinamica dei contenuti."
+      },
+      {
+        "name": "Twitter Clone",
+        "description": "Un'applicazione social media simile a Twitter con feed in tempo reale e interazioni tra utenti."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contatto",
+    "subtitle": "Interessato a collaborare? Restiamo in contatto.",
+    "email": "Email",
+    "phone": "Telefono",
+    "location": "Posizione",
+    "locationValue": "Remoto, Italia",
+    "github": "GitHub",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "emailLabel": "Email",
+    "emailPlaceholder": "la-tua@email.com",
+    "messageLabel": "Messaggio",
+    "messagePlaceholder": "Parlami del tuo progetto...",
+    "send": "Invia Messaggio"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati."
+  },
+  "meta": {
+    "title": "Eduardo Castillo | Sviluppatore Frontend — Vue.js, TypeScript, React",
+    "description": "Sviluppatore Frontend freelance con oltre 6 anni di esperienza nella creazione di applicazioni web moderne e performanti. Disponibile per progetti Vue.js, Nuxt.js, TypeScript e React. Remoto dall'Italia.",
+    "ogDescription": "Sviluppatore Frontend freelance specializzato in Vue.js, Nuxt.js, TypeScript e React. Oltre 6 anni di esperienza. Disponibile — remoto dall'Italia.",
+    "keywords": ["Sviluppatore Frontend", "Sviluppatore Web Freelance", "Sviluppatore Vue.js", "Sviluppatore Nuxt.js", "Sviluppatore TypeScript", "Sviluppatore React", "Frontend Developer Italia", "Ingegnere Web", "Sviluppatore Remoto Italia", "Eduardo Castillo"]
+  }
+}
