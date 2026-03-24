@@ -89,6 +89,9 @@ export interface Dictionary {
     messageLabel: string;
     messagePlaceholder: string;
     send: string;
+    sending: string;
+    success: string;
+    error: string;
   };
   footer: {
     rights: string;

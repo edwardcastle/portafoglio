@@ -238,7 +238,10 @@
     "emailPlaceholder": "la-tua@email.com",
     "messageLabel": "Messaggio",
     "messagePlaceholder": "Parlami del tuo progetto...",
-    "send": "Invia Messaggio"
+    "send": "Invia Messaggio",
+    "sending": "Invio in corso...",
+    "success": "Messaggio inviato! Ti risponderò presto.",
+    "error": "Qualcosa è andato storto. Riprova."
   },
   "footer": {
     "rights": "Tutti i diritti riservati."

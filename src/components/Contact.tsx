@@ -1,14 +1,15 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useRef, useState } from "react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { GithubIcon } from "./icons";
 import type { Dictionary } from "@/i18n/types";
 
 export function Contact({ dict }: { dict: Dictionary["contact"] }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const contactInfo = [
     {
@@ -36,6 +37,31 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
       href: "https://github.com/edwardcastle",
     },
   ];
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message"),
+      }),
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+    }
+  }
 
   return (
     <section id="contact" className="py-24 px-6 bg-surface/50">
@@ -102,9 +128,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="space-y-4"
-            action={`mailto:sir.edwardcastle@gmail.com`}
-            method="GET"
-            encType="text/plain"
+            onSubmit={handleSubmit}
           >
             <div>
               <label htmlFor="name" className="block text-sm text-muted mb-1.5">
@@ -144,7 +168,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
               </label>
               <textarea
                 id="message"
-                name="body"
+                name="message"
                 rows={4}
                 required
                 className="w-full px-4 py-3 rounded-lg bg-surface border border-border focus:border-accent focus:outline-none text-foreground placeholder:text-muted/50 transition-colors resize-none"
@@ -153,11 +177,25 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
+              disabled={status === "sending"}
+              className="w-full px-6 py-3 bg-accent hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
             >
               <Send size={16} />
-              {dict.send}
+              {status === "sending" ? dict.sending : dict.send}
             </button>
+
+            {status === "success" && (
+              <p className="flex items-center gap-2 text-sm text-green-400">
+                <CheckCircle2 size={16} />
+                {dict.success}
+              </p>
+            )}
+            {status === "error" && (
+              <p className="flex items-center gap-2 text-sm text-red-400">
+                <AlertCircle size={16} />
+                {dict.error}
+              </p>
+            )}
           </motion.form>
         </div>
       </div>
