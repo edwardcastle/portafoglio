@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     const body = await res.json().catch(() => ({}));
     console.error("Brevo error:", res.status, body);
     return NextResponse.json(
-      { error: "Failed to send message", brevo: body },
+      { error: "Failed to send message" },
       { status: 500 },
     );
   }
