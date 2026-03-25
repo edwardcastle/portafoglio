@@ -8,21 +8,22 @@
     "contact": "Contatto"
   },
   "hero": {
-    "greeting": "Ciao, sono",
-    "role": "Frontend Developer / Web Engineer",
-    "description": "Oltre 6 anni di esperienza nella creazione di applicazioni web moderne, performanti e incentrate sull'utente. Specializzato in Vue.js, Nuxt.js, TypeScript — appassionato di codice pulito, animazioni e interfacce pixel-perfect.",
-    "cta": "Contattami"
+    "greeting": "Creo siti web e applicazioni che fanno crescere il tuo business",
+    "role": "Sviluppatore Full-Stack Disponibile per Progetti",
+    "description": "Che tu abbia bisogno di un sito web nuovo, un'applicazione web complessa o miglioramenti a un progetto esistente — consegno soluzioni curate, performanti, nei tempi e nel budget. 6+ anni, 8+ aziende servite.",
+    "cta": "Inizia un Progetto",
+    "ctaSecondary": "Scopri i Miei Servizi"
   },
   "about": {
     "title": "Chi Sono",
-    "subtitle": "Una breve panoramica su chi sono e cosa faccio.",
+    "subtitle": "Perché i clienti si affidano a me per i loro progetti.",
     "p1Before": "Sono un ",
-    "p1Emphasis": "Frontend Developer",
-    "p1After": " con oltre 6 anni di esperienza nella progettazione e sviluppo di applicazioni web moderne, performanti e orientate all'utente.",
-    "p2Before": "Specializzato in ",
-    "p2Emphasis": "Vue.js, Nuxt.js e TypeScript",
-    "p2After": ", con forte attenzione al codice pulito, all'accessibilità e all'ottimizzazione delle performance. Mi piace collaborare con designer e team backend per trasformare design system in interfacce fluide, scalabili e responsive.",
-    "p3Before": "Appassionato di animazioni, componenti riutilizzabili e best practice frontend. Possiedo una ",
+    "p1Emphasis": "Sviluppatore Full-Stack",
+    "p1After": " con oltre 6 anni di esperienza nella realizzazione di siti web e applicazioni per aziende in Europa e nelle Americhe.",
+    "p2Before": "Lavoro con tecnologie moderne come ",
+    "p2Emphasis": "Vue.js, React, Next.js, Go e Python",
+    "p2After": " per costruire soluzioni veloci, affidabili e facili da mantenere. Mi concentro prima nel capire i tuoi obiettivi, poi scelgo gli strumenti giusti per raggiungerli.",
+    "p3Before": "I clienti tornano perché consegno nei tempi, comunico in modo chiaro e mi interessa il risultato finale. Possiedo una ",
     "p3Emphasis": "laurea in Informatica",
     "p3After": " dall'UCI (Cuba) con specializzazione in Java e OOP, e ho partecipato a competizioni ACM-ICPC.",
     "locationTitle": "Sede",
@@ -36,7 +37,7 @@
   },
   "experience": {
     "title": "Esperienza",
-    "subtitle": "Il mio percorso professionale attraverso diverse aziende e paesi.",
+    "subtitle": "6+ anni di risultati concreti per aziende in Europa, America Latina e oltre.",
     "jobs": [
       {
         "company": "Dacomat (Reply)",
@@ -139,7 +140,7 @@
   },
   "skills": {
     "title": "Competenze",
-    "subtitle": "Tecnologie e strumenti con cui lavoro quotidianamente.",
+    "subtitle": "Le tecnologie dietro al tuo prossimo progetto.",
     "frontend": "Frontend",
     "designUi": "Design e UI",
     "performanceTools": "Performance e Strumenti",
@@ -148,12 +149,12 @@
   },
   "services": {
     "title": "Servizi",
-    "subtitle": "Come posso aiutarti a realizzare il tuo progetto — dall'idea alla produzione.",
-    "cta": "Parliamone",
+    "subtitle": "Hai bisogno di un sito web da zero? Un'app web personalizzata? Migliorare un progetto esistente? Ci penso io.",
+    "cta": "Richiedi una Consulenza Gratuita",
     "items": [
       {
         "title": "Sviluppo Web Full-Stack",
-        "description": "Applicazioni web end-to-end — dalle interfacce frontend con Vue.js, React o Next.js alle API backend con Go, Python, Django, GraphQL e REST. Consegno sistemi completi e pronti per la produzione.",
+        "description": "Da siti aziendali ad applicazioni web complesse — gestisco l'intero processo per consegnarti un prodotto finito che funziona, ha un bell'aspetto e cresce con il tuo business.",
         "features": [
           "SPA, SSR e progressive web app",
           "Sviluppo API REST e GraphQL",
@@ -195,7 +196,7 @@
   },
   "projects": {
     "title": "Progetti",
-    "subtitle": "Una selezione di progetti personali e side project dal mio GitHub.",
+    "subtitle": "Una selezione di progetti che mostra la varietà di ciò che realizzo.",
     "viewAll": "Vedi Tutti su GitHub",
     "items": [
       {
@@ -225,8 +226,8 @@
     ]
   },
   "contact": {
-    "title": "Contatto",
-    "subtitle": "Interessato a collaborare? Restiamo in contatto.",
+    "title": "Inizia il Tuo Progetto",
+    "subtitle": "Raccontami del tuo progetto e ti risponderò entro 24 ore.",
     "email": "Email",
     "phone": "Telefono",
     "location": "Posizione",
@@ -237,8 +238,8 @@
     "emailLabel": "Email",
     "emailPlaceholder": "la-tua@email.com",
     "messageLabel": "Messaggio",
-    "messagePlaceholder": "Parlami del tuo progetto...",
-    "send": "Invia Messaggio",
+    "messagePlaceholder": "Descrivi il tuo progetto: cosa ti serve? Hai scadenze o un budget in mente?",
+    "send": "Invia Richiesta Progetto",
     "sending": "Invio in corso...",
     "success": "Messaggio inviato! Ti risponderò presto.",
     "error": "Qualcosa è andato storto. Riprova."
@@ -247,9 +248,9 @@
     "rights": "Tutti i diritti riservati."
   },
   "meta": {
-    "title": "Eduardo Castillo | Sviluppatore Frontend — Vue.js, TypeScript, React",
-    "description": "Sviluppatore Frontend freelance con oltre 6 anni di esperienza nella creazione di applicazioni web moderne e performanti. Disponibile per progetti Vue.js, Nuxt.js, TypeScript e React. Remoto dall'Italia.",
-    "ogDescription": "Sviluppatore Frontend freelance specializzato in Vue.js, Nuxt.js, TypeScript e React. Oltre 6 anni di esperienza. Disponibile — remoto dall'Italia.",
+    "title": "Eduardo Castillo | Sviluppatore Web Full-Stack — Siti Web, App Web, Progetti su Misura",
+    "description": "Sviluppatore Full-Stack con oltre 6 anni di esperienza nella creazione di siti web, app web e progetti su misura. Disponibile per progetti — remoto dall'Italia.",
+    "ogDescription": "Sviluppatore Full-Stack disponibile per progetti. Creo siti web, app web e soluzioni personalizzate. Oltre 6 anni di esperienza. Remoto dall'Italia.",
     "keywords": ["Sviluppatore Frontend", "Sviluppatore Full-Stack", "Sviluppatore Web Freelance", "Sviluppatore Vue.js", "Sviluppatore Nuxt.js", "Sviluppatore TypeScript", "Sviluppatore React", "Sviluppatore Next.js", "Sviluppatore Golang", "Cerco Sviluppatore Frontend", "Cerco Sviluppatore Web", "Sviluppo Applicazioni Web", "Sviluppo Siti Web", "Ingegnere Web", "Sviluppatore Remoto Italia", "Servizi Sviluppo Web", "Sviluppo SPA", "Sviluppatore Progressive Web App", "Sviluppatore UI UX", "Eduardo Castillo"]
   }
 }

@@ -8,21 +8,22 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hello, I'm",
-    "role": "Frontend Developer / Web Engineer",
-    "description": "6+ years crafting modern, performant, and user-focused web applications. Specialized in Vue.js, Nuxt.js, TypeScript — passionate about clean code, animations, and pixel-perfect interfaces.",
-    "cta": "Get in Touch"
+    "greeting": "I build websites & web apps that grow your business",
+    "role": "Full-Stack Developer Available for Hire",
+    "description": "Whether you need a brand-new website, a complex web application, or improvements to an existing project — I deliver polished, high-performing solutions on time and on budget. 6+ years, 8+ companies served.",
+    "cta": "Start a Project",
+    "ctaSecondary": "See My Services"
   },
   "about": {
     "title": "About",
-    "subtitle": "A quick overview of who I am and what I do.",
+    "subtitle": "Why clients trust me with their projects.",
     "p1Before": "I'm a ",
-    "p1Emphasis": "Frontend Developer",
-    "p1After": " with over 6 years of experience designing and developing modern, performant, user-oriented web applications.",
-    "p2Before": "Specialized in ",
-    "p2Emphasis": "Vue.js, Nuxt.js, and TypeScript",
-    "p2After": ", with strong focus on clean code, accessibility, and performance optimization. I enjoy collaborating with designers and backend teams to turn design systems into fluid, scalable, responsive interfaces.",
-    "p3Before": "Passionate about animations, reusable components, and frontend best practices. I hold a ",
+    "p1Emphasis": "Full-Stack Developer",
+    "p1After": " with over 6 years of experience delivering websites and web applications for companies across Europe and the Americas.",
+    "p2Before": "I work with modern technologies like ",
+    "p2Emphasis": "Vue.js, React, Next.js, Go, and Python",
+    "p2After": " to build solutions that are fast, reliable, and easy to maintain. I focus on understanding your goals first, then choosing the right tools to get there.",
+    "p3Before": "Clients come back because I deliver on time, communicate clearly, and care about the end result. I hold a ",
     "p3Emphasis": "Computer Science degree",
     "p3After": " from UCI (Cuba) with specialization in Java and OOP, and participated in ACM-ICPC competitions.",
     "locationTitle": "Based in",
@@ -36,7 +37,7 @@
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "My professional journey across different companies and countries.",
+    "subtitle": "6+ years delivering results for companies across Europe, Latin America, and beyond.",
     "jobs": [
       {
         "company": "Dacomat (Reply)",
@@ -139,7 +140,7 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "Technologies and tools I work with on a daily basis.",
+    "subtitle": "Technologies behind your next project.",
     "frontend": "Frontend",
     "designUi": "Design & UI",
     "performanceTools": "Performance & Tools",
@@ -148,12 +149,12 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "How I can help bring your project to life — from idea to production.",
-    "cta": "Let's Talk",
+    "subtitle": "Need a website from scratch? A custom web app? Help improving an existing project? I've got you covered.",
+    "cta": "Request a Free Consultation",
     "items": [
       {
         "title": "Full-Stack Web Development",
-        "description": "End-to-end web applications — from frontend interfaces with Vue.js, React, or Next.js to backend APIs with Go, Python, Django, GraphQL, and REST. I deliver complete, production-ready systems.",
+        "description": "From business websites to complex web applications — I handle the full process so you get a finished product that works, looks great, and scales with your business.",
         "features": [
           "SPAs, SSR & progressive web apps",
           "REST & GraphQL API development",
@@ -195,7 +196,7 @@
   },
   "projects": {
     "title": "Projects",
-    "subtitle": "A selection of personal and side projects from my GitHub.",
+    "subtitle": "A selection of projects that showcase the range of what I build.",
     "viewAll": "View All on GitHub",
     "items": [
       {
@@ -225,8 +226,8 @@
     ]
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Interested in working together? Let's connect.",
+    "title": "Start Your Project",
+    "subtitle": "Tell me about your project and I'll get back to you within 24 hours.",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
@@ -237,8 +238,8 @@
     "emailLabel": "Email",
     "emailPlaceholder": "your@email.com",
     "messageLabel": "Message",
-    "messagePlaceholder": "Tell me about your project...",
-    "send": "Send Message",
+    "messagePlaceholder": "Describe your project: What do you need built? Any deadlines or budget in mind?",
+    "send": "Send Project Inquiry",
     "sending": "Sending...",
     "success": "Message sent! I'll get back to you soon.",
     "error": "Something went wrong. Please try again."
@@ -247,9 +248,9 @@
     "rights": "All rights reserved."
   },
   "meta": {
-    "title": "Eduardo Castillo | Frontend Developer — Vue.js, TypeScript, React",
-    "description": "Freelance Frontend Developer with 6+ years of experience building modern, performant web applications. Hire me for Vue.js, Nuxt.js, TypeScript, and React projects. Remote from Italy.",
-    "ogDescription": "Freelance Frontend Developer specializing in Vue.js, Nuxt.js, TypeScript & React. 6+ years of experience. Available for hire — remote from Italy.",
+    "title": "Eduardo Castillo | Full-Stack Web Developer for Hire — Websites, Web Apps, Custom Projects",
+    "description": "Full-Stack Developer with 6+ years of experience building websites, web apps, and custom projects. Available for hire — remote from Italy.",
+    "ogDescription": "Full-Stack Developer available for hire. I build websites, web apps, and custom projects. 6+ years of experience. Remote from Italy.",
     "keywords": ["Frontend Developer", "Full-Stack Developer", "Freelance Web Developer", "Vue.js Developer", "Nuxt.js Developer", "TypeScript Developer", "React Developer", "Next.js Developer", "Golang Developer", "Hire Frontend Developer", "Hire Web Developer", "Web Application Development", "Custom Website Development", "Web Engineer", "Remote Developer Italy", "Website Development Services", "SPA Development", "Progressive Web App Developer", "UI UX Developer", "Eduardo Castillo"]
   }
 }
