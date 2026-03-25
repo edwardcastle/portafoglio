@@ -8,7 +8,7 @@ export function JsonLd({ locale }: { locale: string }) {
     name: "Eduardo Castillo",
     givenName: "Eduardo",
     familyName: "Castillo",
-    jobTitle: "Frontend Developer",
+    jobTitle: "Full-Stack Web Developer",
     description:
       "Freelance Frontend Developer with 6+ years of experience specializing in Vue.js, Nuxt.js, TypeScript, and React.",
     url: `${baseUrl}/${locale}`,
@@ -63,7 +63,7 @@ export function JsonLd({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${baseUrl}/#service`,
-    name: "Eduardo Castillo — Frontend Development Services",
+    name: "Eduardo Castillo — Web Development Services",
     provider: { "@id": `${baseUrl}/#person` },
     url: `${baseUrl}/${locale}`,
     areaServed: "Worldwide",
