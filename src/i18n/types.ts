@@ -12,6 +12,7 @@ export interface Dictionary {
     role: string;
     description: string;
     cta: string;
+    ctaSecondary: string;
   };
   about: {
     title: string;

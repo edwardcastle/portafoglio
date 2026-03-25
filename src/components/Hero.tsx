@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Phone } from "lucide-react";
-import { GithubIcon } from "./icons";
 import type { Dictionary } from "@/i18n/types";
 
 export function Hero({ dict }: { dict: Dictionary["hero"] }) {
@@ -68,13 +67,10 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
             {dict.cta}
           </a>
           <a
-            href="https://github.com/edwardcastle"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#services"
             className="px-6 py-3 border border-border hover:border-muted text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
           >
-            <GithubIcon size={18} />
-            GitHub
+            {dict.ctaSecondary}
           </a>
         </motion.div>
 
