@@ -18,10 +18,10 @@ export function Header({
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
+    { href: "#services", label: dict.services },
     { href: "#about", label: dict.about },
     { href: "#experience", label: dict.experience },
     { href: "#skills", label: dict.skills },
-    { href: "#services", label: dict.services },
     { href: "#projects", label: dict.projects },
     { href: "#contact", label: dict.contact },
   ];

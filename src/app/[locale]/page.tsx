@@ -21,10 +21,10 @@ export default async function Home({
   return (
     <>
       <Hero dict={dict.hero} />
+      <Services dict={dict.services} />
       <About dict={dict.about} />
       <Experience dict={dict.experience} />
       <Skills dict={dict.skills} />
-      <Services dict={dict.services} />
       <Projects dict={dict.projects} />
       <Contact dict={dict.contact} />
     </>
