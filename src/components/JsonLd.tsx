@@ -10,11 +10,15 @@ export function JsonLd({ locale }: { locale: string }) {
     familyName: "Castillo",
     jobTitle: "Full-Stack Web Developer",
     description:
-      "Freelance Frontend Developer with 6+ years of experience specializing in Vue.js, Nuxt.js, TypeScript, and React.",
+      "Full-Stack Web Developer with 6+ years of experience specializing in Vue.js, React, Next.js, TypeScript, Go, and Python. Available for hire — remote from Italy.",
     url: `${baseUrl}/${locale}`,
     sameAs: ["https://github.com/edwardcastle"],
     email: "sir.edwardcastle@gmail.com",
     telephone: "+39 348 3448387",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "IT",
+    },
     knowsLanguage: [
       { "@type": "Language", name: "English", alternateName: "en" },
       { "@type": "Language", name: "Italian", alternateName: "it" },
@@ -35,23 +39,32 @@ export function JsonLd({ locale }: { locale: string }) {
       "Golang",
       "Python",
       "Django",
+      "GraphQL",
+      "REST APIs",
+      "Docker",
+      "Tailwind CSS",
       "Frontend Development",
       "Backend Development",
       "Full-Stack Development",
       "Web Engineering",
       "Progressive Web Apps",
       "Responsive Design",
+      "CI/CD",
+      "DevOps",
+      "Web Performance Optimization",
+      "Accessibility",
+      "E-commerce Development",
     ],
     hasOccupation: {
       "@type": "Occupation",
-      name: "Frontend Developer",
+      name: "Full-Stack Web Developer",
       occupationLocation: { "@type": "Country", name: "Italy" },
       estimatedSalary: {
         "@type": "MonetaryAmountDistribution",
         currency: "EUR",
       },
       skills:
-        "Vue.js, Nuxt.js, TypeScript, React, Next.js, Go, Python, Django, Docker, HTML, CSS, Tailwind CSS, JavaScript",
+        "Vue.js, Nuxt.js, TypeScript, React, Next.js, Go, Python, Django, Docker, HTML, CSS, Tailwind CSS, JavaScript, GraphQL, REST APIs, Git, CI/CD",
     },
     workLocation: {
       "@type": "VirtualLocation",
@@ -69,7 +82,8 @@ export function JsonLd({ locale }: { locale: string }) {
     areaServed: "Worldwide",
     serviceType: "Web Development",
     description:
-      "Full-stack web development, UI/UX implementation, DevOps & deployment, and technical consulting.",
+      "Full-stack web development, UI/UX implementation, DevOps & deployment, and technical consulting. 6+ years of experience serving companies across Europe and the Americas.",
+    priceRange: "$$",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Development Services",
@@ -118,10 +132,64 @@ export function JsonLd({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    name: "Eduardo Castillo — Frontend Developer",
+    name: "Eduardo Castillo — Full-Stack Web Developer",
     url: baseUrl,
     inLanguage: ["en", "it", "es"],
     author: { "@id": `${baseUrl}/#person` },
+    description:
+      "Portfolio of Eduardo Castillo, a Full-Stack Web Developer available for hire. Specializing in Vue.js, React, Next.js, TypeScript, Go, and Python.",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${baseUrl}/${locale}`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What technologies does Eduardo Castillo work with?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Eduardo works with Vue.js, Nuxt.js, React, Next.js, TypeScript, JavaScript, Go, Python, Django, Docker, GraphQL, REST APIs, Tailwind CSS, and more.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is Eduardo available for remote work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Eduardo works remotely from Italy and has served clients across Europe, Latin America, and worldwide.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What services does Eduardo offer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Eduardo offers full-stack web development, UI/UX implementation, DevOps & deployment, and technical consulting services.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How much experience does Eduardo have?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Eduardo has over 6 years of professional experience and has worked with 8+ companies across different industries and countries.",
+        },
+      },
+    ],
   };
 
   return (
@@ -137,6 +205,14 @@ export function JsonLd({ locale }: { locale: string }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );

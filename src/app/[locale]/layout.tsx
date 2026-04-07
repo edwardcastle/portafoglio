@@ -72,10 +72,10 @@ export async function generateMetadata({
         .filter((l) => l !== locale)
         .map((l) => ogLocaleMap[l]),
       url: `${baseUrl}/${locale}`,
-      siteName: "Eduardo Castillo — Frontend Developer",
+      siteName: "Eduardo Castillo — Full-Stack Web Developer",
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.ogDescription,
       creator: "@edwardcastle",
