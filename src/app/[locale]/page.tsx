@@ -2,9 +2,8 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
 import { Skills } from "@/components/Skills";
-import { Services } from "@/components/Services";
-import { Projects } from "@/components/Projects";
-import { Contact } from "@/components/Contact";
+import { ServicesPreview } from "@/components/ServicesPreview";
+import { WorkPreview } from "@/components/WorkPreview";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { isValidLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
@@ -20,13 +19,20 @@ export default async function Home({
 
   return (
     <>
-      <Hero dict={dict.hero} />
-      <Services dict={dict.services} />
+      <Hero dict={dict.hero} locale={locale} />
+      <ServicesPreview
+        dict={dict.services}
+        homeSections={dict.homeSections}
+        locale={locale}
+      />
       <About dict={dict.about} />
       <Experience dict={dict.experience} />
       <Skills dict={dict.skills} />
-      <Projects dict={dict.projects} />
-      <Contact dict={dict.contact} />
+      <WorkPreview
+        dict={dict.work}
+        homeSections={dict.homeSections}
+        locale={locale}
+      />
     </>
   );
 }

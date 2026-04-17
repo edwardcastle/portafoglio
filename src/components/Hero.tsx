@@ -2,15 +2,22 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Mail, Phone } from "lucide-react";
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
-export function Hero({ dict }: { dict: Dictionary["hero"] }) {
+export function Hero({
+  dict,
+  locale,
+}: {
+  dict: Dictionary["hero"];
+  locale: string;
+}) {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-purple-500/8 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-purple-500/5 blur-[100px]" />
       </div>
 
       <div className="max-w-4xl mx-auto text-center">
@@ -28,22 +35,18 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          className="mb-6"
         >
-          Eduardo{" "}
-          <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
-            Castillo
+          <span className="block text-5xl md:text-7xl font-bold tracking-tight">
+            Eduardo{" "}
+            <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
+              Castillo
+            </span>
+          </span>
+          <span className="block text-xl md:text-2xl text-muted mt-4">
+            {dict.role}
           </span>
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-xl md:text-2xl text-muted mb-4"
-        >
-          {dict.role}
-        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -60,18 +63,18 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex items-center justify-center gap-4 mb-16"
         >
-          <a
-            href="#contact"
+          <Link
+            href={`/${locale}/contact`}
             className="px-6 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors"
           >
             {dict.cta}
-          </a>
-          <a
-            href="#services"
-            className="px-6 py-3 border border-border hover:border-muted text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
+          </Link>
+          <Link
+            href={`/${locale}/services`}
+            className="px-6 py-3 border border-border hover:border-accent/40 text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
           >
             {dict.ctaSecondary}
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -104,12 +107,10 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
         transition={{ delay: 1, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <a href="#about" aria-label="Scroll down">
-          <ArrowDown
-            size={20}
-            className="text-muted animate-bounce"
-          />
-        </a>
+        <ArrowDown
+          size={20}
+          className="text-muted animate-bounce"
+        />
       </motion.div>
     </section>
   );
