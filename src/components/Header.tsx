@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import type { Dictionary } from "@/i18n/types";
 import type { Locale } from "@/i18n/config";
@@ -16,15 +18,19 @@ export function Header({
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
-    { href: "#services", label: dict.services },
-    { href: "#about", label: dict.about },
-    { href: "#experience", label: dict.experience },
-    { href: "#skills", label: dict.skills },
-    { href: "#projects", label: dict.projects },
-    { href: "#contact", label: dict.contact },
+    { href: `/${locale}`, label: dict.home },
+    { href: `/${locale}/work`, label: dict.work },
+    { href: `/${locale}/services`, label: dict.services },
+    { href: `/${locale}/contact`, label: dict.contact },
   ];
+
+  function isActive(href: string) {
+    if (href === `/${locale}`) return pathname === `/${locale}`;
+    return pathname.startsWith(href);
+  }
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 20);
@@ -41,23 +47,27 @@ export function Header({
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a
-          href="#"
+        <Link
+          href={`/${locale}`}
           className="text-lg font-bold tracking-tight hover:text-accent transition-colors"
         >
           EC<span className="text-accent">.</span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
-                  className="text-sm text-muted hover:text-foreground transition-colors"
+                  className={`text-sm transition-colors ${
+                    isActive(link.href)
+                      ? "text-accent font-medium"
+                      : "text-muted hover:text-foreground"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -84,13 +94,17 @@ export function Header({
             <ul className="px-6 py-4 space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
-                    className="block text-muted hover:text-foreground transition-colors"
+                    className={`block transition-colors ${
+                      isActive(link.href)
+                        ? "text-accent font-medium"
+                        : "text-muted hover:text-foreground"
+                    }`}
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
