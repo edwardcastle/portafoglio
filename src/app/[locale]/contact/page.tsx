@@ -1,0 +1,44 @@
+import { Contact } from "@/components/Contact";
+import { getDictionary } from "@/i18n/get-dictionary";
+import { locales, isValidLocale } from "@/i18n/config";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+const baseUrl = "https://eduardocastillo.dev";
+
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  const dict = await getDictionary(locale);
+
+  return {
+    title: dict.meta.contactTitle,
+    description: dict.meta.contactDescription,
+    alternates: {
+      canonical: `${baseUrl}/${locale}/contact`,
+      languages: Object.fromEntries(
+        locales.map((l) => [l, `${baseUrl}/${l}/contact`]),
+      ),
+    },
+  };
+}
+
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) notFound();
+  const dict = await getDictionary(locale);
+
+  return <Contact dict={dict.contact} />;
+}
