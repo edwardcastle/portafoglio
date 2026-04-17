@@ -185,13 +185,13 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
             </button>
 
             {status === "success" && (
-              <p className="flex items-center gap-2 text-sm text-green-400">
+              <p className="flex items-center gap-2 text-sm text-green-600">
                 <CheckCircle2 size={16} />
                 {dict.success}
               </p>
             )}
             {status === "error" && (
-              <p className="flex items-center gap-2 text-sm text-red-400">
+              <p className="flex items-center gap-2 text-sm text-red-600">
                 <AlertCircle size={16} />
                 {dict.error}
               </p>

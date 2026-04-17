@@ -3,18 +3,14 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
-  --color-muted: #a1a1aa;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-muted: #64748b;
   --color-accent: #6366f1;
   --color-accent-light: #818cf8;
-  --color-surface: #141414;
-  --color-surface-light: #1e1e1e;
-  --color-border: #27272a;
-}
-
-html {
-  scroll-behavior: smooth;
+  --color-surface: #f8fafc;
+  --color-surface-light: #f1f5f9;
+  --color-border: #e2e8f0;
 }
 
 body {
@@ -24,8 +20,8 @@ body {
 }
 
 ::selection {
-  background-color: #6366f180;
-  color: #fff;
+  background-color: #6366f140;
+  color: #1e1b4b;
 }
 
 ::-webkit-scrollbar {
@@ -33,7 +29,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-background);
+  background: var(--color-surface);
 }
 
 ::-webkit-scrollbar-thumb {

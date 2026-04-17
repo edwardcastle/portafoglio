@@ -28,9 +28,9 @@ export default async function Image({
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)",
+          background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)",
           fontFamily: "sans-serif",
-          color: "#ffffff",
+          color: "#0f172a",
           padding: "60px",
         }}
       >
@@ -46,6 +46,7 @@ export default async function Image({
             fontSize: 36,
             fontWeight: 700,
             marginBottom: 30,
+            color: "#ffffff",
           }}
         >
           EC
@@ -57,6 +58,7 @@ export default async function Image({
             letterSpacing: "-1px",
             textAlign: "center",
             lineHeight: 1.2,
+            color: "#0f172a",
           }}
         >
           Eduardo Castillo
@@ -64,7 +66,7 @@ export default async function Image({
         <div
           style={{
             fontSize: 28,
-            color: "#a5b4fc",
+            color: "#6366f1",
             marginTop: 12,
             fontWeight: 600,
           }}
@@ -97,10 +99,10 @@ export default async function Image({
                 style={{
                   padding: "8px 20px",
                   borderRadius: "999px",
-                  border: "1px solid #334155",
+                  border: "1px solid #e2e8f0",
                   fontSize: 16,
-                  color: "#cbd5e1",
-                  background: "rgba(99, 102, 241, 0.1)",
+                  color: "#64748b",
+                  background: "rgba(99, 102, 241, 0.08)",
                 }}
               >
                 {tech}
