@@ -16,9 +16,9 @@ const featuredSites = [
     image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
   },
   {
-    url: "https://www.inequalitycouncil.org/",
+    url: "https://peacebeginswithme.un.org/en/",
     image:
-      "https://www.inequalitycouncil.org/wp-content/themes/unaids-gcai/assets/img/sharing-card.jpg",
+      "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
   },
 ];
 

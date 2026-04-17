@@ -88,7 +88,6 @@
         "links": [
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
           { "label": "Nairobi Summit ICPD Dashboard", "url": "https://www.nairobisummiticpd.org/gcmf-dashboard" },
-          { "label": "Inequality Council", "url": "https://www.inequalitycouncil.org/" },
           { "label": "UNFPA", "url": "https://www.unfpa.org/" },
           { "label": "Peace Begins With Me", "url": "https://peacebeginswithme.un.org/en/" }
         ]
@@ -254,11 +253,6 @@
       {
         "name": "Nairobi Summit ICPD Dashboard",
         "description": "Dashboard de datos para la Cumbre de Nairobi sobre CIPD con gráficos interactivos y layouts responsive.",
-        "company": "Elkanodata"
-      },
-      {
-        "name": "Inequality Council",
-        "description": "Sitio web de promoción con secciones animadas, gráficos Canvas y contenido gestionado por CMS.",
         "company": "Elkanodata"
       },
       {

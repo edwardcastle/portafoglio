@@ -16,11 +16,6 @@ const sitesData: { url: string; image: string }[] = [
       "https://www.nairobisummiticpd.org/sites/all/modules/custom/nairobi_gcmf/assets/share_cards/share.jpg",
   },
   {
-    url: "https://www.inequalitycouncil.org/",
-    image:
-      "https://www.inequalitycouncil.org/wp-content/themes/unaids-gcai/assets/img/sharing-card.jpg",
-  },
-  {
     url: "https://utiq.com/",
     image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
   },
