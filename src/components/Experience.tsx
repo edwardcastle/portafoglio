@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { ExternalLink } from "lucide-react";
 import type { Dictionary } from "@/i18n/types";
 
 interface Job {
@@ -11,6 +12,7 @@ interface Job {
   period: string;
   location: string;
   highlights: string[];
+  links?: Array<{ label: string; url: string }>;
 }
 
 function TimelineItem({ job, index }: { job: Job; index: number }) {
@@ -42,7 +44,7 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
             </p>
           </div>
           <div className="text-right">
-            <p className="text-sm text-muted">{job.period}</p>
+            <time className="text-sm text-muted block">{job.period}</time>
             <p className="text-xs text-muted">{job.location}</p>
           </div>
         </div>
@@ -55,6 +57,23 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
             </li>
           ))}
         </ul>
+
+        {job.links && job.links.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-border">
+            {job.links.map((link) => (
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-accent bg-accent/10 hover:bg-accent/20 rounded-full transition-colors"
+              >
+                <ExternalLink size={12} />
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );

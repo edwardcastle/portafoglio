@@ -26,10 +26,15 @@ const projectsData = [
   {
     tech: ["TypeScript", "CMS", "Web App"],
     github: "https://github.com/edwardcastle/cubita-producciones",
+    url: "https://cubitaproducciones.com/",
   },
   {
     tech: ["JavaScript", "Social Media", "REST API"],
     github: "https://github.com/edwardcastle/twitter-clone",
+  },
+  {
+    tech: ["Next.js", "SEO", "Business Website"],
+    url: "https://casainordine.com/",
   },
 ];
 
@@ -38,12 +43,14 @@ function ProjectCard({
   description,
   tech,
   github,
+  url,
   index,
 }: {
   name: string;
   description: string;
   tech: string[];
-  github: string;
+  github?: string;
+  url?: string;
   index: number;
 }) {
   const ref = useRef(null);
@@ -59,17 +66,36 @@ function ProjectCard({
     >
       <div className="flex items-start justify-between mb-4">
         <div className="p-2 rounded-lg bg-accent/10">
-          <GithubIcon size={20} className="text-accent" />
+          {github ? (
+            <GithubIcon size={20} className="text-accent" />
+          ) : (
+            <ExternalLink size={20} className="text-accent" />
+          )}
         </div>
-        <a
-          href={github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted hover:text-accent transition-colors"
-          aria-label={`View ${name} on GitHub`}
-        >
-          <ExternalLink size={18} />
-        </a>
+        <div className="flex items-center gap-2">
+          {url && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent transition-colors"
+              aria-label={`Visit ${name}`}
+            >
+              <ExternalLink size={18} />
+            </a>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-accent transition-colors"
+              aria-label={`View ${name} on GitHub`}
+            >
+              <GithubIcon size={18} />
+            </a>
+          )}
+        </div>
       </div>
 
       <h3 className="font-semibold mb-2 group-hover:text-accent transition-colors">
@@ -121,7 +147,8 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
               name={project.name}
               description={project.description}
               tech={projectsData[index].tech}
-              github={projectsData[index].github}
+              github={projectsData[index]?.github}
+              url={projectsData[index]?.url}
               index={index}
             />
           ))}

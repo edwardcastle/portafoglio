@@ -89,12 +89,15 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <a
-            href="#contact"
+          <button
+            onClick={() => {
+              const el = document.getElementById("contact");
+              if (el) el.scrollIntoView({ behavior: "smooth" });
+            }}
             className="inline-flex items-center gap-2 px-8 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors"
           >
             {dict.cta}
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export function Footer({ dict }: { dict: Dictionary["footer"] }) {
           &copy; {new Date().getFullYear()} Eduardo Castillo. {dict.rights}
         </p>
 
-        <div className="flex items-center gap-4">
+        <address className="flex items-center gap-4 not-italic">
           <a
             href="https://github.com/edwardcastle"
             target="_blank"
@@ -27,7 +27,7 @@ export function Footer({ dict }: { dict: Dictionary["footer"] }) {
           >
             <Mail size={18} />
           </a>
-        </div>
+        </address>
       </div>
     </footer>
   );
