@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { locales, isValidLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import { SsrCleanup } from "@/components/SsrCleanup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,7 +44,6 @@ export async function generateMetadata({
     metadataBase: new URL(baseUrl),
     title: dict.meta.title,
     description: dict.meta.description,
-    keywords: dict.meta.keywords,
     authors: [{ name: "Eduardo Castillo", url: baseUrl }],
     creator: "Eduardo Castillo",
     category: "technology",
@@ -97,9 +97,19 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+        {/* Ensure SSR content is visible for search engine crawlers.
+            Removed after React hydration so Framer Motion animations work. */}
+        <style
+          id="ssr-visible"
+          dangerouslySetInnerHTML={{
+            __html: `[style*="opacity: 0"],[style*="opacity:0"]{opacity:1!important;transform:none!important}`,
+          }}
+        />
+        <SsrCleanup />
         <JsonLd locale={locale} />
         <Header dict={dict.header} locale={locale} />
         <main className="flex-1">{children}</main>

@@ -3,31 +3,20 @@ import { locales } from "@/i18n/config";
 
 const baseUrl = "https://eduardocastillo.dev";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const localeEntries: MetadataRoute.Sitemap = locales.map((locale) => ({
-    url: `${baseUrl}/${locale}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 1,
-    alternates: {
-      languages: Object.fromEntries(
-        locales.map((l) => [l, `${baseUrl}/${l}`]),
-      ),
-    },
-  }));
+const pages = ["", "/work", "/services", "/contact"] as const;
 
-  return [
-    {
-      url: baseUrl,
+export default function sitemap(): MetadataRoute.Sitemap {
+  return locales.flatMap((locale) =>
+    pages.map((page) => ({
+      url: `${baseUrl}/${locale}${page}`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      changeFrequency: "monthly" as const,
+      priority: page === "" ? 1 : 0.8,
       alternates: {
         languages: Object.fromEntries(
-          locales.map((locale) => [locale, `${baseUrl}/${locale}`]),
+          locales.map((l) => [l, `${baseUrl}/${l}${page}`]),
         ),
       },
-    },
-    ...localeEntries,
-  ];
+    })),
+  );
 }
