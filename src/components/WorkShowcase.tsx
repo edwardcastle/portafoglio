@@ -38,6 +38,11 @@ const sitesData = [
     image:
       "https://res.cloudinary.com/doelo4gvm/image/upload/f_png,w_1200,h_630,c_fill/v1737588282/login-hero.svg",
   },
+  {
+    url: "https://www.luna-tour.com/",
+    image: "/work/luna-tour.svg",
+    local: true,
+  },
 ];
 
 function SiteCard({
@@ -46,6 +51,7 @@ function SiteCard({
   company,
   url,
   image,
+  local,
   index,
 }: {
   name: string;
@@ -53,6 +59,7 @@ function SiteCard({
   company: string;
   url: string;
   image: string;
+  local?: boolean;
   index: number;
 }) {
   const ref = useRef(null);
@@ -70,13 +77,18 @@ function SiteCard({
       className="group block rounded-xl border border-border overflow-hidden bg-surface hover:shadow-lg hover:border-accent/30 transition-all hover:-translate-y-1"
     >
       <div className="relative aspect-video bg-surface-light">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+        {local ? (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img src={image} alt={name} className="w-full h-full object-cover" />
+        ) : (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        )}
       </div>
       <div className="p-5">
         <p className="text-xs text-muted uppercase tracking-wider mb-1">
@@ -127,6 +139,7 @@ export function WorkShowcase({ dict }: { dict: Dictionary["work"] }) {
               company={site.company}
               url={sitesData[index].url}
               image={sitesData[index].image}
+              local={"local" in sitesData[index]}
               index={index}
             />
           ))}

@@ -116,6 +116,9 @@
           "CMS pages, SEO optimization, and Google OAuth",
           "Mobile layouts with Ionic and Capacitor",
           "E-commerce admin panels"
+        ],
+        "links": [
+          { "label": "Luna Tour", "url": "https://www.luna-tour.com/" }
         ]
       },
       {
@@ -275,6 +278,11 @@
         "name": "Freemock",
         "description": "Free design mockup tool for creating beautiful product previews and social media images.",
         "company": "Personal"
+      },
+      {
+        "name": "Luna Tour",
+        "description": "Travel agency website with destination search, hotel bookings, and flight integration.",
+        "company": "JADE Solutions"
       }
     ]
   },
