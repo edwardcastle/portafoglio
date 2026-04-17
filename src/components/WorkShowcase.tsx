@@ -46,6 +46,11 @@ const sitesData: { url: string; image: string }[] = [
     image:
       "https://www.unfpa.org/sites/default/files/unfpa_global_redesign/images/placeholders/unfpa-social-img-en.svg",
   },
+  {
+    url: "https://peacebeginswithme.un.org/en/",
+    image:
+      "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
+  },
 ];
 
 function SiteCard({

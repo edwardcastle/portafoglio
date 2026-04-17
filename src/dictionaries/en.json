@@ -89,7 +89,8 @@
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
           { "label": "Nairobi Summit ICPD Dashboard", "url": "https://www.nairobisummiticpd.org/gcmf-dashboard" },
           { "label": "Inequality Council", "url": "https://www.inequalitycouncil.org/" },
-          { "label": "UNFPA", "url": "https://www.unfpa.org/" }
+          { "label": "UNFPA", "url": "https://www.unfpa.org/" },
+          { "label": "Peace Begins With Me", "url": "https://peacebeginswithme.un.org/en/" }
         ]
       },
       {
@@ -288,6 +289,11 @@
       {
         "name": "UNFPA",
         "description": "United Nations Population Fund global website with multilingual content, data dashboards, and interactive reports.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Peace Begins With Me",
+        "description": "UN campaign website promoting peace with interactive storytelling, animations, and Prismic CMS integration.",
         "company": "Elkanodata"
       }
     ]
