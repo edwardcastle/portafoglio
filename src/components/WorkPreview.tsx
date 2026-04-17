@@ -3,7 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
@@ -70,13 +69,12 @@ export function WorkPreview({
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group block rounded-xl border border-border overflow-hidden bg-surface hover:shadow-lg hover:border-accent/30 transition-all hover:-translate-y-1"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="relative aspect-video bg-surface-light">
-                <Image
+                <img
                   src={featuredSites[index].image}
                   alt={site.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-4">
