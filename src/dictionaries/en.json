@@ -88,7 +88,8 @@
         "links": [
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
           { "label": "Nairobi Summit ICPD Dashboard", "url": "https://www.nairobisummiticpd.org/gcmf-dashboard" },
-          { "label": "Inequality Council", "url": "https://www.inequalitycouncil.org/" }
+          { "label": "Inequality Council", "url": "https://www.inequalitycouncil.org/" },
+          { "label": "UNFPA", "url": "https://www.unfpa.org/" }
         ]
       },
       {
@@ -283,6 +284,11 @@
         "name": "Luna Tour",
         "description": "Travel agency website with destination search, hotel bookings, and flight integration.",
         "company": "JADE Solutions"
+      },
+      {
+        "name": "UNFPA",
+        "description": "United Nations Population Fund global website with multilingual content, data dashboards, and interactive reports.",
+        "company": "Elkanodata"
       }
     ]
   },

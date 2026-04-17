@@ -41,6 +41,11 @@ const sitesData: { url: string; image: string }[] = [
     url: "https://www.luna-tour.com/",
     image: "/screenshots/luna-tour.png",
   },
+  {
+    url: "https://www.unfpa.org/",
+    image:
+      "https://www.unfpa.org/sites/default/files/unfpa_global_redesign/images/placeholders/unfpa-social-img-en.svg",
+  },
 ];
 
 function SiteCard({
