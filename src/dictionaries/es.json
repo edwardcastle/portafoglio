@@ -1,10 +1,8 @@
 {
   "header": {
-    "about": "Sobre Mí",
-    "experience": "Experiencia",
-    "skills": "Habilidades",
+    "home": "Inicio",
+    "work": "Trabajo",
     "services": "Servicios",
-    "projects": "Proyectos",
     "contact": "Contacto"
   },
   "hero": {
@@ -86,6 +84,11 @@
           "Interfaces animadas e interactivas con Canvas y SVG",
           "De Figma/Zeplin a layouts responsive y cross-browser",
           "Contenido dinámico mediante Prismic CMS y WordPress"
+        ],
+        "links": [
+          { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
+          { "label": "Nairobi Summit ICPD Dashboard", "url": "https://www.nairobisummiticpd.org/gcmf-dashboard" },
+          { "label": "Inequality Council", "url": "https://www.inequalitycouncil.org/" }
         ]
       },
       {
@@ -98,6 +101,9 @@
           "Plataforma administrativa para gestión de usuarios y datos",
           "Migración de JavaScript a TypeScript",
           "Componentes Vue reutilizables y testing automatizado"
+        ],
+        "links": [
+          { "label": "Utiq", "url": "https://utiq.com/" }
         ]
       },
       {
@@ -222,8 +228,63 @@
       {
         "name": "Twitter Clone",
         "description": "Una aplicación de redes sociales similar a Twitter con feeds en tiempo real e interacciones de usuarios."
+      },
+      {
+        "name": "Casa in Ordine",
+        "description": "Sitio web de servicios de organización profesional construido con Next.js, con optimización SEO y diseño responsive."
       }
     ]
+  },
+  "work": {
+    "title": "Trabajo",
+    "subtitle": "Sitios web y aplicaciones que he construido para clientes y proyectos personales.",
+    "websitesTitle": "Sitios Web en Producción",
+    "projectsTitle": "Proyectos Open Source",
+    "sites": [
+      {
+        "name": "UNAIDS – Let Communities Lead",
+        "description": "Sitio web de campaña interactivo para UNAIDS con interfaces animadas, gráficos SVG y contenido dinámico.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Nairobi Summit ICPD Dashboard",
+        "description": "Dashboard de datos para la Cumbre de Nairobi sobre CIPD con gráficos interactivos y layouts responsive.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Inequality Council",
+        "description": "Sitio web de promoción con secciones animadas, gráficos Canvas y contenido gestionado por CMS.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Utiq",
+        "description": "Sitio web corporativo para la plataforma de publicidad digital, construido con Vue.js y TypeScript.",
+        "company": "Teavaro"
+      },
+      {
+        "name": "Cubita Producciones",
+        "description": "Sitio web de productora con integración CMS y gestión dinámica de contenidos.",
+        "company": "Personal"
+      },
+      {
+        "name": "Casa in Ordine",
+        "description": "Sitio web de servicios de organización profesional con optimización SEO y diseño responsive.",
+        "company": "Personal"
+      },
+      {
+        "name": "Freemock",
+        "description": "Herramienta gratuita de mockups para crear hermosas previsualizaciones de productos e imágenes para redes sociales.",
+        "company": "Personal"
+      }
+    ]
+  },
+  "homeSections": {
+    "servicesTitle": "Lo Que Hago",
+    "servicesSubtitle": "Desde sitios web hasta aplicaciones web complejas — gestiono todo el stack.",
+    "servicesCta": "Ver Todos los Servicios",
+    "workTitle": "Trabajo Destacado",
+    "workSubtitle": "Sitios web reales que he construido para clientes reales.",
+    "workCta": "Ver Todo el Trabajo"
   },
   "contact": {
     "title": "Inicia Tu Proyecto",
@@ -251,6 +312,12 @@
     "title": "Eduardo Castillo | Desarrollador Web Full-Stack — Sitios Web, Apps Web, Proyectos a Medida",
     "description": "Desarrollador Full-Stack con más de 6 años de experiencia creando sitios web, apps web y proyectos a medida. Disponible para proyectos — remoto desde Italia.",
     "ogDescription": "Desarrollador Full-Stack disponible para proyectos. Creo sitios web, apps web y soluciones personalizadas. Más de 6 años de experiencia. Remoto desde Italia.",
-    "keywords": ["Desarrollador Frontend", "Desarrollador Full-Stack", "Desarrollador Web Freelance", "Desarrollador Vue.js", "Desarrollador Nuxt.js", "Desarrollador TypeScript", "Desarrollador React", "Desarrollador Next.js", "Desarrollador Golang", "Contratar Desarrollador Frontend", "Contratar Desarrollador Web", "Desarrollo de Aplicaciones Web", "Desarrollo de Sitios Web", "Ingeniero Web", "Desarrollador Remoto Italia", "Servicios de Desarrollo Web", "Desarrollo SPA", "Desarrollador Progressive Web App", "Desarrollador UI UX", "Eduardo Castillo", "Contratar Desarrollador Full-Stack", "Programador Freelance Italia", "Desarrollador Web para Startups", "Desarrollador JavaScript", "Desarrollador Python Django", "Desarrollador API GraphQL", "Desarrollador Docker DevOps", "Diseño Web Responsive", "Desarrollador E-commerce", "Servicios Desarrollo App Web", "Ingeniero Software Remoto Europa", "Consultor Vue.js", "Consultor React", "Optimización Rendimiento Web", "Consultoría Técnica Desarrollo Web", "De Figma a Código", "Desarrollo Cross-Browser", "Desarrollador API REST", "Desarrollador Tailwind CSS", "Desarrollador Single Page Application"]
+    "keywords": ["Desarrollador Frontend", "Desarrollador Full-Stack", "Desarrollador Web Freelance", "Desarrollador Vue.js", "Desarrollador Nuxt.js", "Desarrollador TypeScript", "Desarrollador React", "Desarrollador Next.js", "Desarrollador Golang", "Contratar Desarrollador Frontend", "Contratar Desarrollador Web", "Desarrollo de Aplicaciones Web", "Desarrollo de Sitios Web", "Ingeniero Web", "Desarrollador Remoto Italia", "Servicios de Desarrollo Web", "Desarrollo SPA", "Desarrollador Progressive Web App", "Desarrollador UI UX", "Eduardo Castillo", "Contratar Desarrollador Full-Stack", "Programador Freelance Italia", "Desarrollador Web para Startups", "Desarrollador JavaScript", "Desarrollador Python Django", "Desarrollador API GraphQL", "Desarrollador Docker DevOps", "Diseño Web Responsive", "Desarrollador E-commerce", "Servicios Desarrollo App Web", "Ingeniero Software Remoto Europa", "Consultor Vue.js", "Consultor React", "Optimización Rendimiento Web", "Consultoría Técnica Desarrollo Web", "De Figma a Código", "Desarrollo Cross-Browser", "Desarrollador API REST", "Desarrollador Tailwind CSS", "Desarrollador Single Page Application"],
+    "workTitle": "Trabajo — Eduardo Castillo | Desarrollador Web Full-Stack",
+    "workDescription": "Explora sitios web y aplicaciones web que he construido para clientes como UNAIDS, Cumbre de Nairobi, Inequality Council y más.",
+    "servicesTitle": "Servicios — Eduardo Castillo | Desarrollador Web Full-Stack",
+    "servicesDescription": "Desarrollo Web Full-Stack, Implementación UI/UX, DevOps y Deployment, y servicios de Consultoría Técnica disponibles para contratación.",
+    "contactTitle": "Contacto — Eduardo Castillo | Desarrollador Web Full-Stack",
+    "contactDescription": "Ponte en contacto para iniciar tu proyecto. Te responderé en menos de 24 horas."
   }
 }

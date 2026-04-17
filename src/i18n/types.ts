@@ -1,10 +1,8 @@
 export interface Dictionary {
   header: {
-    about: string;
-    experience: string;
-    skills: string;
+    home: string;
+    work: string;
     services: string;
-    projects: string;
     contact: string;
   };
   hero: {
@@ -45,6 +43,7 @@ export interface Dictionary {
       period: string;
       location: string;
       highlights: string[];
+      links?: Array<{ label: string; url: string }>;
     }>;
   };
   skills: {
@@ -75,6 +74,25 @@ export interface Dictionary {
       description: string;
     }>;
   };
+  work: {
+    title: string;
+    subtitle: string;
+    websitesTitle: string;
+    projectsTitle: string;
+    sites: Array<{
+      name: string;
+      description: string;
+      company: string;
+    }>;
+  };
+  homeSections: {
+    servicesTitle: string;
+    servicesSubtitle: string;
+    servicesCta: string;
+    workTitle: string;
+    workSubtitle: string;
+    workCta: string;
+  };
   contact: {
     title: string;
     subtitle: string;
@@ -102,5 +120,11 @@ export interface Dictionary {
     description: string;
     ogDescription: string;
     keywords: string[];
+    workTitle: string;
+    workDescription: string;
+    servicesTitle: string;
+    servicesDescription: string;
+    contactTitle: string;
+    contactDescription: string;
   };
 }
