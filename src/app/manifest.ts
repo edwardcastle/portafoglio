@@ -2,13 +2,13 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Eduardo Castillo — Full-Stack Web Developer",
+    name: "Eduardo Castillo — Frontend Developer",
     short_name: "Eduardo Castillo",
     description:
-      "Full-Stack Developer with 6+ years of experience building websites, web apps, and custom projects. Available for hire — remote from Italy.",
+      "Frontend Developer specializing in Vue 3, Nuxt 3, and TypeScript. 6+ years building enterprise web applications. Available for hire — remote from Italy.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0a0a0a",
+    background_color: "#ffffff",
     theme_color: "#6366f1",
     icons: [
       {

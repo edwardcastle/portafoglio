@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Eduardo Castillo — Full-Stack Web Developer";
+export const alt = "Eduardo Castillo — Frontend Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -71,7 +71,7 @@ export default async function Image({
             fontWeight: 600,
           }}
         >
-          Full-Stack Web Developer
+          Frontend Developer
         </div>
         <div
           style={{

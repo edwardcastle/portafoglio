@@ -8,11 +8,14 @@ export function JsonLd({ locale }: { locale: string }) {
     name: "Eduardo Castillo",
     givenName: "Eduardo",
     familyName: "Castillo",
-    jobTitle: "Full-Stack Web Developer",
+    jobTitle: "Frontend Developer",
     description:
-      "Full-Stack Web Developer with 6+ years of experience specializing in Vue.js, React, Next.js, TypeScript, Go, and Python. Available for hire — remote from Italy.",
+      "Frontend Developer with 6+ years of experience specializing in Vue.js, React, Next.js, TypeScript, Go, and Python. Available for hire — remote from Italy.",
     url: `${baseUrl}/${locale}`,
-    sameAs: ["https://github.com/edwardcastle"],
+    sameAs: [
+      "https://github.com/edwardcastle",
+      "https://www.linkedin.com/in/eduardo-castillo-dev",
+    ],
     email: "sir.edwardcastle@gmail.com",
     telephone: "+39 348 3448387",
     address: {
@@ -45,7 +48,7 @@ export function JsonLd({ locale }: { locale: string }) {
       "Tailwind CSS",
       "Frontend Development",
       "Backend Development",
-      "Full-Stack Development",
+      "Frontend Development",
       "Web Engineering",
       "Progressive Web Apps",
       "Responsive Design",
@@ -57,7 +60,7 @@ export function JsonLd({ locale }: { locale: string }) {
     ],
     hasOccupation: {
       "@type": "Occupation",
-      name: "Full-Stack Web Developer",
+      name: "Frontend Developer",
       occupationLocation: { "@type": "Country", name: "Italy" },
       estimatedSalary: {
         "@type": "MonetaryAmountDistribution",
@@ -92,7 +95,7 @@ export function JsonLd({ locale }: { locale: string }) {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Full-Stack Web Development",
+            name: "Frontend Web Development",
             description:
               "End-to-end web applications with Vue.js, React, Next.js, Go, Python, Django, GraphQL, and REST APIs.",
           },
@@ -132,12 +135,12 @@ export function JsonLd({ locale }: { locale: string }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    name: "Eduardo Castillo — Full-Stack Web Developer",
+    name: "Eduardo Castillo — Frontend Developer",
     url: baseUrl,
     inLanguage: ["en", "it", "es"],
     author: { "@id": `${baseUrl}/#person` },
     description:
-      "Portfolio of Eduardo Castillo, a Full-Stack Web Developer available for hire. Specializing in Vue.js, React, Next.js, TypeScript, Go, and Python.",
+      "Portfolio of Eduardo Castillo, a Frontend Developer available for hire. Specializing in Vue.js, React, Next.js, TypeScript, Go, and Python.",
   };
 
   const breadcrumbSchema = {
@@ -178,7 +181,7 @@ export function JsonLd({ locale }: { locale: string }) {
         name: "What services does Eduardo offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Eduardo offers full-stack web development, UI/UX implementation, DevOps & deployment, and technical consulting services.",
+          text: "Eduardo offers frontend web development, UI/UX implementation, DevOps & deployment, and technical consulting services.",
         },
       },
       {
