@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
+import { Testimonials } from "@/components/Testimonials";
 import { Experience } from "@/components/Experience";
 import { Skills } from "@/components/Skills";
 import { ServicesPreview } from "@/components/ServicesPreview";
@@ -26,6 +27,7 @@ export default async function Home({
         locale={locale}
       />
       <About dict={dict.about} />
+      <Testimonials />
       <Experience dict={dict.experience} />
       <Skills dict={dict.skills} />
       <WorkPreview
