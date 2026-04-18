@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, Phone } from "lucide-react";
+import { ArrowDown, Mail, Phone, Download } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
@@ -84,6 +84,15 @@ export function Hero({
           >
             {dict.ctaSecondary}
           </Link>
+          {/* TODO: Add CV PDF at /public/cv/eduardo-castillo-cv.pdf */}
+          <a
+            href="/cv/eduardo-castillo-cv.pdf"
+            download
+            className="px-6 py-3 border border-border hover:border-accent/40 text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
+          >
+            <Download size={16} />
+            {dict.downloadCv}
+          </a>
         </motion.div>
 
         <motion.div

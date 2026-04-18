@@ -11,7 +11,8 @@
     "description": "I specialize in Vue 3, Nuxt 3, and TypeScript, with 6+ years building enterprise web applications and high-performance websites. Available for freelance projects and full-time roles — remote or based in Italy.",
     "availability": "Currently open to: full-time frontend roles (Italy or remote within Europe) and selected freelance projects.",
     "cta": "Start a Project",
-    "ctaSecondary": "See My Services"
+    "ctaSecondary": "See My Services",
+    "downloadCv": "Download CV"
   },
   "about": {
     "title": "About",

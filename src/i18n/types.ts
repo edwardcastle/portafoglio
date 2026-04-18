@@ -12,6 +12,7 @@ export interface Dictionary {
     availability: string;
     cta: string;
     ctaSecondary: string;
+    downloadCv: string;
   };
   about: {
     title: string;
