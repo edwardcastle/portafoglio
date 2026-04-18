@@ -6,9 +6,10 @@
     "contact": "Contatti"
   },
   "hero": {
-    "greeting": "Creo siti web e applicazioni che fanno crescere il tuo business",
-    "role": "Sviluppatore Full-Stack Disponibile per Progetti",
-    "description": "Che tu abbia bisogno di un sito web nuovo, un'applicazione web complessa o miglioramenti a un progetto esistente — consegno soluzioni curate, performanti, nei tempi e nel budget. 6+ anni, 8+ aziende servite.",
+    "greeting": "Frontend developer al servizio di team che lavorano con ONU, Eni e Reply",
+    "role": "Frontend Developer",
+    "description": "Specializzato in Vue 3, Nuxt 3 e TypeScript, con oltre 6 anni di esperienza nello sviluppo di applicazioni web enterprise e siti ad alte prestazioni. Disponibile per progetti freelance e ruoli full-time — in remoto o in Italia.",
+    "availability": "Attualmente aperto a: ruoli frontend full-time (Italia o remoto in Europa) e progetti freelance selezionati.",
     "cta": "Inizia un Progetto",
     "ctaSecondary": "Scopri i Miei Servizi"
   },
@@ -16,10 +17,10 @@
     "title": "Chi Sono",
     "subtitle": "Perché i clienti si affidano a me per i loro progetti.",
     "p1Before": "Sono un ",
-    "p1Emphasis": "Sviluppatore Full-Stack",
-    "p1After": " con oltre 6 anni di esperienza nella realizzazione di siti web e applicazioni per aziende in Europa e nelle Americhe.",
+    "p1Emphasis": "Frontend Developer",
+    "p1After": " con oltre 6 anni di esperienza nella creazione di applicazioni web per aziende in Europa e America. Il mio stack principale è Vue 3, Nuxt 3 e TypeScript. Lavoro anche con React/Next.js e ho esperienza backend in Go e Python quando i progetti lo richiedono.",
     "p2Before": "Lavoro con tecnologie moderne come ",
-    "p2Emphasis": "Vue.js, React, Next.js, Go e Python",
+    "p2Emphasis": "Vue 3, Nuxt 3, TypeScript, React e Next.js",
     "p2After": " per costruire soluzioni veloci, affidabili e facili da mantenere. Mi concentro prima nel capire i tuoi obiettivi, poi scelgo gli strumenti giusti per raggiungerli.",
     "p3Before": "I clienti tornano perché consegno nei tempi, comunico in modo chiaro e mi interessa il risultato finale. Possiedo una ",
     "p3Emphasis": "laurea in Informatica",
@@ -38,40 +39,30 @@
     "subtitle": "6+ anni di risultati concreti per aziende in Europa, America Latina e oltre.",
     "jobs": [
       {
-        "company": "Dacomat (Reply)",
-        "role": "Frontend Developer",
+        "company": "Frontend Developer — Progetti Enterprise",
+        "role": "Datore di lavoro: Dacomat S.r.l. · Partner di delivery: Reply S.p.A.",
         "type": "Contratto",
-        "period": "Lug 2025 — Presente",
+        "period": "Giu 2025 — Presente",
         "location": "Remoto, Italia",
         "highlights": [
-          "Sviluppo di dashboard interattive per la gestione dati con Vue 3 e TypeScript",
+          "Sviluppo frontend per clienti enterprise nei settori energia e industria",
+          "Dashboard interattive e interfacce di gestione dati con Vue 3 e TypeScript",
           "Tabelle dinamiche con filtri, paginazione e ordinamento ottimizzato",
-          "Import/export di file e gestione di grandi dataset",
-          "Ottimizzazione delle performance tramite lazy loading, code splitting e componenti riutilizzabili"
+          "Flussi di import/export di file e gestione di grandi volumi di dati",
+          "Ottimizzazione delle performance: lazy loading, code splitting, librerie di componenti riutilizzabili"
         ]
       },
       {
-        "company": "BattleBucks",
+        "company": "Progetti Frontend Freelance",
         "role": "Frontend Developer",
         "type": "Freelance",
-        "period": "Feb 2025 — Giu 2025",
-        "location": "Remoto, Costa Rica",
+        "period": "Lug 2024 — Giu 2025",
+        "location": "Remoto",
         "highlights": [
-          "Integrazione blockchain Solana tramite Reown per autenticazione e transazioni",
-          "Chat in tempo reale con WebSocket e REST API",
-          "Configurazione PWA e strategie di caching per migliorare le performance"
-        ]
-      },
-      {
-        "company": "Gitfast",
-        "role": "Frontend Developer",
-        "type": "Contratto",
-        "period": "Lug 2024 — Set 2024",
-        "location": "Remoto, Messico",
-        "highlights": [
-          "Sviluppo di nuove funzionalità e libreria di componenti UI",
-          "Ottimizzazione delle performance di rendering e gestione dello stato",
-          "Refactoring frontend per migliorare scalabilità e leggibilità"
+          "BattleBucks (Costa Rica · Feb–Giu 2025) — Integrazione blockchain Solana tramite Reown per autenticazione e transazioni",
+          "BattleBucks — Chat in tempo reale con WebSocket e REST API, configurazione PWA e strategie di caching",
+          "Gitfast (Messico · Lug–Set 2024) — Nuove funzionalità e libreria di componenti UI",
+          "Gitfast — Ottimizzazione delle performance di rendering e gestione dello stato, refactoring frontend"
         ]
       },
       {
@@ -110,7 +101,7 @@
       {
         "company": "JADE Solutions",
         "role": "Frontend Developer",
-        "type": "Tempo pieno",
+        "type": "Freelance, part-time",
         "period": "Nov 2022 — Lug 2023",
         "location": "Remoto, Cuba",
         "highlights": [
@@ -163,7 +154,7 @@
     "cta": "Richiedi una Consulenza Gratuita",
     "items": [
       {
-        "title": "Sviluppo Web Full-Stack",
+        "title": "Sviluppo Web Frontend",
         "description": "Da siti aziendali ad applicazioni web complesse — gestisco l'intero processo per consegnarti un prodotto finito che funziona, ha un bell'aspetto e cresce con il tuo business.",
         "features": [
           "SPA, SSR e progressive web app",
@@ -308,6 +299,7 @@
     "location": "Posizione",
     "locationValue": "Remoto, Italia",
     "github": "GitHub",
+    "linkedin": "LinkedIn",
     "nameLabel": "Nome",
     "namePlaceholder": "Il tuo nome",
     "emailLabel": "Email",
@@ -323,15 +315,15 @@
     "rights": "Tutti i diritti riservati."
   },
   "meta": {
-    "title": "Eduardo Castillo | Sviluppatore Web Full-Stack — Siti Web, App Web, Progetti su Misura",
-    "description": "Sviluppatore Full-Stack con oltre 6 anni di esperienza nella creazione di siti web, app web e progetti su misura. Disponibile per progetti — remoto dall'Italia.",
-    "ogDescription": "Sviluppatore Full-Stack disponibile per progetti. Creo siti web, app web e soluzioni personalizzate. Oltre 6 anni di esperienza. Remoto dall'Italia.",
-    "keywords": ["Sviluppatore Frontend", "Sviluppatore Full-Stack", "Sviluppatore Web Freelance", "Sviluppatore Vue.js", "Sviluppatore Nuxt.js", "Sviluppatore TypeScript", "Sviluppatore React", "Sviluppatore Next.js", "Sviluppatore Golang", "Cerco Sviluppatore Frontend", "Cerco Sviluppatore Web", "Sviluppo Applicazioni Web", "Sviluppo Siti Web", "Ingegnere Web", "Sviluppatore Remoto Italia", "Servizi Sviluppo Web", "Sviluppo SPA", "Sviluppatore Progressive Web App", "Sviluppatore UI UX", "Eduardo Castillo", "Assumere Sviluppatore Full-Stack", "Programmatore Freelance Italia", "Sviluppatore Web per Startup", "Sviluppatore JavaScript", "Sviluppatore Python Django", "Sviluppatore API GraphQL", "Sviluppatore Docker DevOps", "Design Sito Web Responsive", "Sviluppatore E-commerce", "Servizi Sviluppo App Web", "Ingegnere Software Remoto Europa", "Consulente Vue.js", "Consulente React", "Ottimizzazione Performance Sito Web", "Consulenza Tecnica Sviluppo Web", "Da Figma a Codice", "Sviluppo Cross-Browser", "Sviluppatore API REST", "Sviluppatore Tailwind CSS", "Sviluppatore Single Page Application"],
-    "workTitle": "Lavori — Eduardo Castillo | Sviluppatore Web Full-Stack",
+    "title": "Eduardo Castillo | Frontend Developer — Vue 3, Nuxt 3, TypeScript",
+    "description": "Frontend Developer con oltre 6 anni di esperienza nello sviluppo di applicazioni web enterprise. Specializzato in Vue 3, Nuxt 3 e TypeScript. Disponibile per assunzione — remoto dall'Italia.",
+    "ogDescription": "Frontend Developer specializzato in Vue 3, Nuxt 3 e TypeScript. 6+ anni di sviluppo di app web enterprise per team che lavorano con ONU, Eni e Reply.",
+    "keywords": ["Sviluppatore Frontend", "Frontend Developer", "Sviluppatore Web Freelance", "Sviluppatore Vue.js", "Sviluppatore Nuxt.js", "Sviluppatore TypeScript", "Sviluppatore React", "Sviluppatore Next.js", "Sviluppatore Golang", "Cerco Sviluppatore Frontend", "Cerco Sviluppatore Web", "Sviluppo Applicazioni Web", "Sviluppo Siti Web", "Ingegnere Web", "Sviluppatore Remoto Italia", "Servizi Sviluppo Web", "Sviluppo SPA", "Sviluppatore Progressive Web App", "Sviluppatore UI UX", "Eduardo Castillo", "Assumere Frontend Developer", "Programmatore Freelance Italia", "Sviluppatore Web per Startup", "Sviluppatore JavaScript", "Sviluppatore Python Django", "Sviluppatore API GraphQL", "Sviluppatore Docker DevOps", "Design Sito Web Responsive", "Sviluppatore E-commerce", "Servizi Sviluppo App Web", "Ingegnere Software Remoto Europa", "Consulente Vue.js", "Consulente React", "Ottimizzazione Performance Sito Web", "Consulenza Tecnica Sviluppo Web", "Da Figma a Codice", "Sviluppo Cross-Browser", "Sviluppatore API REST", "Sviluppatore Tailwind CSS", "Sviluppatore Single Page Application"],
+    "workTitle": "Lavori — Eduardo Castillo | Frontend Developer",
     "workDescription": "Esplora i siti web e le applicazioni web che ho realizzato per clienti tra cui UNAIDS, Nairobi Summit, Inequality Council e altri.",
-    "servicesTitle": "Servizi — Eduardo Castillo | Sviluppatore Web Full-Stack",
-    "servicesDescription": "Sviluppo Web Full-Stack, Implementazione UI/UX, DevOps e Deployment, e servizi di Consulenza Tecnica disponibili per progetti.",
-    "contactTitle": "Contatti — Eduardo Castillo | Sviluppatore Web Full-Stack",
+    "servicesTitle": "Servizi — Eduardo Castillo | Frontend Developer",
+    "servicesDescription": "Sviluppo Web Frontend, Implementazione UI/UX, DevOps e Deployment, e servizi di Consulenza Tecnica disponibili per progetti.",
+    "contactTitle": "Contatti — Eduardo Castillo | Frontend Developer",
     "contactDescription": "Contattami per iniziare il tuo progetto. Ti risponderò entro 24 ore."
   }
 }

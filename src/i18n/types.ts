@@ -9,6 +9,7 @@ export interface Dictionary {
     greeting: string;
     role: string;
     description: string;
+    availability: string;
     cta: string;
     ctaSecondary: string;
   };
@@ -101,6 +102,7 @@ export interface Dictionary {
     location: string;
     locationValue: string;
     github: string;
+    linkedin: string;
     nameLabel: string;
     namePlaceholder: string;
     emailLabel: string;
