@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { GithubIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 import type { Dictionary } from "@/i18n/types";
 
 export function Footer({ dict }: { dict: Dictionary["footer"] }) {
@@ -19,6 +19,15 @@ export function Footer({ dict }: { dict: Dictionary["footer"] }) {
             aria-label="GitHub"
           >
             <GithubIcon size={18} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/eduardo-castillo-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted hover:text-foreground transition-colors"
+            aria-label="LinkedIn"
+          >
+            <LinkedinIcon size={18} />
           </a>
           <a
             href="mailto:sir.edwardcastle@gmail.com"

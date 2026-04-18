@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
-import { GithubIcon } from "./icons";
+import { GithubIcon, LinkedinIcon } from "./icons";
 import type { Dictionary } from "@/i18n/types";
 
 export function Contact({ dict }: { dict: Dictionary["contact"] }) {
@@ -35,6 +35,12 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
       label: dict.github,
       value: "edwardcastle",
       href: "https://github.com/edwardcastle",
+    },
+    {
+      icon: LinkedinIcon,
+      label: dict.linkedin,
+      value: "eduardo-castillo-dev",
+      href: "https://www.linkedin.com/in/eduardo-castillo-dev",
     },
   ];
 
