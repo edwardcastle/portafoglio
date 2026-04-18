@@ -142,11 +142,11 @@
   "skills": {
     "title": "Skills",
     "subtitle": "Technologies behind your next project.",
-    "frontend": "Frontend",
-    "designUi": "Design & UI",
-    "performanceTools": "Performance & Tools",
-    "backend": "Backend",
-    "otherTools": "Other Tools"
+    "coreStack": "Core Stack",
+    "coreStackLabel": "Daily use, 3+ years",
+    "proficient": "Proficient",
+    "workingKnowledge": "Working Knowledge",
+    "tools": "Tools"
   },
   "services": {
     "title": "Services",

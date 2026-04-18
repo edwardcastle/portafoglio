@@ -50,11 +50,11 @@ export interface Dictionary {
   skills: {
     title: string;
     subtitle: string;
-    frontend: string;
-    designUi: string;
-    performanceTools: string;
-    backend: string;
-    otherTools: string;
+    coreStack: string;
+    coreStackLabel: string;
+    proficient: string;
+    workingKnowledge: string;
+    tools: string;
   };
   services: {
     title: string;
