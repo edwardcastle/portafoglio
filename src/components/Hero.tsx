@@ -84,9 +84,8 @@ export function Hero({
           >
             {dict.ctaSecondary}
           </Link>
-          {/* TODO: Add CV PDF at /public/cv/eduardo-castillo-cv.pdf */}
           <a
-            href="/cv/eduardo-castillo-cv.pdf"
+            href={`/cv/eduardo-castillo-cv-${locale}.pdf`}
             download
             className="px-6 py-3 border border-border hover:border-accent/40 text-foreground rounded-lg font-medium transition-colors flex items-center gap-2"
           >
