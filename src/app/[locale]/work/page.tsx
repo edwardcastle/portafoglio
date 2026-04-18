@@ -29,6 +29,11 @@ export async function generateMetadata({
         locales.map((l) => [l, `${baseUrl}/${l}/work`]),
       ),
     },
+    openGraph: {
+      title: dict.meta.workTitle,
+      description: dict.meta.workDescription,
+      url: `${baseUrl}/${locale}/work`,
+    },
   };
 }
 
