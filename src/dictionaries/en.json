@@ -202,10 +202,6 @@
     "viewAll": "View All on GitHub",
     "items": [
       {
-        "name": "Chat for Team",
-        "description": "A team collaboration chat application built with TypeScript for real-time communication."
-      },
-      {
         "name": "WhatsApp Chat Integration",
         "description": "WhatsApp API integration using Twilio for automated messaging and communication workflows."
       },
@@ -220,10 +216,6 @@
       {
         "name": "Cubita Producciones",
         "description": "A production company website built with TypeScript, featuring dynamic content management."
-      },
-      {
-        "name": "Twitter Clone",
-        "description": "A Twitter-like social media application showcasing real-time feeds and user interactions."
       },
       {
         "name": "Casa in Ordine",

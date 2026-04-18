@@ -201,11 +201,7 @@
     "subtitle": "Una selección de proyectos que muestra la variedad de lo que construyo.",
     "viewAll": "Ver Todos en GitHub",
     "items": [
-      {
-        "name": "Chat for Team",
-        "description": "Una aplicación de chat colaborativo para equipos desarrollada con TypeScript para comunicación en tiempo real."
-      },
-      {
+{
         "name": "WhatsApp Chat Integration",
         "description": "Integración de API WhatsApp usando Twilio para mensajería automatizada y flujos de comunicación."
       },
@@ -221,11 +217,7 @@
         "name": "Cubita Producciones",
         "description": "Sitio web de una productora desarrollado con TypeScript, con gestión dinámica de contenidos."
       },
-      {
-        "name": "Twitter Clone",
-        "description": "Una aplicación de redes sociales similar a Twitter con feeds en tiempo real e interacciones de usuarios."
-      },
-      {
+{
         "name": "Casa in Ordine",
         "description": "Sitio web de servicios de organización profesional construido con Next.js, con optimización SEO y diseño responsive."
       }

@@ -8,10 +8,6 @@ import type { Dictionary } from "@/i18n/types";
 
 const projectsData = [
   {
-    tech: ["TypeScript", "Real-time", "WebSocket"],
-    github: "https://github.com/edwardcastle/chat-for-team",
-  },
-  {
     tech: ["TypeScript", "Twilio", "WhatsApp API"],
     github: "https://github.com/edwardcastle/chat-whatsapp",
   },
@@ -27,10 +23,6 @@ const projectsData = [
     tech: ["TypeScript", "CMS", "Web App"],
     github: "https://github.com/edwardcastle/cubita-producciones",
     url: "https://cubitaproducciones.com/",
-  },
-  {
-    tech: ["JavaScript", "Social Media", "REST API"],
-    github: "https://github.com/edwardcastle/twitter-clone",
   },
   {
     tech: ["Next.js", "SEO", "Business Website"],
