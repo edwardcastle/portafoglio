@@ -75,6 +75,7 @@ export function WorkPreview({
                   src={featuredSites[index].image}
                   alt={site.name}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="p-4">

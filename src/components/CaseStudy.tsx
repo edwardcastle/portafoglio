@@ -87,6 +87,7 @@ export function CaseStudy({
             src={ogImage}
             alt={data.title}
             className="w-full aspect-video object-cover"
+            loading="lazy"
           />
         </motion.div>
 

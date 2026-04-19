@@ -85,7 +85,7 @@ function SiteCard({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <div className="relative aspect-video bg-surface-light">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
+        <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" />
       </div>
       <div className="p-5">
         <p className="text-xs text-muted uppercase tracking-wider mb-1">
