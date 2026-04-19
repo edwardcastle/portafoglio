@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { locales, isValidLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { SsrCleanup } from "@/components/SsrCleanup";
 
 const geistSans = Geist({
@@ -114,6 +115,14 @@ export default async function LocaleLayout({
         <Header dict={dict.header} locale={locale} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict.footer} />
+        {/* TODO: Replace with your Umami instance URL and website ID */}
+        {process.env.NEXT_PUBLIC_UMAMI_URL && (
+          <Script
+            src={process.env.NEXT_PUBLIC_UMAMI_URL}
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            strategy="lazyOnload"
+          />
+        )}
       </body>
     </html>
   );
