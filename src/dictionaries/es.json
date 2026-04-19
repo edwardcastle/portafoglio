@@ -162,7 +162,9 @@
           "Desarrollo de APIs REST y GraphQL",
           "Diseño e integración de bases de datos",
           "Autenticación y servicios de terceros"
-        ]
+        ],
+        "examples": "Casa in Ordine, Cubita Producciones, Luna Tour",
+        "timeline": "4\u201312 weeks"
       },
       {
         "title": "Implementación UI/UX",
@@ -172,7 +174,9 @@
           "Animaciones CSS y gráficos Canvas/SVG",
           "Layouts responsive y cross-browser",
           "Accesibilidad (conforme WCAG)"
-        ]
+        ],
+        "examples": "UNAIDS Let Communities Lead, UNFPA, Peace Begins With Me",
+        "timeline": "2\u20138 weeks"
       },
       {
         "title": "DevOps y Deployment",
@@ -182,7 +186,8 @@
           "Configuración de pipelines CI/CD",
           "Deployment en la nube y hosting",
           "Monitoreo de rendimiento y caching"
-        ]
+        ],
+        "timeline": "1\u20134 weeks"
       },
       {
         "title": "Consultoría Técnica",
@@ -192,7 +197,9 @@
           "Auditoría y refactorización de código",
           "Migración JS a TypeScript",
           "Mentoría y buenas prácticas para el equipo"
-        ]
+        ],
+        "examples": "Teavaro JS-to-TS migration",
+        "timeline": "1\u20132 weeks"
       }
     ]
   },

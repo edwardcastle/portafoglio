@@ -38,7 +38,7 @@ function ServiceCard({
         {item.description}
       </p>
 
-      <ul className="space-y-2">
+      <ul className="space-y-2 mb-4">
         {item.features.map((feature) => (
           <li
             key={feature}
@@ -52,6 +52,21 @@ function ServiceCard({
           </li>
         ))}
       </ul>
+
+      <div className="pt-4 border-t border-border flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted">
+        {item.timeline && (
+          <span>
+            <span className="font-medium text-foreground">Timeline:</span>{" "}
+            {item.timeline}
+          </span>
+        )}
+        {item.examples && (
+          <span>
+            <span className="font-medium text-foreground">Examples:</span>{" "}
+            {item.examples}
+          </span>
+        )}
+      </div>
     </motion.div>
   );
 }

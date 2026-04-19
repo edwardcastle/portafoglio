@@ -162,7 +162,9 @@
           "REST & GraphQL API development",
           "Database design & integration",
           "Authentication & third-party services"
-        ]
+        ],
+        "examples": "Casa in Ordine, Cubita Producciones, Luna Tour",
+        "timeline": "4\u201312 weeks"
       },
       {
         "title": "UI/UX Implementation",
@@ -172,7 +174,9 @@
           "CSS animations & Canvas/SVG graphics",
           "Responsive & cross-browser layouts",
           "Accessibility (WCAG compliant)"
-        ]
+        ],
+        "examples": "UNAIDS Let Communities Lead, UNFPA, Peace Begins With Me",
+        "timeline": "2\u20138 weeks"
       },
       {
         "title": "DevOps & Deployment",
@@ -182,7 +186,8 @@
           "CI/CD pipeline setup",
           "Cloud deployment & hosting",
           "Performance monitoring & caching"
-        ]
+        ],
+        "timeline": "1\u20134 weeks"
       },
       {
         "title": "Technical Consulting",
@@ -192,7 +197,9 @@
           "Codebase audit & refactoring",
           "JS to TypeScript migration",
           "Team mentoring & best practices"
-        ]
+        ],
+        "examples": "Teavaro JS-to-TS migration",
+        "timeline": "1\u20132 weeks"
       }
     ]
   },

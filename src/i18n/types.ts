@@ -65,6 +65,8 @@ export interface Dictionary {
       title: string;
       description: string;
       features: string[];
+      examples?: string;
+      timeline?: string;
     }>;
   };
   projects: {
