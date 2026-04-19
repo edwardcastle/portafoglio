@@ -37,16 +37,24 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
         aria-label="Change language"
+        aria-expanded={open}
+        aria-haspopup="listbox"
       >
         <Globe size={16} />
         <span className="uppercase">{locale}</span>
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 bg-surface border border-border rounded-lg py-1 min-w-[140px] shadow-lg z-50">
+        <div
+          role="listbox"
+          aria-label="Select language"
+          className="absolute right-0 top-full mt-2 bg-surface border border-border rounded-lg py-1 min-w-[140px] shadow-lg z-50"
+        >
           {locales.map((l) => (
             <button
               key={l}
+              role="option"
+              aria-selected={l === locale}
               onClick={() => {
                 switchLocale(l);
                 setOpen(false);

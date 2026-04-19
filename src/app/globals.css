@@ -19,6 +19,13 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/* Focus styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 ::selection {
   background-color: #6366f140;
   color: #1e1b4b;
