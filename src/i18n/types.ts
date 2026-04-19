@@ -87,6 +87,29 @@ export interface Dictionary {
       company: string;
     }>;
   };
+  caseStudy: {
+    backToWork: string;
+    client: string;
+    year: string;
+    role: string;
+    liveLabel: string;
+    challengeTitle: string;
+    approachTitle: string;
+    stackTitle: string;
+    outcomeTitle: string;
+    contributionsTitle: string;
+    unaids: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+  };
   homeSections: {
     servicesTitle: string;
     servicesSubtitle: string;

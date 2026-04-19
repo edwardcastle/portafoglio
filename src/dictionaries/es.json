@@ -276,6 +276,35 @@
       }
     ]
   },
+  "caseStudy": {
+    "backToWork": "Volver a Trabajo",
+    "client": "Cliente",
+    "year": "Año",
+    "role": "Rol",
+    "liveLabel": "Ver Sitio en Vivo",
+    "challengeTitle": "Desafío",
+    "approachTitle": "Enfoque",
+    "stackTitle": "Stack",
+    "outcomeTitle": "Resultado",
+    "contributionsTitle": "Contribuciones Clave",
+    "unaids": {
+      "title": "UNAIDS — Let Communities Lead",
+      "client": "Elkanodata (para UNAIDS)",
+      "year": "2023–2024",
+      "role": "Frontend Developer",
+      "challenge": "UNAIDS necesitaba un sitio web de campaña interactivo para promover las respuestas comunitarias al VIH. El sitio requería animaciones ricas, gestión de contenido multilingüe y un diseño capaz de involucrar a audiencias diversas en distintos dispositivos, manteniendo tiempos de carga rápidos.",
+      "approach": "Construí el frontend utilizando interfaces animadas e interactivas con Canvas y SVG, trasladando diseños de alta fidelidad de Figma a layouts responsive pixel-perfect. El contenido se gestionó a través de Prismic CMS, permitiendo al equipo de UNAIDS actualizar el contenido de la campaña de forma independiente en múltiples idiomas.",
+      "stack": "Vue.js, Nuxt.js, TypeScript, Prismic CMS, animaciones Canvas/SVG, Figma/Zeplin, diseño responsive",
+      "outcome": "El sitio de la campaña se lanzó con éxito, apoyando los esfuerzos de promoción global de UNAIDS. El enfoque de narrativa interactiva aumentó el engagement, y la arquitectura basada en CMS permitió al equipo mantener y actualizar el contenido sin intervención de desarrolladores.",
+      "contributions": [
+        "Interfaces animadas e interactivas usando Canvas y SVG para narrativa visual",
+        "Implementación pixel-perfect desde diseños de Figma y Zeplin a layouts responsive y cross-browser",
+        "Integración de contenido dinámico multilingüe a través de Prismic CMS",
+        "Optimización del rendimiento para tiempos de carga y animaciones en todos los dispositivos",
+        "Colaboración con diseñadores y equipos backend para cumplir con plazos ajustados de la campaña"
+      ]
+    }
+  },
   "homeSections": {
     "servicesTitle": "Lo Que Hago",
     "servicesSubtitle": "Desde sitios web hasta aplicaciones web complejas — gestiono todo el stack.",

@@ -276,6 +276,35 @@
       }
     ]
   },
+  "caseStudy": {
+    "backToWork": "Back to Work",
+    "client": "Client",
+    "year": "Year",
+    "role": "Role",
+    "liveLabel": "View Live Site",
+    "challengeTitle": "Challenge",
+    "approachTitle": "Approach",
+    "stackTitle": "Stack",
+    "outcomeTitle": "Outcome",
+    "contributionsTitle": "Key Contributions",
+    "unaids": {
+      "title": "UNAIDS \u2014 Let Communities Lead",
+      "client": "Elkanodata (for UNAIDS)",
+      "year": "2023\u20132024",
+      "role": "Frontend Developer",
+      "challenge": "UNAIDS needed an interactive campaign website to promote community-led responses to HIV. The site required rich animations, multilingual content management, and a design that could engage diverse audiences across devices while maintaining fast load times.",
+      "approach": "I built the frontend using animated and interactive interfaces with Canvas and SVG, translating high-fidelity Figma designs into pixel-perfect, responsive layouts. Content was managed through Prismic CMS, allowing the UNAIDS team to update campaign content independently across multiple languages.",
+      "stack": "Vue.js, Nuxt.js, TypeScript, Prismic CMS, Canvas/SVG animations, Figma/Zeplin, responsive design",
+      "outcome": "The campaign site launched successfully, supporting UNAIDS global advocacy efforts. The interactive storytelling approach increased engagement, and the CMS-driven architecture enabled the team to maintain and update content without developer involvement.",
+      "contributions": [
+        "Animated and interactive interfaces using Canvas and SVG for visual storytelling",
+        "Pixel-perfect implementation from Figma and Zeplin designs into responsive, cross-browser layouts",
+        "Dynamic multilingual content integration via Prismic CMS",
+        "Performance optimization for loading times and animations across devices",
+        "Collaboration with designers and backend teams to deliver on tight campaign deadlines"
+      ]
+    }
+  },
   "homeSections": {
     "servicesTitle": "What I Do",
     "servicesSubtitle": "From websites to complex web applications — I handle the full stack.",

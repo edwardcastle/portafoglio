@@ -2,13 +2,15 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FileText } from "lucide-react";
+import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
-const sitesData: { url: string; image: string }[] = [
+const sitesData: { url: string; image: string; caseStudy?: string }[] = [
   {
     url: "https://letcommunitieslead.unaids.org/",
     image: "https://letcommunitieslead.unaids.org/img/share/sm-share-generic.jpg",
+    caseStudy: "unaids-let-communities-lead",
   },
   {
     url: "https://www.nairobisummiticpd.org/gcmf-dashboard",
@@ -54,6 +56,8 @@ function SiteCard({
   company,
   url,
   image,
+  caseStudy,
+  locale,
   index,
 }: {
   name: string;
@@ -61,6 +65,8 @@ function SiteCard({
   company: string;
   url: string;
   image: string;
+  caseStudy?: string;
+  locale: string;
   index: number;
 }) {
   const ref = useRef(null);
@@ -95,12 +101,22 @@ function SiteCard({
           />
         </div>
         <p className="text-sm text-muted leading-relaxed">{description}</p>
+        {caseStudy && (
+          <Link
+            href={`/${locale}/work/${caseStudy}`}
+            className="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-accent hover:text-accent-light transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <FileText size={12} />
+            Case Study
+          </Link>
+        )}
       </div>
     </motion.a>
   );
 }
 
-export function WorkShowcase({ dict }: { dict: Dictionary["work"] }) {
+export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; locale: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -130,6 +146,8 @@ export function WorkShowcase({ dict }: { dict: Dictionary["work"] }) {
               company={site.company}
               url={sitesData[index].url}
               image={sitesData[index].image}
+              caseStudy={sitesData[index].caseStudy}
+              locale={locale}
               index={index}
             />
           ))}
