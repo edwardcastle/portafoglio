@@ -24,6 +24,7 @@ export function Header({
     { href: `/${locale}`, label: dict.home },
     { href: `/${locale}/work`, label: dict.work },
     { href: `/${locale}/services`, label: dict.services },
+    { href: `/${locale}/blog`, label: dict.blog },
     { href: `/${locale}/contact`, label: dict.contact },
   ];
 
