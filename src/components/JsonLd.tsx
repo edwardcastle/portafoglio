@@ -85,7 +85,7 @@ export function JsonLd({ locale }: { locale: string }) {
     areaServed: "Worldwide",
     serviceType: "Web Development",
     description:
-      "Full-stack web development, UI/UX implementation, DevOps & deployment, and technical consulting. 6+ years of experience serving companies across Europe and the Americas.",
+      "Frontend web development, UI/UX implementation, DevOps & deployment, and technical consulting. 6+ years of experience serving companies across Europe and the Americas.",
     priceRange: "$$",
     hasOfferCatalog: {
       "@type": "OfferCatalog",

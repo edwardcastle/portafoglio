@@ -191,7 +191,7 @@
       },
       {
         "title": "Consultoría Técnica",
-        "description": "Revisión de arquitectura, migración JavaScript-TypeScript, auditoría de código y mentoría para equipos de desarrollo en todo el stack.",
+        "description": "Revisión de arquitectura, migración JavaScript-TypeScript, auditoría de código y mentoría para equipos de desarrollo en el frontend y más allá.",
         "features": [
           "Planificación de arquitectura de sistemas",
           "Auditoría y refactorización de código",
@@ -314,7 +314,7 @@
   },
   "homeSections": {
     "servicesTitle": "Lo Que Hago",
-    "servicesSubtitle": "Desde sitios web hasta aplicaciones web complejas — gestiono todo el stack.",
+    "servicesSubtitle": "Desde sitios web hasta aplicaciones web complejas — gestiono el frontend de principio a fin.",
     "servicesCta": "Ver Todos los Servicios",
     "workTitle": "Trabajo Destacado",
     "workSubtitle": "Sitios web reales que he construido para clientes reales.",

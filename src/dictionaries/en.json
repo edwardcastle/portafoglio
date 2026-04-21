@@ -191,7 +191,7 @@
       },
       {
         "title": "Technical Consulting",
-        "description": "Architecture reviews, JavaScript-to-TypeScript migrations, code audits, and mentoring for development teams across the full stack.",
+        "description": "Architecture reviews, JavaScript-to-TypeScript migrations, code audits, and mentoring for development teams across the frontend and beyond.",
         "features": [
           "System architecture planning",
           "Codebase audit & refactoring",
@@ -314,7 +314,7 @@
   },
   "homeSections": {
     "servicesTitle": "What I Do",
-    "servicesSubtitle": "From websites to complex web applications — I handle the full stack.",
+    "servicesSubtitle": "From websites to complex web applications — I handle the frontend end to end.",
     "servicesCta": "View All Services",
     "workTitle": "Featured Work",
     "workSubtitle": "Real websites I've built for real clients.",
