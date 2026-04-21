@@ -3,7 +3,6 @@ export interface Dictionary {
     home: string;
     work: string;
     services: string;
-    blog: string;
     contact: string;
   };
   hero: {
@@ -112,14 +111,6 @@ export interface Dictionary {
       outcome: string;
       contributions: string[];
     };
-  };
-  blog: {
-    title: string;
-    subtitle: string;
-    readMore: string;
-    backToBlog: string;
-    minRead: string;
-    comingSoon: string;
   };
   homeSections: {
     servicesTitle: string;

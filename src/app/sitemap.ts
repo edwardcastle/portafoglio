@@ -3,7 +3,7 @@ import { locales } from "@/i18n/config";
 
 const baseUrl = "https://eduardocastillo.dev";
 
-const pages = ["", "/work", "/work/unaids-let-communities-lead", "/services", "/blog", "/contact"] as const;
+const pages = ["", "/work", "/work/unaids-let-communities-lead", "/services", "/contact"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>

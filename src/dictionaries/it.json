@@ -3,7 +3,6 @@
     "home": "Home",
     "work": "Lavori",
     "services": "Servizi",
-    "blog": "Blog",
     "contact": "Contatti"
   },
   "hero": {
@@ -312,14 +311,6 @@
         "Collaborazione con designer e team backend per rispettare le scadenze strette della campagna"
       ]
     }
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Articoli tecnici su sviluppo frontend, performance e lezioni dalla produzione.",
-    "readMore": "Leggi articolo",
-    "backToBlog": "Torna al Blog",
-    "minRead": "min di lettura",
-    "comingSoon": "Nuovi articoli in arrivo. Nel frattempo, dai un'occhiata ai miei lavori e progetti."
   },
   "homeSections": {
     "servicesTitle": "Cosa Faccio",

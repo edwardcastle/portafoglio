@@ -3,7 +3,6 @@
     "home": "Home",
     "work": "Work",
     "services": "Services",
-    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -312,14 +311,6 @@
         "Collaboration with designers and backend teams to deliver on tight campaign deadlines"
       ]
     }
-  },
-  "blog": {
-    "title": "Blog",
-    "subtitle": "Technical articles on frontend development, performance, and lessons from production.",
-    "readMore": "Read article",
-    "backToBlog": "Back to Blog",
-    "minRead": "min read",
-    "comingSoon": "New articles coming soon. In the meantime, check out my work and projects."
   },
   "homeSections": {
     "servicesTitle": "What I Do",
