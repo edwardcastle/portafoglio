@@ -115,14 +115,11 @@ export default async function LocaleLayout({
         <Header dict={dict.header} locale={locale} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict.footer} />
-        {/* TODO: Replace with your Umami instance URL and website ID */}
-        {process.env.NEXT_PUBLIC_UMAMI_URL && (
-          <Script
-            src={process.env.NEXT_PUBLIC_UMAMI_URL}
-            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-            strategy="lazyOnload"
-          />
-        )}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="bab7a179-e72f-4ab7-8f4b-ad11f176b6c8"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
