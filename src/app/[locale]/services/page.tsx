@@ -3,7 +3,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { locales, isValidLocale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import Link from "next/link";
+
 
 const baseUrl = "https://eduardocastillo.dev";
 
@@ -27,7 +27,7 @@ export async function generateMetadata({
       canonical: `${baseUrl}/${locale}/services`,
       languages: Object.fromEntries(
         locales.map((l) => [l, `${baseUrl}/${l}/services`]),
-      ),
+      ) as Record<string, string>,
     },
     openGraph: {
       title: dict.meta.servicesTitle,
@@ -46,17 +46,5 @@ export default async function ServicesPage({
   if (!isValidLocale(locale)) notFound();
   const dict = await getDictionary(locale);
 
-  return (
-    <>
-      <Services dict={dict.services} />
-      <section className="py-16 px-6 text-center">
-        <Link
-          href={`/${locale}/contact`}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-light text-white font-medium rounded-lg transition-colors"
-        >
-          {dict.contact.title}
-        </Link>
-      </section>
-    </>
-  );
+  return <Services dict={dict.services} />;
 }

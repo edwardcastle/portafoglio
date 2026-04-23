@@ -2,11 +2,14 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Layers, Palette, Rocket, MessagesSquare, CheckCircle2 } from "lucide-react";
 import type { Dictionary } from "@/i18n/types";
-import type { ElementType } from "react";
+import type { LucideProps } from "lucide-react";
+import type { FC } from "react";
 
-const serviceIcons: ElementType[] = [Layers, Palette, Rocket, MessagesSquare];
+const serviceIcons: FC<LucideProps>[] = [Layers, Palette, Rocket, MessagesSquare];
 
 function ServiceCard({
   item,
@@ -74,6 +77,8 @@ function ServiceCard({
 export function Services({ dict }: { dict: Dictionary["services"] }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const pathname = usePathname();
+  const locale = pathname.split("/")[1] || "en";
 
   return (
     <section id="services" className="py-24 px-6 bg-surface/50">
@@ -104,15 +109,12 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <button
-            onClick={() => {
-              const el = document.getElementById("contact");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
+          <Link
+            href={`/${locale}/contact`}
             className="inline-flex items-center gap-2 px-8 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors"
           >
             {dict.cta}
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

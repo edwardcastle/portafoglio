@@ -22,19 +22,6 @@ const sitesData: { url: string; image: string; caseStudy?: string }[] = [
     image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
   },
   {
-    url: "https://cubitaproducciones.com/",
-    image: "https://www.cubitaproducciones.com/og-image.jpg",
-  },
-  {
-    url: "https://casainordine.com/",
-    image: "https://www.casainordine.com/images/logo/logo_1200x630.png",
-  },
-  {
-    url: "https://freemock.art/",
-    image:
-      "https://res.cloudinary.com/doelo4gvm/image/upload/f_png,w_1200,h_630,c_fill/v1737588282/login-hero.svg",
-  },
-  {
     url: "https://www.luna-tour.com/",
     image: "/screenshots/luna-tour.png",
   },
@@ -47,6 +34,19 @@ const sitesData: { url: string; image: string; caseStudy?: string }[] = [
     url: "https://peacebeginswithme.un.org/en/",
     image:
       "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
+  },
+  {
+    url: "https://cubitaproducciones.com/",
+    image: "https://www.cubitaproducciones.com/og-image.jpg",
+  },
+  {
+    url: "https://casainordine.com/",
+    image: "https://www.casainordine.com/images/logo/logo_1200x630.png",
+  },
+  {
+    url: "https://freemock.art/",
+    image:
+      "https://res.cloudinary.com/doelo4gvm/image/upload/f_png,w_1200,h_630,c_fill/v1737588282/login-hero.svg",
   },
 ];
 

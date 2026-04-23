@@ -252,21 +252,6 @@
         "company": "Teavaro"
       },
       {
-        "name": "Cubita Producciones",
-        "description": "Sito web di una casa di produzione con integrazione CMS e gestione dinamica dei contenuti.",
-        "company": "Personal"
-      },
-      {
-        "name": "Casa in Ordine",
-        "description": "Sito web per servizi di organizzazione professionale con ottimizzazione SEO e design responsive.",
-        "company": "Personal"
-      },
-      {
-        "name": "Freemock",
-        "description": "Strumento gratuito per creare mockup di design, anteprime di prodotti e immagini per i social media.",
-        "company": "Personal"
-      },
-      {
         "name": "Luna Tour",
         "description": "Sito web di agenzia viaggi con ricerca destinazioni, prenotazioni hotel e integrazione voli.",
         "company": "JADE Solutions"
@@ -280,6 +265,21 @@
         "name": "Peace Begins With Me",
         "description": "Sito web della campagna ONU per la pace con storytelling interattivo, animazioni e integrazione Prismic CMS.",
         "company": "Elkanodata"
+      },
+      {
+        "name": "Cubita Producciones",
+        "description": "Sito web di una casa di produzione con integrazione CMS e gestione dinamica dei contenuti.",
+        "company": "Personal"
+      },
+      {
+        "name": "Casa in Ordine",
+        "description": "Sito web per servizi di organizzazione professionale con ottimizzazione SEO e design responsive.",
+        "company": "Personal"
+      },
+      {
+        "name": "Freemock",
+        "description": "Strumento gratuito per creare mockup di design, anteprime di prodotti e immagini per i social media.",
+        "company": "Personal"
       }
     ]
   },

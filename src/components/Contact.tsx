@@ -78,20 +78,20 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <h2 className="text-3xl font-bold mb-2 text-center">
             {dict.title}<span className="text-accent">.</span>
           </h2>
-          <p className="text-muted mb-12 max-w-xl">
+          <p className="text-muted mb-12 max-w-xl text-center mx-auto">
             {dict.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex flex-col items-center gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-6"
+            className="flex flex-wrap justify-center gap-6"
           >
             {contactInfo.map((item) => {
               const content = (
@@ -130,10 +130,10 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="space-y-4"
+            className="space-y-4 w-full max-w-lg"
             onSubmit={handleSubmit}
           >
             <div>
