@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import { SsrCleanup } from "@/components/SsrCleanup";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -104,6 +105,7 @@ export default async function LocaleLayout({
     >
       <body className="min-h-screen flex flex-col bg-background">
         <ParticleNetwork />
+        <ServiceWorkerRegistration />
         {/* Ensure SSR content is visible for search engine crawlers.
             Removed after React hydration so Framer Motion animations work. */}
         <style
