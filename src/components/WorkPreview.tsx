@@ -34,11 +34,10 @@ export function WorkPreview({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Show only first 3 sites as featured
   const featured = dict.sites.slice(0, 3);
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -46,7 +45,10 @@ export function WorkPreview({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">
+            {'<'} work {'/>'}
+          </div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {homeSections.workTitle}
             <span className="text-accent">.</span>
           </h2>
@@ -67,20 +69,20 @@ export function WorkPreview({
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
               }
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group block rounded-xl border border-border overflow-hidden bg-surface hover:shadow-lg hover:border-accent/30 transition-all hover:-translate-y-1"
+              className="group block glass-card overflow-hidden hover:-translate-y-1 transition-all"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="relative aspect-video bg-surface-light">
+              <div className="relative aspect-video bg-background/50">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={featuredSites[index].image}
                   alt={site.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
                   loading="lazy"
                 />
               </div>
               <div className="p-4">
                 <div className="flex items-center justify-between">
-                  <h3 className="font-semibold text-sm group-hover:text-accent transition-colors">
+                  <h3 className="font-semibold text-sm text-foreground group-hover:text-accent transition-colors">
                     {site.name}
                   </h3>
                   <ExternalLink
@@ -88,7 +90,7 @@ export function WorkPreview({
                     className="text-muted group-hover:text-accent transition-colors shrink-0"
                   />
                 </div>
-                <p className="text-xs text-muted mt-1">{site.company}</p>
+                <p className="text-xs text-muted font-mono mt-1">{site.company}</p>
               </div>
             </motion.a>
           ))}
@@ -102,7 +104,7 @@ export function WorkPreview({
         >
           <Link
             href={`/${locale}/work`}
-            className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-mono font-medium transition-colors"
           >
             {homeSections.workCta}
             <ArrowRight size={16} />
