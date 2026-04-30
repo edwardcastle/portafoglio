@@ -29,22 +29,21 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
           : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }
       }
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="relative pl-8 pb-12 last:pb-0 border-l border-border"
+      className="relative pl-8 pb-12 last:pb-0 border-l border-accent/20"
     >
-      {/* Timeline dot */}
-      <div className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-accent border-2 border-background" />
+      <div className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_0_8px_rgba(6,182,212,0.5)]" />
 
-      <div className="p-5 rounded-xl bg-surface border border-border hover:border-accent/30 transition-colors">
+      <div className="glass-card p-5 transition-colors">
         <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
           <div>
-            <h3 className="font-semibold text-lg">{job.company}</h3>
-            <p className="text-accent text-sm">
+            <h3 className="font-semibold text-lg text-foreground">{job.company}</h3>
+            <p className="text-accent text-sm font-mono">
               {job.role}{" "}
               <span className="text-muted">({job.type})</span>
             </p>
           </div>
           <div className="text-right">
-            <time className="text-sm text-muted block">{job.period}</time>
+            <time className="text-sm text-muted font-mono block">{job.period}</time>
             <p className="text-xs text-muted">{job.location}</p>
           </div>
         </div>
@@ -52,7 +51,7 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
         <ul className="space-y-1.5">
           {job.highlights.map((item, i) => (
             <li key={i} className="text-sm text-muted flex items-start gap-2">
-              <span className="text-accent mt-1.5 shrink-0 w-1 h-1 rounded-full bg-accent" />
+              <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-accent" />
               {item}
             </li>
           ))}
@@ -66,7 +65,7 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-accent bg-accent/10 hover:bg-accent/20 rounded-full transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono text-accent bg-accent/10 hover:bg-accent/20 rounded-full transition-colors"
               >
                 <ExternalLink size={12} />
                 {link.label}
@@ -84,7 +83,7 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-24 px-6">
+    <section id="experience" className="py-24 px-6 relative z-10">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
@@ -92,7 +91,10 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">
+            {'<'} experience {'/>'}
+          </div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {dict.title}<span className="text-accent">.</span>
           </h2>
           <p className="text-muted mb-12 max-w-xl">
