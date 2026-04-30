@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { Download } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
@@ -41,9 +41,18 @@ export function Hero({
   dict: Dictionary["hero"];
   locale: string;
 }) {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9]);
+  const y = useTransform(scrollYProgress, [0, 0.8], [0, -50]);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-4xl mx-auto text-center relative z-10">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-6">
+      <motion.div style={{ opacity, scale, y }} className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -114,7 +123,7 @@ export function Hero({
             {dict.downloadCv}
           </a>
         </motion.div>
-      </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}

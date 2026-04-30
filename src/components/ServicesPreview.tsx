@@ -48,11 +48,9 @@ export function ServicesPreview({
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={
-                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-                }
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: index % 2 === 0 ? 40 : -20, x: index < 2 ? -20 : 20 }}
+                animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: index % 2 === 0 ? 40 : -20, x: index < 2 ? -20 : 20 }}
+                transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
                 className="glass-card p-6 transition-all text-center hover:-translate-y-1"
               >
                 <div className="font-mono text-xs text-accent/50 mb-3">

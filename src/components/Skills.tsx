@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Zap, Code2, BookOpen, Wrench } from "lucide-react";
 import type { Dictionary } from "@/i18n/types";
 import type { ElementType } from "react";
+import { GlowOnScroll } from "./SmoothScroll";
 
 interface SkillTier {
   icon: ElementType;
@@ -55,31 +56,34 @@ function TierCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass-card p-6 transition-colors"
     >
-      <div className="font-mono text-xs text-accent/50 mb-3">
-        {String(index + 1).padStart(2, "0")} //
-      </div>
-      <tier.icon size={22} className="text-accent mb-4" />
-      <h3 className="font-semibold mb-1 text-foreground">
-        {dict[tier.titleKey] as string}
-      </h3>
-      {tier.label && (
-        <p className="text-xs text-muted font-mono mb-4">
-          {dict[tier.label] as string}
-        </p>
-      )}
-      {!tier.label && <div className="mb-3" />}
-      <div className="flex flex-wrap gap-2">
-        {tier.skills.map((skill) => (
-          <span
-            key={skill}
-            className="px-3 py-1 text-xs rounded-full bg-accent/5 text-muted border border-border hover:text-accent hover:border-accent/40 transition-colors font-mono"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
+      <GlowOnScroll>
+        <div className="glass-card p-6 transition-colors">
+          <div className="font-mono text-xs text-accent/50 mb-3">
+            {String(index + 1).padStart(2, "0")} //
+          </div>
+          <tier.icon size={22} className="text-accent mb-4" />
+          <h3 className="font-semibold mb-1 text-foreground">
+            {dict[tier.titleKey] as string}
+          </h3>
+          {tier.label && (
+            <p className="text-xs text-muted font-mono mb-4">
+              {dict[tier.label] as string}
+            </p>
+          )}
+          {!tier.label && <div className="mb-3" />}
+          <div className="flex flex-wrap gap-2">
+            {tier.skills.map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 text-xs rounded-full bg-accent/5 text-muted border border-border hover:text-accent hover:border-accent/40 transition-colors font-mono"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </GlowOnScroll>
     </motion.div>
   );
 }

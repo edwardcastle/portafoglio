@@ -22,16 +22,24 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, rotateY: index % 2 === 0 ? -5 : 5 }}
       animate={
         isInView
-          ? { opacity: 1, x: 0 }
-          : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }
+          ? { opacity: 1, x: 0, rotateY: 0 }
+          : { opacity: 0, x: index % 2 === 0 ? -40 : 40, rotateY: index % 2 === 0 ? -5 : 5 }
       }
-      transition={{ duration: 0.5, delay: 0.1 }}
+      transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
       className="relative pl-8 pb-12 last:pb-0 border-l border-accent/20"
     >
       <div className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_0_8px_rgba(6,182,212,0.5)]" />
+      {isInView && (
+        <motion.div
+          initial={{ scale: 1, opacity: 0.5 }}
+          animate={{ scale: 2, opacity: 0 }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeOut" }}
+          className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-accent"
+        />
+      )}
 
       <div className="glass-card p-5 transition-colors">
         <div className="flex flex-wrap items-start justify-between gap-2 mb-3">

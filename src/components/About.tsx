@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { ScrollReveal } from "./SmoothScroll";
 import { MapPin, Briefcase, GraduationCap, Languages } from "lucide-react";
 import type { Dictionary } from "@/i18n/types";
 
@@ -46,7 +47,7 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <AnimatedSection>
+          <ScrollReveal direction="left">
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 {dict.p1Before}
@@ -64,9 +65,9 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
                 {dict.p3After}
               </p>
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
 
-          <AnimatedSection>
+          <ScrollReveal direction="right">
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item) => (
                 <div
@@ -81,7 +82,7 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
                 </div>
               ))}
             </div>
-          </AnimatedSection>
+          </ScrollReveal>
         </div>
       </div>
     </section>
