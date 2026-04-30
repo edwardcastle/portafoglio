@@ -4,9 +4,9 @@ import type { Dictionary } from "@/i18n/types";
 
 export function Footer({ dict }: { dict: Dictionary["footer"] }) {
   return (
-    <footer className="border-t border-border py-8 px-6">
+    <footer className="border-t border-border py-8 px-6 relative z-10">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted">
+        <p className="text-sm text-muted font-mono">
           &copy; {new Date().getFullYear()} Eduardo Castillo. {dict.rights}
         </p>
 
@@ -15,7 +15,7 @@ export function Footer({ dict }: { dict: Dictionary["footer"] }) {
             href="https://github.com/edwardcastle"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-accent transition-colors"
             aria-label="GitHub"
           >
             <GithubIcon size={18} />
@@ -24,14 +24,14 @@ export function Footer({ dict }: { dict: Dictionary["footer"] }) {
             href="https://www.linkedin.com/in/eduardo-castillo-dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-accent transition-colors"
             aria-label="LinkedIn"
           >
             <LinkedinIcon size={18} />
           </a>
           <a
             href="mailto:sir.edwardcastle@gmail.com"
-            className="text-muted hover:text-foreground transition-colors"
+            className="text-muted hover:text-accent transition-colors"
             aria-label="Email"
           >
             <Mail size={18} />
