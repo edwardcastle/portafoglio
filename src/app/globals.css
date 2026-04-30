@@ -3,14 +3,16 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  --color-muted: #64748b;
-  --color-accent: #6366f1;
-  --color-accent-light: #818cf8;
-  --color-surface: #f8fafc;
-  --color-surface-light: #f1f5f9;
-  --color-border: #e2e8f0;
+  --color-background: #050510;
+  --color-foreground: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-accent: #06b6d4;
+  --color-accent-light: #22d3ee;
+  --color-accent-glow: #67e8f9;
+  --color-surface: rgba(6, 182, 212, 0.05);
+  --color-surface-light: rgba(6, 182, 212, 0.03);
+  --color-border: rgba(6, 182, 212, 0.15);
+  --color-glass: rgba(5, 5, 16, 0.8);
 }
 
 body {
@@ -27,8 +29,8 @@ body {
 }
 
 ::selection {
-  background-color: #6366f140;
-  color: #1e1b4b;
+  background-color: rgba(6, 182, 212, 0.3);
+  color: #f1f5f9;
 }
 
 ::-webkit-scrollbar {
@@ -36,14 +38,33 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-surface);
+  background: #0a0a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  background: rgba(6, 182, 212, 0.3);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
+  background: rgba(6, 182, 212, 0.5);
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  canvas {
+    display: none;
+  }
 }
