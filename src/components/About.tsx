@@ -24,33 +24,20 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
 
 export function About({ dict }: { dict: Dictionary["about"] }) {
   const highlights = [
-    {
-      icon: MapPin,
-      title: dict.locationTitle,
-      value: dict.locationValue,
-    },
-    {
-      icon: Briefcase,
-      title: dict.experienceTitle,
-      value: dict.experienceValue,
-    },
-    {
-      icon: GraduationCap,
-      title: dict.educationTitle,
-      value: dict.educationValue,
-    },
-    {
-      icon: Languages,
-      title: dict.languagesTitle,
-      value: dict.languagesValue,
-    },
+    { icon: MapPin, title: dict.locationTitle, value: dict.locationValue },
+    { icon: Briefcase, title: dict.experienceTitle, value: dict.experienceValue },
+    { icon: GraduationCap, title: dict.educationTitle, value: dict.educationValue },
+    { icon: Languages, title: dict.languagesTitle, value: dict.languagesValue },
   ];
 
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">
+            {'<'} about {'/>'}
+          </div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {dict.title}<span className="text-accent">.</span>
           </h2>
           <p className="text-muted mb-12 max-w-xl">
@@ -84,13 +71,13 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="p-5 rounded-xl bg-surface border border-border hover:border-accent/30 transition-colors"
+                  className="glass-card p-5 transition-colors"
                 >
                   <item.icon size={20} className="text-accent mb-3" />
-                  <p className="text-xs text-muted uppercase tracking-wider mb-1">
+                  <p className="text-xs text-muted uppercase tracking-wider font-mono mb-1">
                     {item.title}
                   </p>
-                  <p className="font-medium">{item.value}</p>
+                  <p className="font-medium text-foreground">{item.value}</p>
                 </div>
               ))}
             </div>
