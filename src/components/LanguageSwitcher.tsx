@@ -35,7 +35,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
+        className="flex items-center gap-1.5 text-muted hover:text-accent font-mono text-sm transition-colors"
         aria-label="Change language"
         aria-expanded={open}
         aria-haspopup="listbox"
@@ -48,7 +48,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
         <div
           role="listbox"
           aria-label="Select language"
-          className="absolute right-0 top-full mt-2 bg-surface border border-border rounded-lg py-1 min-w-[140px] shadow-lg z-50"
+          className="absolute right-0 top-full mt-2 bg-glass backdrop-blur-xl border border-border rounded-lg py-1 min-w-[140px] shadow-lg z-50"
         >
           {locales.map((l) => (
             <button
@@ -62,7 +62,7 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
               className={`w-full text-left px-4 py-2 text-sm transition-colors ${
                 l === locale
                   ? "text-accent"
-                  : "text-muted hover:text-foreground hover:bg-surface-light"
+                  : "text-muted hover:text-accent hover:bg-accent/5 transition-colors"
               }`}
             >
               {localeLabels[l]}
