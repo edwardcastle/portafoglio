@@ -37,7 +37,7 @@ export function WorkPreview({
   const featured = dict.sites.slice(0, 3);
 
   return (
-    <section className="py-24 px-6 relative z-10">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -57,7 +57,7 @@ export function WorkPreview({
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
           {featured.map((site, index) => (
             <motion.a
               key={site.name}

@@ -29,7 +29,7 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
           : { opacity: 0, x: index % 2 === 0 ? -40 : 40, rotateY: index % 2 === 0 ? -5 : 5 }
       }
       transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-      className="relative pl-8 pb-12 last:pb-0 border-l border-accent/20"
+      className="relative pl-6 sm:pl-8 pb-12 last:pb-0 border-l border-accent/20"
     >
       <div className="absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_0_8px_rgba(6,182,212,0.5)]" />
       {isInView && (
@@ -41,8 +41,8 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
         />
       )}
 
-      <div className="glass-card p-5 transition-colors">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+      <div className="glass-card p-3 sm:p-5 transition-colors">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
           <div>
             <h3 className="font-semibold text-lg text-foreground">{job.company}</h3>
             <p className="text-accent text-sm font-mono">
@@ -91,7 +91,7 @@ export function Experience({ dict }: { dict: Dictionary["experience"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-24 px-6 relative z-10">
+    <section id="experience" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}

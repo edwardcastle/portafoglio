@@ -73,46 +73,46 @@ function SiteCard({
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <motion.a
+    <motion.div
       ref={ref}
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group block glass-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
+      className="group glass-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <div className="relative aspect-video bg-background/50">
-        <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
-      </div>
-      <div className="p-5">
-        <p className="text-xs text-muted uppercase tracking-wider mb-1">
-          {company}
-        </p>
-        <div className="flex items-center justify-between mb-2">
-          <h3 className="font-semibold group-hover:text-accent transition-colors">
-            {name}
-          </h3>
-          <ExternalLink
-            size={16}
-            className="text-muted group-hover:text-accent transition-colors shrink-0"
-          />
+      <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <div className="relative aspect-video bg-background/50">
+          <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
         </div>
-        <p className="text-sm text-muted leading-relaxed">{description}</p>
-        {caseStudy && (
+        <div className="p-3 sm:p-5">
+          <p className="text-xs text-muted uppercase tracking-wider mb-1">
+            {company}
+          </p>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="font-semibold group-hover:text-accent transition-colors">
+              {name}
+            </h3>
+            <ExternalLink
+              size={16}
+              className="text-muted group-hover:text-accent transition-colors shrink-0"
+            />
+          </div>
+          <p className="text-sm text-muted leading-relaxed">{description}</p>
+        </div>
+      </a>
+      {caseStudy && (
+        <div className="px-3 sm:px-5 pb-3 sm:pb-5">
           <Link
             href={`/${locale}/work/${caseStudy}`}
-            className="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-accent hover:text-accent-light transition-colors"
-            onClick={(e) => e.stopPropagation()}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-light transition-colors"
           >
             <FileText size={12} />
             Case Study
           </Link>
-        )}
-      </div>
-    </motion.a>
+        </div>
+      )}
+    </motion.div>
   );
 }
 
@@ -121,7 +121,7 @@ export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; local
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-6 pt-32 relative z-10">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 pt-24 sm:pt-32 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -138,7 +138,7 @@ export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; local
           <h2 className="text-xl font-semibold mb-8 text-foreground">{dict.websitesTitle}</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {dict.sites.map((site, index) => (
             <SiteCard
               key={site.name}

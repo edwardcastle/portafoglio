@@ -32,7 +32,7 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
   ];
 
   return (
-    <section id="about" className="py-24 px-6 relative z-10">
+    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <AnimatedSection>
           <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">
@@ -46,7 +46,7 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12">
           <ScrollReveal direction="left">
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
@@ -68,7 +68,7 @@ export function About({ dict }: { dict: Dictionary["about"] }) {
           </ScrollReveal>
 
           <ScrollReveal direction="right">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {highlights.map((item) => (
                 <div
                   key={item.title}

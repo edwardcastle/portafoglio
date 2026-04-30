@@ -38,7 +38,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
   }
 
   return (
-    <section id="contact" className="py-24 px-6 relative z-10">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
@@ -62,11 +62,11 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-6"
+            className="flex flex-wrap justify-center gap-3 sm:gap-6"
           >
             {contactInfo.map((item) => {
               const content = (
-                <div className="flex items-center gap-4 group">
+                <div className="flex items-center gap-3 sm:gap-4 group">
                   <div className="p-3 rounded-lg bg-accent/5 border border-border group-hover:border-accent/30 transition-colors">
                     <item.icon size={20} className="text-accent" />
                   </div>

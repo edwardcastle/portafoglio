@@ -21,7 +21,7 @@ export function CaseStudy({
   const data = dict[project];
 
   return (
-    <section className="py-24 px-6 pt-32">
+    <section className="py-24 px-6 pt-24 sm:pt-32">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,13 +36,13 @@ export function CaseStudy({
             {dict.backToWork}
           </Link>
 
-          <h1 className="text-4xl font-bold mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
             {data.title}
             <span className="text-accent">.</span>
           </h1>
 
           {/* Meta row */}
-          <div className="flex flex-wrap gap-6 text-sm text-muted mb-8 pb-8 border-b border-border">
+          <div className="flex flex-wrap gap-3 sm:gap-6 text-sm text-muted mb-8 pb-8 border-b border-border">
             <div>
               <span className="text-xs uppercase tracking-wider block mb-1">
                 {dict.client}

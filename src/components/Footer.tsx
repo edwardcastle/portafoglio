@@ -4,7 +4,7 @@ import type { Dictionary } from "@/i18n/types";
 
 export function Footer({ dict }: { dict: Dictionary["footer"] }) {
   return (
-    <footer className="border-t border-border py-8 px-6 relative z-10">
+    <footer className="border-t border-border py-8 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted font-mono">
           &copy; {new Date().getFullYear()} Eduardo Castillo. {dict.rights}

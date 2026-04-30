@@ -51,7 +51,7 @@ export function Hero({
   const y = useTransform(scrollYProgress, [0, 0.8], [0, -50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-6">
+    <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center px-4 sm:px-6">
       <motion.div style={{ opacity, scale, y }} className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -69,11 +69,11 @@ export function Hero({
           transition={{ duration: 0.6, delay: 1.2 }}
           className="mb-6"
         >
-          <span className="block text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+          <span className="block text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-foreground">
             Eduardo{" "}
             <span className="text-accent">Castillo</span>
           </span>
-          <span className="block text-xl md:text-2xl text-muted mt-4 font-mono">
+          <span className="block text-lg sm:text-xl md:text-2xl text-muted mt-4 font-mono">
             {dict.role}
           </span>
         </motion.h1>
@@ -100,7 +100,7 @@ export function Hero({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.9 }}
-          className="flex items-center justify-center gap-4 flex-wrap"
+          className="flex items-center justify-center gap-3 sm:gap-4 flex-wrap"
         >
           <Link
             href={`/${locale}/contact`}

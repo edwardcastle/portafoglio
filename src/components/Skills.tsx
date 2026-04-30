@@ -58,7 +58,7 @@ function TierCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <GlowOnScroll>
-        <div className="glass-card p-6 transition-colors">
+        <div className="glass-card p-4 sm:p-6 transition-colors">
           <div className="font-mono text-xs text-accent/50 mb-3">
             {String(index + 1).padStart(2, "0")} //
           </div>
@@ -93,7 +93,7 @@ export function Skills({ dict }: { dict: Dictionary["skills"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-24 px-6 relative z-10">
+    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -111,7 +111,7 @@ export function Skills({ dict }: { dict: Dictionary["skills"] }) {
           <p className="text-muted mb-12 max-w-xl">{dict.subtitle}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {tiers.map((tier, index) => (
             <TierCard key={tier.titleKey} tier={tier} dict={dict} index={index} />
           ))}

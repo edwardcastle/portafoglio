@@ -46,7 +46,7 @@ export function Header({
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link
           href={`/${locale}`}
           className="font-mono text-lg font-bold tracking-tight text-accent hover:text-accent-light transition-colors"
@@ -91,7 +91,7 @@ export function Header({
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-glass backdrop-blur-xl border-b border-border overflow-hidden"
           >
-            <ul className="px-6 py-4 space-y-4">
+            <ul className="px-4 sm:px-6 py-4 space-y-4">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <Link

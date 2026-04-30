@@ -81,7 +81,7 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
   const locale = pathname.split("/")[1] || "en";
 
   return (
-    <section id="services" className="py-24 px-6 relative z-10">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -98,7 +98,7 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
           {dict.items.map((item, index) => (
             <ServiceCard key={item.title} item={item} index={index} />
           ))}

@@ -22,7 +22,7 @@ export function ServicesPreview({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-6 relative z-10">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -42,7 +42,7 @@ export function ServicesPreview({
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {dict.items.map((item, index) => {
             const Icon = serviceIcons[index];
             return (

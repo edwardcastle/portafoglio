@@ -116,7 +116,7 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-24 px-6 relative z-10">
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -133,7 +133,7 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {dict.items.map((project, index) => (
             <ProjectCard
               key={project.name}
