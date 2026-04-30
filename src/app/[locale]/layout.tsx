@@ -9,6 +9,7 @@ import { locales, isValidLocale, type Locale } from "@/i18n/config";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { SsrCleanup } from "@/components/SsrCleanup";
+import { ParticleNetwork } from "@/components/ParticleNetwork";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,7 +102,8 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col bg-background">
+        <ParticleNetwork />
         {/* Ensure SSR content is visible for search engine crawlers.
             Removed after React hydration so Framer Motion animations work. */}
         <style
@@ -113,7 +115,7 @@ export default async function LocaleLayout({
         <SsrCleanup />
         <JsonLd locale={locale} />
         <Header dict={dict.header} locale={locale} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 relative z-10">{children}</main>
         <Footer dict={dict.footer} />
         <Script
           src="https://cloud.umami.is/script.js"
