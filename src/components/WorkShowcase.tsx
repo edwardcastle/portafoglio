@@ -81,11 +81,11 @@ function SiteCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group block rounded-xl border border-border overflow-hidden bg-surface hover:shadow-lg hover:border-accent/30 transition-all hover:-translate-y-1"
+      className="group block glass-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <div className="relative aspect-video bg-surface-light">
-        <img src={image} alt={name} className="w-full h-full object-cover" loading="lazy" />
+      <div className="relative aspect-video bg-background/50">
+        <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
       </div>
       <div className="p-5">
         <p className="text-xs text-muted uppercase tracking-wider mb-1">
@@ -121,7 +121,7 @@ export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; local
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-6 pt-32">
+    <section className="py-24 px-6 pt-32 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -129,12 +129,13 @@ export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; local
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">{'<'} work {'/>'}</div>
+          <h1 className="text-4xl font-bold mb-2 text-foreground">
             {dict.title}
             <span className="text-accent">.</span>
           </h1>
           <p className="text-muted mb-4 max-w-xl">{dict.subtitle}</p>
-          <h2 className="text-xl font-semibold mb-8">{dict.websitesTitle}</h2>
+          <h2 className="text-xl font-semibold mb-8 text-foreground">{dict.websitesTitle}</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

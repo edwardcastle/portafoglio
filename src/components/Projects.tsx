@@ -54,7 +54,7 @@ function ProjectCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all hover:-translate-y-1"
+      className="group glass-card p-5 transition-all hover:-translate-y-1"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="p-2 rounded-lg bg-accent/10">
@@ -81,7 +81,7 @@ function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted hover:text-accent transition-colors"
+              className="text-accent hover:text-accent-light transition-colors"
               aria-label={`View ${name} on GitHub`}
             >
               <GithubIcon size={18} />
@@ -101,7 +101,7 @@ function ProjectCard({
         {tech.map((t) => (
           <span
             key={t}
-            className="px-2 py-0.5 text-xs font-mono text-accent bg-accent/10 rounded"
+            className="px-2 py-0.5 text-xs rounded bg-accent/5 text-muted border border-border font-mono"
           >
             {t}
           </span>
@@ -116,7 +116,7 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -124,7 +124,8 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">{'<'} projects {'/>'}</div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {dict.title}<span className="text-accent">.</span>
           </h2>
           <p className="text-muted mb-12 max-w-xl">
@@ -151,7 +152,7 @@ export function Projects({ dict }: { dict: Dictionary["projects"] }) {
             href="https://github.com/edwardcastle"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent text-muted hover:text-foreground rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-border hover:border-accent text-muted hover:text-accent rounded-lg transition-colors"
           >
             <GithubIcon size={18} />
             {dict.viewAll}

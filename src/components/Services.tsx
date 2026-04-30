@@ -28,7 +28,7 @@ function ServiceCard({
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all group"
+      className="glass-card p-6 transition-all group"
     >
       <div className="p-3 rounded-lg bg-accent/10 w-fit mb-5">
         <Icon size={22} className="text-accent" />
@@ -56,7 +56,7 @@ function ServiceCard({
         ))}
       </ul>
 
-      <div className="pt-4 border-t border-border flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted">
+      <div className="pt-4 border-t border-border flex flex-wrap gap-x-6 gap-y-1 text-xs text-muted font-mono">
         {item.timeline && (
           <span>
             <span className="font-medium text-foreground">Timeline:</span>{" "}
@@ -81,7 +81,7 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
   const locale = pathname.split("/")[1] || "en";
 
   return (
-    <section id="services" className="py-24 px-6 bg-surface/50">
+    <section id="services" className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -89,7 +89,8 @@ export function Services({ dict }: { dict: Dictionary["services"] }) {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">{'<'} services {'/>'}</div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {dict.title}<span className="text-accent">.</span>
           </h2>
           <p className="text-muted mb-12 max-w-xl">
