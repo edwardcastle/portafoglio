@@ -22,7 +22,7 @@ export function ServicesPreview({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 px-6 bg-surface/50">
+    <section className="py-24 px-6 relative z-10">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -30,7 +30,10 @@ export function ServicesPreview({
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold mb-2">
+          <div className="font-mono text-xs text-accent/60 mb-4 tracking-wider">
+            {'<'} services {'/>'}
+          </div>
+          <h2 className="text-3xl font-bold mb-2 text-foreground">
             {homeSections.servicesTitle}
             <span className="text-accent">.</span>
           </h2>
@@ -50,12 +53,15 @@ export function ServicesPreview({
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all text-center"
+                className="glass-card p-6 transition-all text-center hover:-translate-y-1"
               >
+                <div className="font-mono text-xs text-accent/50 mb-3">
+                  {String(index + 1).padStart(2, "0")} //
+                </div>
                 <div className="p-3 rounded-lg bg-accent/10 w-fit mx-auto mb-4">
                   <Icon size={22} className="text-accent" />
                 </div>
-                <h3 className="font-semibold">{item.title}</h3>
+                <h3 className="font-semibold text-foreground">{item.title}</h3>
               </motion.div>
             );
           })}
@@ -69,7 +75,7 @@ export function ServicesPreview({
         >
           <Link
             href={`/${locale}/services`}
-            className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-accent hover:text-accent-light font-mono font-medium transition-colors"
           >
             {homeSections.servicesCta}
             <ArrowRight size={16} />
