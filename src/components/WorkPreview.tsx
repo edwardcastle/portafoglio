@@ -12,13 +12,12 @@ const featuredSites = [
     image: "https://letcommunitieslead.unaids.org/img/share/sm-share-generic.jpg",
   },
   {
-    url: "https://utiq.com/",
-    image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
+    url: "https://www.nairobisummiticpd.org/gcmf-dashboard",
+    image: "https://www.nairobisummiticpd.org/sites/all/modules/custom/nairobi_gcmf/assets/share_cards/share.jpg",
   },
   {
-    url: "https://peacebeginswithme.un.org/en/",
-    image:
-      "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
+    url: "https://utiq.com/",
+    image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
   },
 ];
 

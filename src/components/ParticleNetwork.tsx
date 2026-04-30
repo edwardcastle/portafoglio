@@ -12,8 +12,8 @@ interface Particle {
   opacity: number;
 }
 
-const CONNECTION_DISTANCE = 150;
-const MOUSE_RADIUS = 100;
+const CONNECTION_DISTANCE = 180;
+const MOUSE_RADIUS = 120;
 const MOUSE_FORCE = 0.5;
 const BASE_SPEED = 0.3;
 const SCROLL_SPEED_MULTIPLIER = 3;
@@ -26,11 +26,11 @@ export function ParticleNetwork() {
   const scrollVelocity = useScrollVelocity();
 
   const getParticleCount = useCallback(() => {
-    if (typeof window === "undefined") return 80;
+    if (typeof window === "undefined") return 200;
     const width = window.innerWidth;
-    if (width < 768) return 40;
-    if (width < 1200) return 60;
-    return 80;
+    if (width < 768) return 80;
+    if (width < 1200) return 140;
+    return 200;
   }, []);
 
   const initParticles = useCallback(
@@ -60,7 +60,7 @@ export function ParticleNetwork() {
 
     function resize() {
       canvas!.width = window.innerWidth;
-      canvas!.height = document.documentElement.scrollHeight;
+      canvas!.height = window.innerHeight;
       if (particlesRef.current.length === 0) {
         initParticles(canvas!.width, canvas!.height);
       }
@@ -70,7 +70,7 @@ export function ParticleNetwork() {
     window.addEventListener("resize", resize);
 
     function onMouseMove(e: MouseEvent) {
-      mouseRef.current = { x: e.clientX, y: e.clientY + window.scrollY };
+      mouseRef.current = { x: e.clientX, y: e.clientY };
     }
     window.addEventListener("mousemove", onMouseMove);
 
@@ -86,7 +86,6 @@ export function ParticleNetwork() {
       const speedMultiplier =
         1 + Math.min(scrollVelocity.current * SCROLL_SPEED_MULTIPLIER, 4);
       const particles = particlesRef.current;
-      const scrollY = window.scrollY;
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -118,19 +117,15 @@ export function ParticleNetwork() {
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        if (p.y > scrollY - 200 && p.y < scrollY + window.innerHeight + 200) {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(6, 182, 212, ${p.opacity})`;
-          ctx.fill();
-        }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(6, 182, 212, ${p.opacity})`;
+        ctx.fill();
       }
 
       ctx.lineWidth = 0.5;
       for (let i = 0; i < particles.length; i++) {
         const pi = particles[i];
-        if (pi.y < scrollY - 200 || pi.y > scrollY + window.innerHeight + 200)
-          continue;
         for (let j = i + 1; j < particles.length; j++) {
           const pj = particles[j];
           const dx = pi.x - pj.x;

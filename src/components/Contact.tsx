@@ -38,8 +38,8 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
   }
 
   return (
-    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="min-h-screen flex items-center py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+      <div className="max-w-5xl mx-auto w-full">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
@@ -57,12 +57,12 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
           </p>
         </motion.div>
 
-        <div className="flex flex-col items-center gap-12">
+        <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-3 sm:gap-6"
+            className="flex flex-col justify-between gap-4"
           >
             {contactInfo.map((item) => {
               const content = (
@@ -94,7 +94,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="space-y-4 w-full max-w-lg"
+            className="space-y-4 w-full"
             onSubmit={handleSubmit}
           >
             <div>
