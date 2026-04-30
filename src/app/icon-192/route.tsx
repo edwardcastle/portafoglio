@@ -12,11 +12,11 @@ export async function GET() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#6366f1",
+          background: "#050510",
           borderRadius: "24px",
           fontSize: 96,
           fontWeight: 700,
-          color: "#ffffff",
+          color: "#06b6d4",
           fontFamily: "sans-serif",
         }}
       >
