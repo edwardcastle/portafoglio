@@ -104,7 +104,10 @@ export function Chatbot({ locale }: { locale: Locale }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
-  const [viewportHeight, setViewportHeight] = useState<number | null>(null);
+  const [mobileViewport, setMobileViewport] = useState<{
+    height: number;
+    offsetTop: number;
+  } | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const t = uiText[locale];
@@ -122,12 +125,25 @@ export function Chatbot({ locale }: { locale: Locale }) {
     const vv = window.visualViewport;
     if (!vv) return;
 
-    function onResize() {
-      setViewportHeight(vv!.height);
+    function onViewportChange() {
+      setMobileViewport({ height: vv!.height, offsetTop: vv!.offsetTop });
     }
-    onResize();
-    vv.addEventListener("resize", onResize);
-    return () => vv.removeEventListener("resize", onResize);
+    onViewportChange();
+    vv.addEventListener("resize", onViewportChange);
+    vv.addEventListener("scroll", onViewportChange);
+    return () => {
+      vv.removeEventListener("resize", onViewportChange);
+      vv.removeEventListener("scroll", onViewportChange);
+      setMobileViewport(null);
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -264,7 +280,14 @@ export function Chatbot({ locale }: { locale: Locale }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            style={viewportHeight ? { height: `${viewportHeight}px` } : undefined}
+            style={
+              mobileViewport
+                ? {
+                    height: `${mobileViewport.height}px`,
+                    top: `${mobileViewport.offsetTop}px`,
+                  }
+                : undefined
+            }
             className="fixed inset-x-0 top-0 z-40 h-dvh flex flex-col bg-[rgba(5,5,16,0.98)] backdrop-blur-xl sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[480px] sm:!h-[min(600px,85vh)] sm:rounded-2xl sm:border sm:border-border sm:bg-[rgba(5,5,16,0.95)] sm:shadow-2xl sm:shadow-black/50"
           >
             {/* Header */}
