@@ -6,7 +6,7 @@ import { ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
-const sitesData: { url: string; image: string; caseStudy?: string }[] = [
+const sitesData: { url?: string; image: string; caseStudy?: string; status?: "offline" | "dev" }[] = [
   {
     url: "https://letcommunitieslead.unaids.org/",
     image: "https://letcommunitieslead.unaids.org/img/share/sm-share-generic.jpg",
@@ -47,6 +47,11 @@ const sitesData: { url: string; image: string; caseStudy?: string }[] = [
     url: "https://freemock.art/",
     image:
       "https://res.cloudinary.com/doelo4gvm/image/upload/f_png,w_1200,h_630,c_fill/v1737588282/login-hero.svg",
+    status: "dev",
+  },
+  {
+    image: "/screenshots/el-catre.png",
+    status: "offline",
   },
 ];
 
@@ -57,20 +62,27 @@ function SiteCard({
   url,
   image,
   caseStudy,
+  status,
   locale,
   index,
 }: {
   name: string;
   description: string;
   company: string;
-  url: string;
+  url?: string;
   image: string;
   caseStudy?: string;
+  status?: "offline" | "dev";
   locale: string;
   index: number;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+
+  const Wrapper = url ? "a" : "div";
+  const wrapperProps = url
+    ? { href: url, target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
 
   return (
     <motion.div
@@ -80,10 +92,26 @@ function SiteCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group glass-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
     >
-      <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+      <Wrapper {...wrapperProps} className="block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <div className="relative aspect-video bg-background/50">
           <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
+          <span className={`absolute top-2 right-2 flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded bg-background/80 backdrop-blur-sm ${
+            status === "offline"
+              ? "text-red-400"
+              : status === "dev"
+                ? "text-amber-400"
+                : "text-emerald-400"
+          }`}>
+            <span className={`w-1.5 h-1.5 rounded-full ${
+              status === "offline"
+                ? "bg-red-400"
+                : status === "dev"
+                  ? "bg-amber-400 animate-pulse"
+                  : "bg-emerald-400 animate-pulse"
+            }`} />
+            {status === "offline" ? "Offline" : status === "dev" ? "In Dev" : "Online"}
+          </span>
         </div>
         <div className="p-3 sm:p-5">
           <p className="text-xs text-muted uppercase tracking-wider mb-1">
@@ -93,14 +121,16 @@ function SiteCard({
             <h3 className="font-semibold group-hover:text-accent transition-colors">
               {name}
             </h3>
-            <ExternalLink
-              size={16}
-              className="text-muted group-hover:text-accent transition-colors shrink-0"
-            />
+            {url && (
+              <ExternalLink
+                size={16}
+                className="text-muted group-hover:text-accent transition-colors shrink-0"
+              />
+            )}
           </div>
           <p className="text-sm text-muted leading-relaxed">{description}</p>
         </div>
-      </a>
+      </Wrapper>
       {caseStudy && (
         <div className="px-3 sm:px-5 pb-3 sm:pb-5">
           <Link
@@ -145,9 +175,10 @@ export function WorkShowcase({ dict, locale }: { dict: Dictionary["work"]; local
               name={site.name}
               description={site.description}
               company={site.company}
-              url={sitesData[index].url}
-              image={sitesData[index].image}
-              caseStudy={sitesData[index].caseStudy}
+              url={sitesData[index]?.url}
+              image={sitesData[index]?.image ?? ""}
+              caseStudy={sitesData[index]?.caseStudy}
+              status={sitesData[index]?.status}
               locale={locale}
               index={index}
             />

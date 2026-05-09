@@ -278,8 +278,13 @@
       },
       {
         "name": "Freemock",
-        "description": "Herramienta gratuita de mockups para crear hermosas previsualizaciones de productos e imágenes para redes sociales.",
-        "company": "Personal"
+        "description": "Plataforma de memes en la blockchain de Bitcoin donde los usuarios crean y comparten memes para ganar recompensas.",
+        "company": "Startup"
+      },
+      {
+        "name": "El Catre",
+        "description": "Primera plataforma independiente de e-commerce en Cuba con listados de productos, analíticas de ventas y comercio social. Ya no está activa.",
+        "company": "Startup"
       }
     ]
   },
