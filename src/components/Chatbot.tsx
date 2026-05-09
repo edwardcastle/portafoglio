@@ -264,7 +264,7 @@ export function Chatbot({ locale }: { locale: Locale }) {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-accent text-background flex items-center justify-center shadow-lg shadow-accent/30 cursor-pointer"
+            className="fixed bottom-6 right-6 z-[60] w-16 h-16 rounded-full bg-accent text-background flex items-center justify-center shadow-lg shadow-accent/30 cursor-pointer"
             aria-label="Open chat"
           >
             <MessageCircle size={28} />
@@ -288,7 +288,7 @@ export function Chatbot({ locale }: { locale: Locale }) {
                   }
                 : undefined
             }
-            className="fixed inset-x-0 top-0 z-40 h-dvh flex flex-col bg-[rgba(5,5,16,0.98)] backdrop-blur-xl sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[480px] sm:!h-[min(600px,85vh)] sm:rounded-2xl sm:border sm:border-border sm:bg-[rgba(5,5,16,0.95)] sm:shadow-2xl sm:shadow-black/50"
+            className="fixed inset-x-0 top-0 z-[60] h-dvh flex flex-col bg-[rgba(5,5,16,0.98)] backdrop-blur-xl sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[480px] sm:!h-[min(600px,85vh)] sm:rounded-2xl sm:border sm:border-border sm:bg-[rgba(5,5,16,0.95)] sm:shadow-2xl sm:shadow-black/50"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-border">
