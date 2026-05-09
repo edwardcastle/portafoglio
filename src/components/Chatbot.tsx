@@ -5,6 +5,48 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 
+const linkPattern =
+  /\b(contact\s*(?:me|form)|get\s*in\s*touch|contatt(?:ami|o|a)|modulo\s*di\s*contatto|cont[aá]ct(?:ame|o)|formulario\s*de\s*contacto|reach\s*out|telegram)\b/gi;
+
+const telegramPattern = /\b(reach\s*out|telegram)\b/i;
+
+function renderWithLinks(
+  text: string,
+  onContactClick: () => void,
+): React.ReactNode {
+  const parts = text.split(linkPattern);
+  if (parts.length === 1) return text;
+
+  // split with capture group puts matches at odd indices
+  return parts.map((part, i) => {
+    if (i % 2 === 0) return part;
+
+    if (telegramPattern.test(part)) {
+      return (
+        <a
+          key={i}
+          href="https://t.me/edwardcastle"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-accent hover:text-accent/80 transition-colors"
+        >
+          {part}
+        </a>
+      );
+    }
+
+    return (
+      <button
+        key={i}
+        onClick={onContactClick}
+        className="underline text-accent hover:text-accent/80 transition-colors cursor-pointer"
+      >
+        {part}
+      </button>
+    );
+  });
+}
+
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -127,12 +169,15 @@ export function Chatbot({ locale }: { locale: Locale }) {
             if (parsed.error) throw new Error(parsed.error);
             if (parsed.text) {
               setMessages((prev) => {
-                const updated = [...prev];
-                const last = updated[updated.length - 1];
+                const lastIdx = prev.length - 1;
+                const last = prev[lastIdx];
                 if (last.role === "assistant") {
-                  last.content += parsed.text;
+                  return [
+                    ...prev.slice(0, lastIdx),
+                    { ...last, content: last.content + parsed.text },
+                  ];
                 }
-                return updated;
+                return prev;
               });
             }
           } catch {
@@ -142,17 +187,18 @@ export function Chatbot({ locale }: { locale: Locale }) {
       }
     } catch (err) {
       setMessages((prev) => {
-        const updated = [...prev];
-        const last = updated[updated.length - 1];
+        const lastIdx = prev.length - 1;
+        const last = prev[lastIdx];
         if (last.role === "assistant" && !last.content) {
-          last.content =
+          const errorMsg =
             locale === "es"
               ? "Lo siento, algo salio mal. Intentalo de nuevo."
               : locale === "it"
                 ? "Mi dispiace, qualcosa e andato storto. Riprova."
                 : "Sorry, something went wrong. Please try again.";
+          return [...prev.slice(0, lastIdx), { ...last, content: errorMsg }];
         }
-        return updated;
+        return prev;
       });
       console.error("Chat error:", err);
     } finally {
@@ -172,15 +218,26 @@ export function Chatbot({ locale }: { locale: Locale }) {
         {!isOpen && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+              boxShadow: [
+                "0 0 0 0 rgba(6, 182, 212, 0.4)",
+                "0 0 0 12px rgba(6, 182, 212, 0)",
+                "0 0 0 0 rgba(6, 182, 212, 0.4)",
+              ],
+            }}
             exit={{ scale: 0, opacity: 0 }}
+            transition={{
+              boxShadow: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+            }}
             whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-accent text-background flex items-center justify-center shadow-lg shadow-accent/25 cursor-pointer"
+            className="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-accent text-background flex items-center justify-center shadow-lg shadow-accent/30 cursor-pointer"
             aria-label="Open chat"
           >
-            <MessageCircle size={24} />
+            <MessageCircle size={28} />
           </motion.button>
         )}
       </AnimatePresence>
@@ -193,7 +250,7 @@ export function Chatbot({ locale }: { locale: Locale }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-6 right-6 z-40 w-[calc(100vw-2rem)] sm:w-[400px] h-[min(500px,80vh)] flex flex-col rounded-2xl border border-border bg-[rgba(5,5,16,0.95)] backdrop-blur-xl shadow-2xl shadow-black/50"
+            className="fixed inset-0 z-40 flex flex-col bg-[rgba(5,5,16,0.98)] backdrop-blur-xl sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[480px] sm:h-[min(600px,85vh)] sm:rounded-2xl sm:border sm:border-border sm:bg-[rgba(5,5,16,0.95)] sm:shadow-2xl sm:shadow-black/50"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-border">
@@ -251,7 +308,16 @@ export function Chatbot({ locale }: { locale: Locale }) {
                         : "rounded-bl-sm bg-white/5 border border-border text-foreground"
                     }`}
                   >
-                    {msg.content || (
+                    {msg.content
+                      ? msg.role === "assistant"
+                        ? renderWithLinks(msg.content, () => {
+                            setIsOpen(false);
+                            document
+                              .getElementById("contact")
+                              ?.scrollIntoView({ behavior: "smooth" });
+                          })
+                        : msg.content
+                      : (
                       <Loader2 size={14} className="animate-spin text-muted" />
                     )}
                   </div>

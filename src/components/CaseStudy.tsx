@@ -21,7 +21,7 @@ export function CaseStudy({
   const data = dict[project];
 
   return (
-    <section className="py-24 px-6 pt-24 sm:pt-32">
+    <section className="py-24 px-4 sm:px-6 pt-24 sm:pt-32">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

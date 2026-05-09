@@ -93,7 +93,7 @@ export function Skills({ dict }: { dict: Dictionary["skills"] }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}

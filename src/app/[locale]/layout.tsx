@@ -11,6 +11,7 @@ import Script from "next/script";
 import { SsrCleanup } from "@/components/SsrCleanup";
 import { ParticleNetwork } from "@/components/ParticleNetwork";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { Chatbot } from "@/components/Chatbot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -119,6 +120,7 @@ export default async function LocaleLayout({
         <Header dict={dict.header} locale={locale} />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer dict={dict.footer} />
+        <Chatbot locale={locale} />
         <Script
           src="https://cloud.umami.is/script.js"
           data-website-id="bab7a179-e72f-4ab7-8f4b-ad11f176b6c8"
