@@ -1,0 +1,292 @@
+"use client";
+
+import { useState, useRef, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import type { Locale } from "@/i18n/config";
+
+interface Message {
+  role: "user" | "assistant";
+  content: string;
+}
+
+const uiText: Record<
+  Locale,
+  {
+    title: string;
+    placeholder: string;
+    greeting: string;
+    suggestions: string[];
+  }
+> = {
+  en: {
+    title: "Chat with Eduardo",
+    placeholder: "Type a message...",
+    greeting:
+      "Hi! I'm Eduardo's AI assistant. Ask me anything about my skills, services, or experience!",
+    suggestions: [
+      "What services do you offer?",
+      "What's your tech stack?",
+      "Are you available for hire?",
+      "Tell me about your projects",
+    ],
+  },
+  es: {
+    title: "Chatea con Eduardo",
+    placeholder: "Escribe un mensaje...",
+    greeting:
+      "Hola! Soy el asistente de Eduardo. Preguntame lo que quieras sobre mis servicios, habilidades o experiencia!",
+    suggestions: [
+      "Que servicios ofreces?",
+      "Cual es tu stack tecnologico?",
+      "Estas disponible?",
+      "Cuentame sobre tus proyectos",
+    ],
+  },
+  it: {
+    title: "Chatta con Eduardo",
+    placeholder: "Scrivi un messaggio...",
+    greeting:
+      "Ciao! Sono l'assistente di Eduardo. Chiedimi quello che vuoi sui miei servizi, competenze o esperienze!",
+    suggestions: [
+      "Quali servizi offri?",
+      "Qual e il tuo stack tecnologico?",
+      "Sei disponibile?",
+      "Parlami dei tuoi progetti",
+    ],
+  },
+};
+
+export function Chatbot({ locale }: { locale: Locale }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [input, setInput] = useState("");
+  const [isStreaming, setIsStreaming] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const t = uiText[locale];
+
+  const scrollToBottom = useCallback(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, scrollToBottom]);
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
+  const sendMessage = async (content: string) => {
+    if (!content.trim() || isStreaming) return;
+
+    const userMessage: Message = { role: "user", content: content.trim() };
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
+    setInput("");
+    setIsStreaming(true);
+
+    // Add empty assistant message that we'll stream into
+    setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages, locale }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || "Failed to send message");
+      }
+
+      const reader = res.body?.getReader();
+      if (!reader) throw new Error("No response stream");
+
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n\n");
+        buffer = lines.pop() ?? "";
+
+        for (const line of lines) {
+          const data = line.replace(/^data: /, "");
+          if (data === "[DONE]") break;
+
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.error) throw new Error(parsed.error);
+            if (parsed.text) {
+              setMessages((prev) => {
+                const updated = [...prev];
+                const last = updated[updated.length - 1];
+                if (last.role === "assistant") {
+                  last.content += parsed.text;
+                }
+                return updated;
+              });
+            }
+          } catch {
+            // skip malformed chunks
+          }
+        }
+      }
+    } catch (err) {
+      setMessages((prev) => {
+        const updated = [...prev];
+        const last = updated[updated.length - 1];
+        if (last.role === "assistant" && !last.content) {
+          last.content =
+            locale === "es"
+              ? "Lo siento, algo salio mal. Intentalo de nuevo."
+              : locale === "it"
+                ? "Mi dispiace, qualcosa e andato storto. Riprova."
+                : "Sorry, something went wrong. Please try again.";
+        }
+        return updated;
+      });
+      console.error("Chat error:", err);
+    } finally {
+      setIsStreaming(false);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    sendMessage(input);
+  };
+
+  return (
+    <>
+      {/* Floating bubble */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsOpen(true)}
+            className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-accent text-background flex items-center justify-center shadow-lg shadow-accent/25 cursor-pointer"
+            aria-label="Open chat"
+          >
+            <MessageCircle size={24} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+
+      {/* Chat panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="fixed bottom-6 right-6 z-40 w-[calc(100vw-2rem)] sm:w-[400px] h-[min(500px,80vh)] flex flex-col rounded-2xl border border-border bg-[rgba(5,5,16,0.95)] backdrop-blur-xl shadow-2xl shadow-black/50"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                <span className="font-semibold text-sm text-foreground">
+                  {t.title}
+                </span>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-muted hover:text-foreground transition-colors cursor-pointer"
+                aria-label="Close chat"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Messages */}
+            <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
+              {/* Greeting */}
+              <div className="flex justify-start">
+                <div className="max-w-[80%] px-3 py-2 rounded-2xl rounded-bl-sm bg-white/5 border border-border text-sm text-foreground">
+                  {t.greeting}
+                </div>
+              </div>
+
+              {/* Suggestions (show only if no messages yet) */}
+              {messages.length === 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {t.suggestions.map((suggestion) => (
+                    <button
+                      key={suggestion}
+                      onClick={() => sendMessage(suggestion)}
+                      className="px-3 py-1.5 text-xs rounded-full border border-accent/30 text-accent hover:bg-accent/10 transition-colors cursor-pointer"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Message list */}
+              {messages.map((msg, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[80%] px-3 py-2 rounded-2xl text-sm whitespace-pre-wrap ${
+                      msg.role === "user"
+                        ? "rounded-br-sm bg-accent/20 border border-accent/30 text-foreground"
+                        : "rounded-bl-sm bg-white/5 border border-border text-foreground"
+                    }`}
+                  >
+                    {msg.content || (
+                      <Loader2 size={14} className="animate-spin text-muted" />
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input */}
+            <form
+              onSubmit={handleSubmit}
+              className="flex items-center gap-2 px-4 py-3 border-t border-border"
+            >
+              <input
+                ref={inputRef}
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder={t.placeholder}
+                disabled={isStreaming}
+                className="flex-1 bg-white/5 border border-border rounded-full px-4 py-2 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 disabled:opacity-50"
+              />
+              <button
+                type="submit"
+                disabled={!input.trim() || isStreaming}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-accent text-background disabled:opacity-30 cursor-pointer disabled:cursor-not-allowed transition-opacity"
+                aria-label="Send message"
+              >
+                <Send size={16} />
+              </button>
+            </form>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
