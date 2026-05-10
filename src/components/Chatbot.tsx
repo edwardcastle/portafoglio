@@ -125,15 +125,23 @@ export function Chatbot({ locale }: { locale: Locale }) {
     const vv = window.visualViewport;
     if (!vv) return;
 
+    const mq = window.matchMedia("(max-width: 639px)");
+
     function onViewportChange() {
+      if (!mq.matches) {
+        setMobileViewport(null);
+        return;
+      }
       setMobileViewport({ height: vv!.height, offsetTop: vv!.offsetTop });
     }
     onViewportChange();
     vv.addEventListener("resize", onViewportChange);
     vv.addEventListener("scroll", onViewportChange);
+    mq.addEventListener("change", onViewportChange);
     return () => {
       vv.removeEventListener("resize", onViewportChange);
       vv.removeEventListener("scroll", onViewportChange);
+      mq.removeEventListener("change", onViewportChange);
       setMobileViewport(null);
     };
   }, [isOpen]);
