@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
@@ -9,14 +9,31 @@ export function CaseStudy({
   dict,
   project,
   locale,
-  liveUrl,
   ogImage,
+  liveUrl,
 }: {
   dict: Dictionary["caseStudy"];
-  project: "unaids";
+  project:
+    | "unaids"
+    | "battlebucks"
+    | "zenocircle"
+    | "unfpa"
+    | "peacebeginswithme"
+    | "cubita"
+    | "freemock"
+    | "elcatre"
+    | "casainordine"
+    | "iomclimatemigration"
+    | "unaidsgcai"
+    | "ifadride2023"
+    | "uhcassessmenttool"
+    | "covenanthouse"
+    | "ebueurovisionnews"
+    | "utiq"
+    | "lunatour";
   locale: string;
-  liveUrl: string;
   ogImage: string;
+  liveUrl?: string;
 }) {
   const data = dict[project];
 
@@ -61,17 +78,19 @@ export function CaseStudy({
               </span>
               <span className="text-foreground font-medium">{data.role}</span>
             </div>
-            <div className="ml-auto">
-              <a
-                href={liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent-light text-white text-sm rounded-lg transition-colors"
-              >
-                <ExternalLink size={14} />
-                {dict.liveLabel}
-              </a>
-            </div>
+            {liveUrl && (
+              <div className="ml-auto">
+                <a
+                  href={liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-accent hover:bg-accent-light text-white text-sm rounded-lg transition-colors"
+                >
+                  <ExternalLink size={14} />
+                  {dict.liveLabel}
+                </a>
+              </div>
+            )}
           </div>
         </motion.div>
 

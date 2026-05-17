@@ -111,6 +111,182 @@ export interface Dictionary {
       outcome: string;
       contributions: string[];
     };
+    zenocircle: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    battlebucks: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    unfpa: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    peacebeginswithme: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    cubita: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    freemock: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    elcatre: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    casainordine: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    iomclimatemigration: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    unaidsgcai: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    ifadride2023: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    uhcassessmenttool: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    covenanthouse: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    ebueurovisionnews: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    utiq: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
+    lunatour: {
+      title: string;
+      client: string;
+      year: string;
+      role: string;
+      challenge: string;
+      approach: string;
+      stack: string;
+      outcome: string;
+      contributions: string[];
+    };
   };
   homeSections: {
     servicesTitle: string;

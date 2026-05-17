@@ -237,28 +237,28 @@
     "projectsTitle": "Open Source Projects",
     "sites": [
       {
-        "name": "UNAIDS – Let Communities Lead",
-        "description": "Interactive campaign website for UNAIDS featuring animated interfaces, SVG graphics, and dynamic content.",
-        "company": "Elkanodata"
+        "name": "ZenO",
+        "description": "Existing platform for ethical collective-purchasing groups. I improved responsiveness across breakpoints, configured DNS and redirects for zenocircle.it, and integrated Resend for questionnaire delivery to the client and newsletter subscriptions.",
+        "company": "Freelance"
+      },
+      {
+        "name": "Casa in Ordine",
+        "description": "Professional organizing service website with SEO optimization and responsive design.",
+        "company": "Personal"
+      },
+      {
+        "name": "BattleBucks",
+        "description": "Play-to-earn battle game on Solana with wallet authentication via Reown, real-time WebSocket chat, and PWA distribution alongside native mobile builds. No longer active.",
+        "company": "Freelance"
+      },
+      {
+        "name": "Cubita Producciones",
+        "description": "Production company website with CMS integration and dynamic content management.",
+        "company": "Personal"
       },
       {
         "name": "Nairobi Summit ICPD Dashboard",
         "description": "Data dashboard for the Nairobi Summit on ICPD with interactive charts and responsive layouts.",
-        "company": "Elkanodata"
-      },
-      {
-        "name": "Utiq",
-        "description": "Corporate website for the digital advertising platform, built with Vue.js and TypeScript.",
-        "company": "Teavaro"
-      },
-      {
-        "name": "Luna Tour",
-        "description": "Travel agency website with destination search, hotel bookings, and flight integration.",
-        "company": "JADE Solutions"
-      },
-      {
-        "name": "UNFPA",
-        "description": "United Nations Population Fund global website with multilingual content, data dashboards, and interactive reports.",
         "company": "Elkanodata"
       },
       {
@@ -267,23 +267,63 @@
         "company": "Elkanodata"
       },
       {
-        "name": "Cubita Producciones",
-        "description": "Production company website with CMS integration and dynamic content management.",
-        "company": "Personal"
+        "name": "UNAIDS – Let Communities Lead",
+        "description": "Interactive campaign website for UNAIDS featuring animated interfaces, SVG graphics, and dynamic content.",
+        "company": "Elkanodata"
       },
       {
-        "name": "Casa in Ordine",
-        "description": "Professional organizing service website with SEO optimization and responsive design.",
-        "company": "Personal"
+        "name": "EBU Eurovision News",
+        "description": "Eurovision news microsite for the European Broadcasting Union, fitting EBU's design system with sublicensee features.",
+        "company": "Elkanodata"
       },
       {
-        "name": "Freemock",
-        "description": "Meme platform on the Bitcoin blockchain where users create and share memes to earn rewards.",
-        "company": "Startup"
+        "name": "IFAD RIDE 2023",
+        "description": "2023 edition of IFAD's RIDE report site with expanded translations and a Webpack pipeline migration.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "IOM Climate-Related Migration",
+        "description": "Data-driven storytelling site for the UN's International Organization for Migration on how climate change drives migration, with multilingual content and interactive D3 visualizations.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "UHC Assessment Tool",
+        "description": "Interactive Universal Health Coverage assessment tool for UNFPA with structured modules and shareable results.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "UNAIDS GCAI",
+        "description": "WordPress site for UNAIDS's Global Council on Inequality, AIDS and Pandemics, with a multi-platform build pipeline.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "UNFPA",
+        "description": "United Nations Population Fund global website with multilingual content, data dashboards, and interactive reports.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Covenant House",
+        "description": "WordPress CMS integration into an existing vanilla-frontend project for the homeless-youth NGO Covenant House.",
+        "company": "Elkanodata"
+      },
+      {
+        "name": "Luna Tour",
+        "description": "Travel agency website with destination search, hotel bookings, and flight integration.",
+        "company": "JADE Solutions"
+      },
+      {
+        "name": "Utiq",
+        "description": "Corporate website for the digital advertising platform, built with Vue.js and TypeScript.",
+        "company": "Teavaro"
       },
       {
         "name": "El Catre",
         "description": "Cuba's first independent e-commerce platform with product listings, sales analytics, and social commerce features. No longer active.",
+        "company": "Startup"
+      },
+      {
+        "name": "Freemock",
+        "description": "Meme platform on the Bitcoin blockchain where users create and share memes to earn rewards.",
         "company": "Startup"
       }
     ]
@@ -293,7 +333,7 @@
     "client": "Client",
     "year": "Year",
     "role": "Role",
-    "liveLabel": "View Live Site",
+    "liveLabel": "View Site",
     "challengeTitle": "Challenge",
     "approachTitle": "Approach",
     "stackTitle": "Stack",
@@ -305,7 +345,7 @@
       "year": "2023\u20132024",
       "role": "Frontend Developer",
       "challenge": "UNAIDS needed an interactive campaign website to promote community-led responses to HIV. The site required rich animations, multilingual content management, and a design that could engage diverse audiences across devices while maintaining fast load times.",
-      "approach": "I built the frontend using animated and interactive interfaces with Canvas and SVG, translating high-fidelity Figma designs into pixel-perfect, responsive layouts. Content was managed through Prismic CMS, allowing the UNAIDS team to update campaign content independently across multiple languages.",
+      "approach": "I built the frontend using animated and interactive interfaces with Canvas and SVG, translating high-fidelity Figma designs into pixel-perfect, responsive layouts. Content was managed through Prismic CMS, allowing the UNAIDS team to update campaign content independently across multiple languages. I worked alongside two senior frontend developers as part of the Elkanodata team.",
       "stack": "Vue.js, Nuxt.js, TypeScript, Prismic CMS, Canvas/SVG animations, Figma/Zeplin, responsive design",
       "outcome": "The campaign site launched successfully, supporting UNAIDS global advocacy efforts. The interactive storytelling approach increased engagement, and the CMS-driven architecture enabled the team to maintain and update content without developer involvement.",
       "contributions": [
@@ -314,6 +354,281 @@
         "Dynamic multilingual content integration via Prismic CMS",
         "Performance optimization for loading times and animations across devices",
         "Collaboration with designers and backend teams to deliver on tight campaign deadlines"
+      ]
+    },
+    "battlebucks": {
+      "title": "BattleBucks — Play-to-Earn on Solana",
+      "client": "Freelance (Costa Rica)",
+      "year": "2025",
+      "role": "Frontend Developer",
+      "challenge": "BattleBucks set out to ship a real-money battle royale and 1v1 PvP game on Solana, distributed as a PWA and as native iOS and Android apps from a single codebase. The frontend had to handle wallet authentication, real-time match state across many concurrent players, and reliable mobile delivery without sacrificing the responsiveness players expect from a competitive title.",
+      "approach": "I built the client in Nuxt 3 with Pinia for state, integrating Reown AppKit and its Solana adapter for wallet connect and Sign-In-With-X authentication. Real-time gameplay and chat run over a custom WebSocket store with reconnect logic and multi-channel support. Capacitor packages the same codebase for iOS and Android, while @vite-pwa/nuxt with Workbox handles caching strategies and periodic background sync. Sentry is wired up for browser tracing and session replay.",
+      "stack": "Nuxt 3, Vue, TypeScript, Pinia, Reown AppKit, Solana web3.js, Capacitor, vite-pwa-nuxt, Workbox, WebSocket, Sentry, Helius RPC, Tailwind",
+      "outcome": "Shipped a production play-to-earn client running across web, iOS, and Android from a single Nuxt codebase, with on-chain authentication and a real-time multiplayer match flow. The project has since been discontinued.",
+      "contributions": [
+        "Solana wallet connect and SIWX authentication via Reown AppKit",
+        "Real-time match and chat layer on a custom WebSocket store with reconnect handling",
+        "Native iOS and Android builds from a single Nuxt 3 source via Capacitor",
+        "PWA configuration with Workbox caching and periodic background sync",
+        "Game surfaces — battle royale, 1v1 lobby, leaderboard, profile, transactions, onboarding",
+        "Sentry observability with browser tracing and session replay"
+      ]
+    },
+    "zenocircle": {
+      "title": "ZenO — Site Improvements & Email Integration",
+      "client": "Freelance",
+      "year": "2026",
+      "role": "Frontend Developer",
+      "challenge": "ZenO is a platform for ethical collective-purchasing groups connecting members, producers, and pickup points. The existing site needed responsiveness improvements, proper domain and redirect setup for zenocircle.it, and an email pipeline so that questionnaire submissions reached the client and newsletter signups were captured cleanly.",
+      "approach": "I worked on the existing site (built by others) to improve responsiveness across breakpoints, configured DNS and redirects so the site lived cleanly at zenocircle.it, and integrated Resend to handle both questionnaire delivery to the client and newsletter subscriptions.",
+      "stack": "Resend, DNS / redirects, existing site stack (Astro, Tailwind CSS, Vercel)",
+      "outcome": "Site is live at zenocircle.it with improved responsiveness, working DNS and redirects, questionnaire submissions reaching the client by email, and newsletter signups flowing through Resend.",
+      "contributions": [
+        "Responsiveness improvements across breakpoints on the existing site",
+        "DNS configuration and redirect setup for zenocircle.it",
+        "Resend integration to deliver questionnaire submissions to the client",
+        "Resend integration for newsletter subscriptions"
+      ]
+    },
+    "unfpa": {
+      "title": "UNFPA Equity 2030 — Global Campaign Site",
+      "client": "Elkanodata (for UNFPA)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "UNFPA needed a multi-page campaign site for its Equity 2030 initiative that could ship fast, run scroll-driven animations without the overhead of a JS framework, and let the team spin up new country and page variants without rebuilding from scratch.",
+      "approach": "I built it as a static HTML/SCSS multi-page architecture compiled with Webpack and a bash orchestrator, using vanilla ES6 modules — no Vue, no React. GSAP with ScrollTrigger and Draggable handled animations, Swiper drove carousels, and custom CLI scripts (new:page, new:country, delete:page) let the team scaffold new variants in one command. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "HTML, SCSS, Vanilla ES6, Webpack 5, Babel, GSAP, ScrollTrigger, Swiper, custom bash build pipeline",
+      "outcome": "Shipped the Equity 2030 campaign site with no framework overhead and a templated build system that supported independent page and country additions.",
+      "contributions": [
+        "Static multi-page architecture with templated .html/.scss/.js per page",
+        "GSAP-driven animations with ScrollTrigger and Draggable plugins",
+        "Mobile-aware layout with custom breakpoint logic and lazy-loaded imagery",
+        "Custom CLI utilities for content scaffolding (new:page, new:country, delete:page)",
+        "Webpack 5 + Babel + custom bash build pipeline for dev/prod environments"
+      ]
+    },
+    "peacebeginswithme": {
+      "title": "Peace Begins With Me — UN Peacekeeper Tribute",
+      "client": "Elkanodata (for the UN)",
+      "year": "2023–2024",
+      "role": "Frontend Developer",
+      "challenge": "The site needed to honor UN peacekeepers through cinematic storytelling, work across multiple languages, and let the editorial team publish updates (events, poetry, ministerial coverage) without engineering bottlenecks.",
+      "approach": "I built it in Nuxt 3 with Prismic as the headless CMS, using Prismic's alternate-language API for multilingual routing under /[lang]/.... GSAP drove text-line reveals, Lenis provided velocity-aware smooth scrolling feeding interactive effects, a custom cursor responded to hover targets, and Swiper powered media carousels. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "Nuxt 3, Vue 3, TypeScript, Prismic CMS, GSAP, Lenis, Swiper, Sass",
+      "outcome": "Launched a Prismic-driven tribute site across multiple languages with editorially-managed pages for Home, About, Inside Out, Ministerial Events, PK 75 Years, Our Work, and Poetry.",
+      "contributions": [
+        "Nuxt 3 frontend with Prismic-managed content across multiple page types",
+        "Multilingual routing via Prismic's alternate_languages API",
+        "GSAP text-reveal and scroll-triggered animations",
+        "Lenis smooth scroll with velocity detection feeding interactive effects",
+        "Custom cursor and video-modal interactions",
+        "Swiper-powered media carousels"
+      ]
+    },
+    "cubita": {
+      "title": "Cubita Producciones — Cuban Talent Agency",
+      "client": "Personal",
+      "year": "2025",
+      "role": "Frontend Developer",
+      "challenge": "A Cuban production agency needed a public site to showcase its salsa and reggaeton artists, drive booking enquiries, and reach Spanish, English, and Italian audiences — with room to move content management into a CMS as the roster grew.",
+      "approach": "I built the site in Next.js 16 with the App Router and Tailwind v4, using next-intl for ES/EN/IT routing, Framer Motion for entrance and carousel animations, and Nodemailer for the contact form. Artist content lives in typed TypeScript modules today; in parallel I scaffolded a Strapi v5 CMS (content types for Artists, HomePage, AboutPage, and more) ready to slot in once the agency needs editorial autonomy. SEO is wired end-to-end with sitemap, robots, and per-artist JSON-LD.",
+      "stack": "Next.js 16, App Router, TypeScript, Tailwind CSS v4, next-intl, Framer Motion, Nodemailer, Strapi 5, Vercel",
+      "outcome": "Site is live at cubitaproducciones.com with full ES/EN/IT support, six artist pages, contact handoff via email, and a Strapi backend staged for the eventual cutover.",
+      "contributions": [
+        "Next.js 16 site with App Router, Tailwind v4, and Framer Motion animations",
+        "Trilingual routing (ES/EN/IT) via next-intl",
+        "Typed artist data layer ready to swap for Strapi",
+        "Strapi v5 CMS scaffold mirroring the site's content model",
+        "Contact form pipeline via Nodemailer through an App Router API route",
+        "SEO suite — sitemap, robots, JSON-LD for artists and FAQ"
+      ]
+    },
+    "freemock": {
+      "title": "FreeMock — Meme Creator & Social Platform",
+      "client": "Personal startup",
+      "year": "2025–2026",
+      "role": "Founder & Frontend Developer",
+      "challenge": "FreeMock set out to bring meme creation, remixing, and a social feed under one roof — with a creator-grade editor, end-to-end encrypted messaging, web3-based auth, and a production-quality image pipeline — from a codebase small enough for one person to keep moving.",
+      "approach": "The frontend is Nuxt 3 with Pinia, shadcn-vue, and Tailwind, using Reown AppKit for wallet-based social login. The meme editor is built on Fabric.js with split panels for drawing, filters, shapes, stickers, adjustments, and AI assistance. Real-time chat runs over WebSockets with a Signal-Protocol layer for end-to-end encryption, while a Go + govips microservice handles preview, export, GIF composition, and cut operations server-side. CI/CD on GitHub Actions with SonarQube and Codecov enforces a 75% coverage gate, deploying to Vercel.",
+      "stack": "Nuxt 3, Vue 3, TypeScript, Pinia, shadcn-vue, Reka UI, Tailwind CSS, Fabric.js, Reown AppKit, web3 wallets, Cloudinary, WebSockets, Signal Protocol, Go + govips, Vercel, GitHub Actions, SonarQube, Codecov",
+      "outcome": "Live at freemock.art with the core loop in place — wallet auth, social feed, meme editor, profiles with rankings, encrypted messaging, notifications, and an admin dashboard. Active development continuing into 2026.",
+      "contributions": [
+        "Nuxt 3 + Pinia frontend with shadcn-vue / Reka UI design system",
+        "Wallet-based web3 auth via Reown AppKit",
+        "Fabric.js meme editor with drawing, filters, shapes, stickers, adjustments, and AI panel",
+        "End-to-end encrypted real-time chat over WebSockets via Signal Protocol",
+        "Go + govips image-rendering microservice for preview, export, GIF, and cut operations",
+        "CI/CD on GitHub Actions with SonarQube and Codecov (75% coverage gate)"
+      ]
+    },
+    "elcatre": {
+      "title": "El Catre — Cuba's First Independent E-Commerce Platform",
+      "client": "Startup (Cuba)",
+      "year": "2020",
+      "role": "Frontend Developer",
+      "challenge": "El Catre set out to be Cuba's first independent e-commerce platform — a marketplace where small Cuban businesses could open storefronts, list products, run promotions, and accept payments. Building for Cuba meant working around US-embargo constraints on payment rails, designing for intermittent connectivity, and combining a social-commerce layer — real-time chat, push notifications, sharing — on top of a conventional cart and checkout.",
+      "approach": "I built the frontend in Nuxt 2 with Vue 2, Vuex, and Buefy on top of an Apollo GraphQL client talking to a Django + Graphene backend. Auth federated Firebase phone verification with Facebook/Google OAuth and JWT tokens issued by the backend. Real-time chat and live notifications ran over Django Channels via vue-native-websocket, push notifications went through OneSignal, and ApexCharts powered the seller analytics dashboards. PWA support and server-side rendering kept the app usable on slow connections.",
+      "stack": "Nuxt 2, Vue 2, Vuex, Buefy, Apollo GraphQL, vue-native-websocket, OneSignal, Firebase phone auth, Facebook/Google OAuth, Vuelidate, ApexCharts, PWA, Vue I18n, reCAPTCHA",
+      "outcome": "Launched a multi-tenant Cuban e-commerce platform with seller storefronts, product catalog, cart and checkout, real-time chat, analytics dashboards, and social commerce features. The platform is no longer active.",
+      "contributions": [
+        "Nuxt 2 SSR frontend with Apollo GraphQL client and batched HTTP queries",
+        "Seller storefronts, product catalog, orders, cart, and checkout flows",
+        "Real-time chat and notifications over WebSockets (Django Channels + Redis backend)",
+        "Federated auth — Firebase phone verification, Facebook and Google OAuth, JWT",
+        "Push notifications via OneSignal and email integration via Mailchimp",
+        "Seller analytics dashboards with ApexCharts; image cropping and QR code generation for product flows",
+        "PWA + SSR optimization for Cuban network conditions",
+        "Backend support on the Django + Graphene side as a secondary contributor (not the primary backend developer)"
+      ]
+    },
+    "casainordine": {
+      "title": "Casa in Ordine — Home Organization Service in Rome",
+      "client": "Personal",
+      "year": "2025–2026",
+      "role": "Frontend Developer",
+      "challenge": "A Rome-based home-organization business needed a multilingual public site that could explain its services, build trust with before/after social proof, and convert visitors through a guided quote flow — without making the owner manage a CMS. The site also had to handle GDPR cookie consent and email-based handoff cleanly.",
+      "approach": "I built it in Next.js 16 with React 19, Tailwind v4, and next-intl for IT/EN/ES routing. The standout surface is a 9-step interactive Preventivo wizard that walks visitors through a chaos-level quiz, service category, room details, complexity tier, extras, and availability slots before submitting via Brevo email. Static JSON content lives in /messages/ (no CMS overhead), Chart.js drives the impact/balance metrics on the home page, and Umami plus a cookie-consent banner handle analytics under GDPR.",
+      "stack": "Next.js 16, React 19, TypeScript, Tailwind CSS v4, next-intl, Chart.js, Brevo API, Umami Analytics, pnpm, Vercel",
+      "outcome": "Site is live at casainordine.com with full IT/EN/ES support, an end-to-end interactive quote wizard, contact and quote-request emails through Brevo, and SEO wired with per-locale JSON-LD.",
+      "contributions": [
+        "Next.js 16 + React 19 frontend with Tailwind v4 and App Router",
+        "Trilingual routing (IT/EN/ES) via next-intl with static JSON translations — no CMS",
+        "9-step interactive Preventivo quote wizard with chaos-level quiz, service selection, and availability handoff",
+        "Brevo SMTP integration for contact and quote-request emails",
+        "Chart.js impact and balance visualizations on the home page",
+        "Umami analytics with GDPR-compliant cookie consent",
+        "SEO suite — sitemap, per-locale JSON-LD, next/image optimization"
+      ]
+    },
+    "iomclimatemigration": {
+      "title": "IOM Climate-Related Migration — Data Story",
+      "client": "Elkanodata (for IOM)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "The UN's International Organization for Migration needed a data-driven storytelling experience to communicate how climate change drives migration — working across multiple languages and rendering complex datasets interactively without overwhelming non-technical readers.",
+      "approach": "I built it in Nuxt 3 with Prismic as the headless CMS for multilingual content, D3.js for the data visualizations, and GSAP plus Lenis for scroll-driven storytelling. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "Nuxt 3, Vue 3, TypeScript, Prismic CMS, D3.js, GSAP, Lenis, Swiper, Sass",
+      "outcome": "Launched the IOM climate-migration story site at environmentalmigration.iom.int with editorially-managed multilingual content and interactive data visualizations.",
+      "contributions": [
+        "Nuxt 3 frontend with Prismic content layer for multilingual storytelling",
+        "D3.js interactive visualizations of climate-migration datasets",
+        "GSAP + Lenis scroll-driven narrative animations",
+        "Swiper-powered media carousels"
+      ]
+    },
+    "unaidsgcai": {
+      "title": "UNAIDS GCAI — Global Council on Inequality, AIDS & Pandemics",
+      "client": "Elkanodata (for UNAIDS)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "UNAIDS needed a public site for the Global Council on Inequality, AIDS and Pandemics — a campaign and resource hub that had to ship within the UNAIDS visual system and support multi-platform builds across deployment targets.",
+      "approach": "I built it as a WordPress site with a custom theme on a Webpack pipeline, including custom production and Windows-variant build scripts for operational flexibility. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "WordPress, PHP, Webpack 5, Babel, SCSS, vanilla ES6, custom multi-platform build scripts",
+      "outcome": "Shipped the GCAI site at inequalitycouncil.org with deployable builds for multiple environments.",
+      "contributions": [
+        "Custom WordPress theme with Webpack asset pipeline",
+        "Production and Windows-variant build scripts",
+        "Pixel-faithful implementation against UNAIDS visual identity",
+        "Resource and campaign surfaces with structured content layout"
+      ]
+    },
+    "ifadride2023": {
+      "title": "IFAD RIDE 2023 — Development Impact and Results",
+      "client": "Elkanodata (for IFAD)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "IFAD needed the 2023 cycle of its annual RIDE report site, building on the 2022 foundation with refreshed content, expanded translations, and a Webpack-based build to align with current Elkanodata tooling.",
+      "approach": "I migrated the project to a Webpack pipeline and handled the 2023 cycle's content updates, additional translations, and editorial refinements on the established template foundation. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "Webpack, SCSS, Vanilla ES6, translations workflow",
+      "outcome": "Shipped the IFAD RIDE 2023 report site on ifad.org with updated content and broadened language coverage.",
+      "contributions": [
+        "Webpack pipeline migration from the 2022 Parcel foundation",
+        "Content updates and editorial refinements for the 2023 cycle",
+        "Translations workflow across multiple language tracks",
+        "Pixel-faithful implementation of editorial updates"
+      ]
+    },
+    "uhcassessmenttool": {
+      "title": "UHC — Universal Health Coverage Assessment Tool",
+      "client": "Elkanodata (for UNFPA)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "UNFPA needed an interactive Universal Health Coverage assessment tool that could guide users through structured modules, capture inputs cleanly, and present results in a usable, shareable format.",
+      "approach": "I built it as a Webpack-driven multi-module web app with custom UI components for the assessment flow, focusing on step-progression clarity, accessibility, and clean result presentation. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "HTML, SCSS, Vanilla ES6, Webpack 5, Babel, custom UI components",
+      "outcome": "Launched the UHC digital assessment tool on unfpa.org as the HRSRH calculator, with structured assessment modules and shareable results.",
+      "contributions": [
+        "Custom UI component library for the assessment flow",
+        "Step-by-step module navigation and state handling",
+        "Webpack 5 + Babel build pipeline",
+        "Accessibility and result-presentation pass across the assessment surfaces"
+      ]
+    },
+    "covenanthouse": {
+      "title": "Covenant House — WordPress CMS Integration",
+      "client": "Elkanodata (for Covenant House)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "Covenant House — an NGO serving homeless youth across the Americas — had an existing vanilla-frontend site that needed a content-management layer so the team could publish editorial updates without engineering involvement. The job was to introduce a CMS without rewriting the existing frontend.",
+      "approach": "I integrated WordPress as the CMS backend into the existing vanilla-frontend project, wiring the existing templates and content surfaces to WordPress-managed data. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "WordPress, PHP, Twig, Webpack, SCSS, vanilla JS (existing frontend stack)",
+      "outcome": "The Covenant House site now lives at covenanthouse.org with WordPress-backed editorial autonomy while preserving the original frontend implementation.",
+      "contributions": [
+        "WordPress CMS integration on top of an existing vanilla-frontend project",
+        "Wired existing templates and content surfaces to WordPress-managed data",
+        "Preserved the original frontend implementation while adding editorial flexibility",
+        "Asset pipeline alignment between the existing frontend and the WordPress layer"
+      ]
+    },
+    "ebueurovisionnews": {
+      "title": "EBU Eurovision News",
+      "client": "Elkanodata (for EBU)",
+      "year": "2023",
+      "role": "Frontend Developer",
+      "challenge": "The European Broadcasting Union needed a news microsite for Eurovision — navbar, footer, pop-ups, sublicensee features — that fit cleanly into EBU's broader design system and could serve member broadcasters.",
+      "approach": "I built it on a Webpack + Babel pipeline with reusable layout primitives (navbar, footer, pop-ups) and sublicensee handling tied to EBU's design system. I worked alongside two senior frontend developers as part of the Elkanodata team.",
+      "stack": "HTML, SCSS, Vanilla ES6, Webpack, Babel",
+      "outcome": "Shipped the Eurovision News microsite within EBU's design system, available at eurovisionnews.ebu.ch.",
+      "contributions": [
+        "Reusable layout components — navbar, footer, pop-ups",
+        "Sublicensee feature handling",
+        "Webpack + Babel build pipeline",
+        "Pixel-faithful implementation against EBU design system"
+      ]
+    },
+    "utiq": {
+      "title": "UTIQ — Privacy-First AdTech Identifier",
+      "client": "Teavaro (for UTIQ)",
+      "year": "2022–2023",
+      "role": "Frontend Developer",
+      "challenge": "UTIQ — the European telco-backed first-party advertising identifier (founding partners include Deutsche Telekom, Vodafone, Telefónica, and Orange) — needed a corporate marketing site to communicate its privacy-first model to publishers, advertisers, and the press across multiple European markets. During my tenure, the brand also went through a rebrand from TrustPid to UTIQ.",
+      "approach": "I built and maintained the marketing site in Vue.js with TypeScript, supporting the rebrand transition and shipping ongoing surfaces — press releases, country milestones, partner programme, about pages, SSP integration pages — as the platform expanded across Germany, Austria, France, Spain, the UK, and Italy.",
+      "stack": "Vue.js, TypeScript, multilingual content",
+      "outcome": "Site is live at utiq.com, supporting UTIQ's expansion across multiple European markets and serving as the public face of the platform through its TrustPid-to-UTIQ rebrand.",
+      "contributions": [
+        "Vue.js + TypeScript marketing site with multilingual content",
+        "Site updates supporting the TrustPid-to-UTIQ rebrand",
+        "Press and milestone pages for European market launches",
+        "Partner programme and SSP/inventory integration pages",
+        "About and product surfaces"
+      ]
+    },
+    "lunatour": {
+      "title": "Luna Tour — Travel Destination Discovery",
+      "client": "JADE Solutions (for Luna Tour)",
+      "year": "2022–2023",
+      "role": "Frontend Developer",
+      "challenge": "Luna Tour needed a Spanish-language travel site for browsing destinations, presenting curated details and ratings, and converting interested visitors into bookings — designed for mobile-heavy traffic with multilingual infrastructure for future expansion.",
+      "approach": "I built the site as a Vue 3 + Vite SPA with <script setup> components, vue-i18n for multilingual content (Spanish primary, English groundwork), Vue3Mq for media-query handling, and lazy-loaded imagery. Destination details, search results, and ratings are presented through reusable component pieces, with WhatsApp handoff for booking conversation.",
+      "stack": "Vue 3, Vite, TypeScript, vue-i18n, Vue3Mq, v-lazy-image, carousel, WhatsApp click-to-chat",
+      "outcome": "Site is live at luna-tour.com presenting Luna Tour's destination catalog with rating displays, mobile-aware layouts, and direct WhatsApp handoff to convert browsing into booking conversations.",
+      "contributions": [
+        "Vue 3 + Vite SPA with <script setup> components",
+        "Multilingual infrastructure via vue-i18n (Spanish primary, English groundwork)",
+        "Destination browsing surfaces — home, details, search results, about",
+        "5-star ratings component and destination cards",
+        "WhatsApp click-to-chat integration for booking conversion",
+        "Mobile-aware layouts via Vue3Mq"
       ]
     }
   },
@@ -351,10 +666,10 @@
   "meta": {
     "title": "Eduardo Castillo | Frontend Developer — Vue 3, Nuxt 3, TypeScript",
     "description": "Frontend Developer with 6+ years of experience building enterprise web applications. Specializing in Vue 3, Nuxt 3, and TypeScript. Available for hire — remote from Italy.",
-    "ogDescription": "Frontend Developer specializing in Vue 3, Nuxt 3, and TypeScript. 6+ years building enterprise web apps for teams delivering to the UN, Eni, and Reply.",
+    "ogDescription": "Frontend Developer specializing in Vue 3, Nuxt 3, and TypeScript. 6+ years building enterprise web apps for teams delivering to UN agencies, EBU, and Reply.",
     "keywords": ["Frontend Developer", "Frontend Developer", "Freelance Web Developer", "Vue.js Developer", "Nuxt.js Developer", "TypeScript Developer", "React Developer", "Next.js Developer", "Golang Developer", "Hire Frontend Developer", "Hire Web Developer", "Web Application Development", "Custom Website Development", "Web Engineer", "Remote Developer Italy", "Website Development Services", "SPA Development", "Progressive Web App Developer", "UI UX Developer", "Eduardo Castillo", "Hire Frontend Developer", "Freelance Frontend Developer Italy", "Web Developer for Startups", "JavaScript Developer for Hire", "Python Django Developer", "GraphQL API Developer", "Docker DevOps Developer", "Responsive Website Design", "E-commerce Web Developer", "Web App Development Services", "Remote Software Engineer Europe", "Vue.js Consultant", "React Consultant", "Website Performance Optimization", "Technical Consulting Web Development", "Figma to Code Developer", "Cross-Browser Development", "REST API Developer", "Tailwind CSS Developer", "Single Page Application Developer"],
     "workTitle": "Work — Eduardo Castillo | Frontend Developer",
-    "workDescription": "Explore websites and web applications I've built for clients including UNAIDS, UNFPA, Nairobi Summit, and more.",
+    "workDescription": "Explore websites and web applications I've worked on for clients including UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, NGOs, AdTech (UTIQ), e-commerce, and startups — with detailed case studies.",
     "servicesTitle": "Services — Eduardo Castillo | Frontend Developer",
     "servicesDescription": "Frontend Web Development, UI/UX Implementation, DevOps & Deployment, and Technical Consulting services available for hire.",
     "contactTitle": "Contact — Eduardo Castillo | Frontend Developer",

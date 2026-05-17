@@ -2,15 +2,30 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Dictionary } from "@/i18n/types";
 
 const sitesData: { url?: string; image: string; caseStudy?: string; status?: "offline" | "dev" }[] = [
   {
-    url: "https://letcommunitieslead.unaids.org/",
-    image: "https://letcommunitieslead.unaids.org/img/share/sm-share-generic.jpg",
-    caseStudy: "unaids-let-communities-lead",
+    url: "https://zenocircle.it",
+    image: "/screenshots/zenocircle.jpg",
+    caseStudy: "zenocircle",
+  },
+  {
+    url: "https://casainordine.com/",
+    image: "https://www.casainordine.com/images/logo/logo_1200x630.png",
+    caseStudy: "casa-in-ordine",
+  },
+  {
+    image: "/screenshots/battlebucks.png",
+    caseStudy: "battlebucks",
+    status: "offline",
+  },
+  {
+    url: "https://cubitaproducciones.com/",
+    image: "https://www.cubitaproducciones.com/og-image.jpg",
+    caseStudy: "cubita-producciones",
   },
   {
     url: "https://www.nairobisummiticpd.org/gcmf-dashboard",
@@ -18,40 +33,77 @@ const sitesData: { url?: string; image: string; caseStudy?: string; status?: "of
       "https://www.nairobisummiticpd.org/sites/all/modules/custom/nairobi_gcmf/assets/share_cards/share.jpg",
   },
   {
-    url: "https://utiq.com/",
-    image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
+    url: "https://peacebeginswithme.un.org/en/",
+    image:
+      "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
+    caseStudy: "peace-begins-with-me",
   },
   {
-    url: "https://www.luna-tour.com/",
-    image: "/screenshots/luna-tour.png",
+    url: "https://letcommunitieslead.unaids.org/",
+    image: "https://letcommunitieslead.unaids.org/img/share/sm-share-generic.jpg",
+    caseStudy: "unaids-let-communities-lead",
+  },
+  {
+    url: "https://eurovisionnews.ebu.ch/",
+    image: "/screenshots/ebu-eurovision-news.jpg",
+    caseStudy: "ebu-eurovision-news",
+  },
+  {
+    url: "https://www.ifad.org/en/ride-report-2023/development-impact-and-results.html",
+    image: "/screenshots/ifad-ride-2023.png",
+    caseStudy: "ifad-ride-2023",
+  },
+  {
+    url: "https://environmentalmigration.iom.int/",
+    image:
+      "https://environmentalmigration.iom.int/sites/g/files/tmzbdl1411/files/styles/social_media/public/banner/2026-02/dji_0181.jpg?h=635a26b7&itok=-__HxuPV",
+    caseStudy: "iom-climate-migration",
+  },
+  {
+    url: "https://www.unfpa.org/HRSRHcalculator",
+    image:
+      "https://www.unfpa.org/sites/default/files/unfpa_global_uhc/assets/img/home-header.jpg",
+    caseStudy: "uhc-assessment-tool",
+  },
+  {
+    url: "https://www.inequalitycouncil.org/",
+    image:
+      "https://www.inequalitycouncil.org/wp-content/themes/unaids-gcai/assets/img/sharing-card.jpg",
+    caseStudy: "unaids-gcai",
   },
   {
     url: "https://www.unfpa.org/",
     image:
       "https://www.unfpa.org/sites/default/files/unfpa_global_redesign/images/placeholders/unfpa-social-img-en.svg",
+    caseStudy: "unfpa-equity",
   },
   {
-    url: "https://peacebeginswithme.un.org/en/",
+    url: "https://www.covenanthouse.org/",
     image:
-      "https://images.prismic.io/peace-begins-with-me/65ce47599be9a5b998b5e239_SM1200x627_Generic.png?auto=format,compress,format&w=1280",
+      "https://www.covenanthouse.org/sites/default/files/styles/1200x630/public/2024-10/young-man-test-b-topaz.jpg.webp?itok=zIbg4HzO",
+    caseStudy: "covenant-house",
   },
   {
-    url: "https://cubitaproducciones.com/",
-    image: "https://www.cubitaproducciones.com/og-image.jpg",
+    url: "https://www.luna-tour.com/",
+    image: "/screenshots/luna-tour.png",
+    caseStudy: "luna-tour",
   },
   {
-    url: "https://casainordine.com/",
-    image: "https://www.casainordine.com/images/logo/logo_1200x630.png",
+    url: "https://utiq.com/",
+    image: "https://utiq.com/wp-content/uploads/2023/05/utiq-logo@2x.png",
+    caseStudy: "utiq",
+  },
+  {
+    image: "/screenshots/el-catre.png",
+    caseStudy: "el-catre",
+    status: "offline",
   },
   {
     url: "https://freemock.art/",
     image:
       "https://res.cloudinary.com/doelo4gvm/image/upload/f_png,w_1200,h_630,c_fill/v1737588282/login-hero.svg",
+    caseStudy: "freemock",
     status: "dev",
-  },
-  {
-    image: "/screenshots/el-catre.png",
-    status: "offline",
   },
 ];
 
@@ -79,10 +131,52 @@ function SiteCard({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
-  const Wrapper = url ? "a" : "div";
-  const wrapperProps = url
-    ? { href: url, target: "_blank" as const, rel: "noopener noreferrer" }
-    : {};
+  const content = (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <div className="relative aspect-video bg-background/50">
+        <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
+        <span className={`absolute top-2 right-2 flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded bg-background/80 backdrop-blur-sm ${
+          status === "offline"
+            ? "text-red-400"
+            : status === "dev"
+              ? "text-amber-400"
+              : "text-emerald-400"
+        }`}>
+          <span className={`w-1.5 h-1.5 rounded-full ${
+            status === "offline"
+              ? "bg-red-400"
+              : status === "dev"
+                ? "bg-amber-400 animate-pulse"
+                : "bg-emerald-400 animate-pulse"
+          }`} />
+          {status === "offline" ? "Offline" : status === "dev" ? "In Dev" : "Online"}
+        </span>
+      </div>
+      <div className="p-3 sm:p-5">
+        <p className="text-xs text-muted uppercase tracking-wider mb-1">
+          {company}
+        </p>
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="font-semibold group-hover:text-accent transition-colors">
+            {name}
+          </h3>
+          {caseStudy ? (
+            <ArrowRight
+              size={16}
+              className="text-muted group-hover:text-accent transition-colors shrink-0"
+            />
+          ) : url ? (
+            <ExternalLink
+              size={16}
+              className="text-muted group-hover:text-accent transition-colors shrink-0"
+            />
+          ) : null}
+        </div>
+        <p className="text-sm text-muted leading-relaxed">{description}</p>
+      </div>
+    </>
+  );
 
   return (
     <motion.div
@@ -92,55 +186,16 @@ function SiteCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group glass-card overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
     >
-      <Wrapper {...wrapperProps} className="block">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <div className="relative aspect-video bg-background/50">
-          <img src={image} alt={name} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy" />
-          <span className={`absolute top-2 right-2 flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider rounded bg-background/80 backdrop-blur-sm ${
-            status === "offline"
-              ? "text-red-400"
-              : status === "dev"
-                ? "text-amber-400"
-                : "text-emerald-400"
-          }`}>
-            <span className={`w-1.5 h-1.5 rounded-full ${
-              status === "offline"
-                ? "bg-red-400"
-                : status === "dev"
-                  ? "bg-amber-400 animate-pulse"
-                  : "bg-emerald-400 animate-pulse"
-            }`} />
-            {status === "offline" ? "Offline" : status === "dev" ? "In Dev" : "Online"}
-          </span>
-        </div>
-        <div className="p-3 sm:p-5">
-          <p className="text-xs text-muted uppercase tracking-wider mb-1">
-            {company}
-          </p>
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="font-semibold group-hover:text-accent transition-colors">
-              {name}
-            </h3>
-            {url && (
-              <ExternalLink
-                size={16}
-                className="text-muted group-hover:text-accent transition-colors shrink-0"
-              />
-            )}
-          </div>
-          <p className="text-sm text-muted leading-relaxed">{description}</p>
-        </div>
-      </Wrapper>
-      {caseStudy && (
-        <div className="px-3 sm:px-5 pb-3 sm:pb-5">
-          <Link
-            href={`/${locale}/work/${caseStudy}`}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-light transition-colors"
-          >
-            <FileText size={12} />
-            Case Study
-          </Link>
-        </div>
+      {caseStudy ? (
+        <Link href={`/${locale}/work/${caseStudy}`} className="block">
+          {content}
+        </Link>
+      ) : url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+          {content}
+        </a>
+      ) : (
+        <div className="block">{content}</div>
       )}
     </motion.div>
   );

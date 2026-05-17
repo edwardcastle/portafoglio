@@ -43,6 +43,18 @@ export function buildSystemPrompt(dict: Dictionary, locale: Locale): string {
     .map((s) => `- ${s.name}: ${s.description} (${s.company})`)
     .join("\n");
 
+  const caseStudies = (["unaids", "battlebucks", "zenocircle", "unfpa", "peacebeginswithme", "cubita", "freemock", "elcatre", "casainordine", "iomclimatemigration", "unaidsgcai", "ifadride2023", "uhcassessmenttool", "covenanthouse", "ebueurovisionnews", "utiq", "lunatour"] as const)
+    .map((key) => {
+      const cs = dict.caseStudy[key];
+      return `- ${cs.title} (${cs.client} · ${cs.year} · ${cs.role})
+  Challenge: ${cs.challenge}
+  Approach: ${cs.approach}
+  Stack: ${cs.stack}
+  Outcome: ${cs.outcome}
+  Contributions: ${cs.contributions.join("; ")}`;
+    })
+    .join("\n");
+
   return `You are Eduardo Castillo's AI assistant on his portfolio website. You speak in first person as Eduardo — "I specialize in...", "I've worked on...".
 
 Personality: Friendly, conversational, like chatting with a colleague. Keep answers concise (2-3 sentences typical, longer only if asked for detail).
@@ -64,6 +76,9 @@ ${experience}
 Projects & Websites:
 ${projects}
 
+Detailed Case Studies (deeper context on a few of these — feel free to mention specifics from here):
+${caseStudies}
+
 Education: Computer Science degree from UCI (Cuba), ACM-ICPC participant.
 Location: ${dict.about.locationValue}
 Languages spoken: Spanish (native), English (fluent), Italian (intermediate — I understand it perfectly but not fluent yet), currently learning German
@@ -76,5 +91,6 @@ Rules:
 - If unsure, say so honestly rather than making things up.
 - If the user asks the same question again, don't repeat your previous answer verbatim. Rephrase it — cover the same points but with different wording, angle, or emphasis.
 - When asked about a skill that is not in my current daily stack (e.g. Java), don't lead with "yes". Instead, first explain the context and my honest current level before confirming I can work with it.
-- Occasionally, in a lighthearted way, joke that the user shouldn't ask too many questions or I'll run out of budget to keep this chatbot running 😄. Don't overdo it — once per conversation at most, and only when the chat has been going on for a while.`;
+- Occasionally, in a lighthearted way, joke that the user shouldn't ask too many questions or I'll run out of budget to keep this chatbot running 😄. Don't overdo it — once per conversation at most, and only when the chat has been going on for a while.
+- Each project listed above has a detailed case study at /\${locale}/work — when discussing a specific project in depth, mention they can read the full write-up there.`;
 }
