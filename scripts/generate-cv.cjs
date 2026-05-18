@@ -34,18 +34,6 @@ const cvData = {
         ],
       },
       {
-        company: "Freelance Frontend Projects",
-        role: "Frontend Developer (Freelance)",
-        location: "Remote",
-        period: "Jul 2024 - Jun 2025",
-        highlights: [
-          "BattleBucks (Costa Rica) -- Solana blockchain integration via Reown for authentication and transactions",
-          "BattleBucks -- Real-time chat with WebSocket and REST API, PWA configuration",
-          "Gitfast (Mexico) -- New features and UI component library, performance optimization",
-          "Gitfast -- Frontend refactoring for scalability and readability",
-        ],
-      },
-      {
         company: "Elkanodata",
         role: "Frontend Developer",
         location: "Remote, Spain",
@@ -88,10 +76,11 @@ const cvData = {
         location: "Hybrid, Cuba",
         period: "Sep 2019 - Aug 2022",
         highlights: [
-          "UI design and development for administrative systems",
-          "Reusable components and client-side rendering optimization",
-          "REST and GraphQL API integration",
-          "UX improvements based on user feedback",
+          "Frontend developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
+          "Built and maintained a reusable Vue component library shared across multiple admin modules",
+          "REST and GraphQL API integration with client-side caching and rendering optimization",
+          "Iterated UX based on direct feedback from internal operational teams",
+          "Three-year tenure with progressive ownership of larger surfaces and feature areas",
         ],
       },
       {
@@ -100,14 +89,16 @@ const cvData = {
         location: "Remote, Cuba",
         period: "Aug 2019 - Sep 2020",
         highlights: [
-          "Interactive UI components and pages with Vue.js and Nuxt.js",
-          "GraphQL API integration and real-time updates",
-          "Docker environments for frontend deployment",
-          "UX optimization through performant layout and animations",
+          "Built the frontend of Cuba's first independent e-commerce platform: Nuxt 2 + Vue 2 + Vuex + Buefy on an Apollo GraphQL client",
+          "Seller storefronts, product catalog, cart, checkout, and seller analytics dashboards with ApexCharts",
+          "Real-time chat and notifications over WebSockets backed by Django Channels + Redis",
+          "Federated auth: Firebase phone verification, Facebook/Google OAuth, JWT",
+          "PWA + SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
+          "Backend support on Django + Graphene as secondary contributor (not the primary backend developer)",
         ],
       },
     ],
-    personalProjectsTitle: "Personal Projects",
+    personalProjectsTitle: "Freelance Projects",
     personalProjects: [
       {
         name: "ZenO -- Site Improvements & Email Integration",
@@ -136,12 +127,31 @@ const cvData = {
         ],
       },
       {
+        name: "BattleBucks -- Play-to-Earn on Solana",
+        period: "2025",
+        highlights: [
+          "Real-money battle royale and 1v1 PvP game on Solana, distributed as PWA and native iOS/Android",
+          "Nuxt 3 + Pinia + Reown AppKit for Solana wallet connect and SIWX authentication",
+          "Custom WebSocket store for real-time match flow and chat with reconnect logic",
+          "Capacitor for native iOS/Android builds from a single Nuxt source; Sentry for observability",
+        ],
+      },
+      {
         name: "Cubita Producciones",
         period: "2025",
         highlights: [
           "Trilingual (ES/EN/IT) Cuban talent agency site with artist catalog and booking flow",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
           "Strapi v5 CMS scaffolded for eventual editorial cutover",
+        ],
+      },
+      {
+        name: "Gitfast",
+        period: "2024",
+        highlights: [
+          "Mexico-based freelance engagement",
+          "New features and reusable UI component library",
+          "Performance optimization and frontend refactoring for scalability and readability",
         ],
       },
     ],
@@ -198,18 +208,6 @@ const cvData = {
         ],
       },
       {
-        company: "Proyectos Frontend Freelance",
-        role: "Frontend Developer (Freelance)",
-        location: "Remoto",
-        period: "Jul 2024 - Jun 2025",
-        highlights: [
-          "BattleBucks (Costa Rica) -- Integraci\u00f3n blockchain Solana mediante Reown para autenticaci\u00f3n y transacciones",
-          "BattleBucks -- Chat en tiempo real con WebSocket y REST API, configuraci\u00f3n PWA",
-          "Gitfast (M\u00e9xico) -- Nuevas funcionalidades y librer\u00eda de componentes UI",
-          "Gitfast -- Refactorizaci\u00f3n frontend para escalabilidad y legibilidad",
-        ],
-      },
-      {
         company: "Elkanodata",
         role: "Frontend Developer",
         location: "Remoto, Espa\u00f1a",
@@ -252,10 +250,11 @@ const cvData = {
         location: "H\u00edbrido, Cuba",
         period: "Sep 2019 - Ago 2022",
         highlights: [
-          "Dise\u00f1o y desarrollo de UI para sistemas administrativos",
-          "Componentes reutilizables y optimizaci\u00f3n de rendering",
-          "Integraci\u00f3n de APIs REST y GraphQL",
-          "Mejoras de UX basadas en feedback de usuarios",
+          "Desarrollador frontend en sistemas administrativos internos para la Oficina Nacional de Administraci\u00f3n Tributaria (ONAT) de Cuba",
+          "Constru\u00ed y mantuve una librer\u00eda de componentes Vue reutilizables compartida entre m\u00faltiples m\u00f3dulos admin",
+          "Integraci\u00f3n de APIs REST y GraphQL con cach\u00e9 del lado del cliente y optimizaci\u00f3n de rendering",
+          "Iteraci\u00f3n de UX basada en feedback directo de equipos operativos internos",
+          "Tenencia de tres a\u00f1os con propiedad progresiva sobre superficies y \u00e1reas funcionales m\u00e1s amplias",
         ],
       },
       {
@@ -264,14 +263,16 @@ const cvData = {
         location: "Remoto, Cuba",
         period: "Ago 2019 - Sep 2020",
         highlights: [
-          "Componentes UI interactivos con Vue.js y Nuxt.js",
-          "Integraci\u00f3n de API GraphQL y actualizaciones en tiempo real",
-          "Entornos Docker para despliegue frontend",
-          "Optimizaci\u00f3n UX mediante layout y animaciones performantes",
+          "Constru\u00ed el frontend de la primera plataforma e-commerce independiente de Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy sobre un cliente Apollo GraphQL",
+          "Tiendas de vendedores, cat\u00e1logo de productos, carrito, checkout y dashboards de anal\u00edtica con ApexCharts",
+          "Chat y notificaciones en tiempo real sobre WebSockets respaldado por Django Channels + Redis",
+          "Autenticaci\u00f3n federada: verificaci\u00f3n telef\u00f3nica de Firebase, OAuth de Facebook/Google, JWT",
+          "Optimizaci\u00f3n PWA + SSR ajustada para condiciones de red cubanas; recorte de im\u00e1genes y generaci\u00f3n de QR",
+          "Soporte al backend en Django + Graphene como contribuidor secundario (no el desarrollador backend principal)",
         ],
       },
     ],
-    personalProjectsTitle: "Proyectos Personales",
+    personalProjectsTitle: "Proyectos Freelance",
     personalProjects: [
       {
         name: "ZenO -- Mejoras del Sitio e Integraci\u00f3n de Email",
@@ -300,12 +301,31 @@ const cvData = {
         ],
       },
       {
+        name: "BattleBucks -- Play-to-Earn en Solana",
+        period: "2025",
+        highlights: [
+          "Juego battle royale y 1v1 PvP con dinero real sobre Solana, distribuido como PWA y nativo iOS/Android",
+          "Nuxt 3 + Pinia + Reown AppKit para wallet connect Solana y autenticaci\u00f3n SIWX",
+          "Store WebSocket propio para flujo de partida en tiempo real y chat con l\u00f3gica de reconexi\u00f3n",
+          "Capacitor para builds nativas iOS/Android desde \u00fanica fuente Nuxt; Sentry para observabilidad",
+        ],
+      },
+      {
         name: "Cubita Producciones",
         period: "2025",
         highlights: [
           "Sitio triling\u00fce (ES/EN/IT) para agencia de talento cubano con cat\u00e1logo de artistas y flujo de booking",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
           "CMS Strapi v5 scaffolded para eventual cambio editorial",
+        ],
+      },
+      {
+        name: "Gitfast",
+        period: "2024",
+        highlights: [
+          "Engagement freelance con cliente basado en M\u00e9xico",
+          "Nuevas funcionalidades y librer\u00eda de componentes UI reutilizables",
+          "Optimizaci\u00f3n de rendimiento y refactorizaci\u00f3n frontend para escalabilidad y legibilidad",
         ],
       },
     ],
@@ -362,18 +382,6 @@ const cvData = {
         ],
       },
       {
-        company: "Progetti Frontend Freelance",
-        role: "Frontend Developer (Freelance)",
-        location: "Remoto",
-        period: "Lug 2024 - Giu 2025",
-        highlights: [
-          "BattleBucks (Costa Rica) -- Integrazione blockchain Solana tramite Reown per autenticazione e transazioni",
-          "BattleBucks -- Chat in tempo reale con WebSocket e REST API, configurazione PWA",
-          "Gitfast (Messico) -- Nuove funzionalit\u00e0 e libreria di componenti UI",
-          "Gitfast -- Refactoring frontend per scalabilit\u00e0 e leggibilit\u00e0",
-        ],
-      },
-      {
         company: "Elkanodata",
         role: "Frontend Developer",
         location: "Remoto, Spagna",
@@ -416,10 +424,11 @@ const cvData = {
         location: "Ibrido, Cuba",
         period: "Set 2019 - Ago 2022",
         highlights: [
-          "Progettazione e sviluppo UI per sistemi amministrativi",
-          "Creazione componenti riutilizzabili e ottimizzazione rendering lato client",
-          "Integrazione REST e GraphQL API",
-          "Miglioramento UX basato su feedback utenti",
+          "Sviluppatore frontend su sistemi amministrativi interni per l'Ufficio Nazionale di Amministrazione Tributaria (ONAT) di Cuba",
+          "Ho costruito e mantenuto una libreria di componenti Vue riutilizzabili condivisa tra più moduli admin",
+          "Integrazione di API REST e GraphQL con caching lato client e ottimizzazione del rendering",
+          "Iterazione UX basata su feedback diretto dei team operativi interni",
+          "Permanenza di tre anni con proprietà progressiva di superfici e aree funzionali più ampie",
         ],
       },
       {
@@ -428,14 +437,16 @@ const cvData = {
         location: "Remoto, Cuba",
         period: "Ago 2019 - Set 2020",
         highlights: [
-          "Sviluppo componenti UI e pagine interattive con Vue.js e Nuxt.js",
-          "Integrazione API GraphQL e aggiornamenti in tempo reale",
-          "Configurazione ambienti Docker per deployment frontend",
-          "Ottimizzazione UX tramite layout e animazioni performanti",
+          "Ho costruito il frontend della prima piattaforma e-commerce indipendente di Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy su un client Apollo GraphQL",
+          "Vetrine venditori, catalogo prodotti, carrello, checkout e dashboard di analytics con ApexCharts",
+          "Chat e notifiche in tempo reale su WebSocket basate su Django Channels + Redis",
+          "Autenticazione federata: verifica telefonica Firebase, OAuth Facebook/Google, JWT",
+          "Ottimizzazione PWA + SSR calibrata per le condizioni di rete cubane; ritaglio immagini e generazione QR",
+          "Supporto al backend Django + Graphene come contributore secondario (non sviluppatore backend principale)",
         ],
       },
     ],
-    personalProjectsTitle: "Progetti Personali",
+    personalProjectsTitle: "Progetti Freelance",
     personalProjects: [
       {
         name: "ZenO -- Miglioramenti del Sito e Integrazione Email",
@@ -464,12 +475,31 @@ const cvData = {
         ],
       },
       {
+        name: "BattleBucks -- Play-to-Earn su Solana",
+        period: "2025",
+        highlights: [
+          "Gioco battle royale e 1v1 PvP con denaro reale su Solana, distribuito come PWA e nativo iOS/Android",
+          "Nuxt 3 + Pinia + Reown AppKit per wallet connect Solana e autenticazione SIWX",
+          "Store WebSocket custom per il flusso di partita in tempo reale e chat con logica di riconnessione",
+          "Capacitor per build native iOS/Android da unica sorgente Nuxt; Sentry per l'osservabilità",
+        ],
+      },
+      {
         name: "Cubita Producciones",
         period: "2025",
         highlights: [
           "Sito trilingue (ES/EN/IT) per agenzia di talento cubano con catalogo artisti e flusso di booking",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
           "CMS Strapi v5 scaffolded per eventuale switch editoriale",
+        ],
+      },
+      {
+        name: "Gitfast",
+        period: "2024",
+        highlights: [
+          "Engagement freelance con cliente basato in Messico",
+          "Nuove funzionalità e libreria di componenti UI riutilizzabili",
+          "Ottimizzazione delle performance e refactoring frontend per scalabilità e leggibilità",
         ],
       },
     ],
