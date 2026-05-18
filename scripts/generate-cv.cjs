@@ -17,7 +17,7 @@ const cvData = {
     linkedin: "eduardo-castillo-dev",
     profileTitle: "Professional Profile",
     profile:
-      "Frontend Developer with over 6 years of experience designing and developing modern, high-performance, user-oriented web applications. Specialized in Vue.js, Nuxt.js, and TypeScript, with strong focus on code quality, accessibility, and performance optimization. Experienced collaborating with designers and backend teams to transform design systems into fluid, scalable, and responsive interfaces. Passionate about animations, reusable components, and frontend best practices.",
+      "Frontend Developer with over 6 years of experience designing and developing modern, high-performance, user-oriented web applications. Specialized in Vue.js, Nuxt.js, and TypeScript, with web work spanning UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), NGOs, and startups. Strong focus on code quality, accessibility, performance optimization, and design-system implementation. Experienced collaborating with designers and backend teams to deliver fluid, scalable, responsive interfaces.",
     experienceTitle: "Work Experience",
     jobs: [
       {
@@ -51,10 +51,10 @@ const cvData = {
         location: "Remote, Spain",
         period: "Sep 2023 - Jun 2024",
         highlights: [
-          "Animated and interactive interfaces with Canvas and SVG",
-          "Design-to-code from Figma and Zeplin into responsive, cross-browser layouts",
-          "Dynamic content integration via Prismic CMS and WordPress",
-          "Performance optimization for loading times and animations across devices",
+          "Worked alongside two senior frontend developers on enterprise client engagements",
+          "UN agencies: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
+          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration on existing vanilla frontend)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
@@ -63,6 +63,7 @@ const cvData = {
         location: "Remote, UK",
         period: "Aug 2022 - Sep 2023",
         highlights: [
+          "UTIQ -- corporate marketing site (Vue.js + TypeScript) supporting the TrustPid-to-UTIQ rebrand and expansion across European markets",
           "Admin platform maintenance and development for user and data management",
           "JavaScript to TypeScript migration for improved stability",
           "Reusable Vue components and automated testing implementation",
@@ -75,6 +76,7 @@ const cvData = {
         location: "Remote, Cuba",
         period: "Nov 2022 - Jul 2023",
         highlights: [
+          "Luna Tour -- Vue 3 + Vite SPA for travel destination discovery (multilingual, mobile-first, WhatsApp handoff)",
           "CMS pages, SEO optimization, and Google OAuth integration",
           "Mobile layouts with Ionic and Capacitor",
           "E-commerce admin panels",
@@ -105,6 +107,44 @@ const cvData = {
         ],
       },
     ],
+    personalProjectsTitle: "Personal Projects",
+    personalProjects: [
+      {
+        name: "ZenO -- Site Improvements & Email Integration",
+        period: "2026",
+        highlights: [
+          "Responsiveness improvements, DNS and redirect setup",
+          "Resend integration for questionnaire delivery to client and newsletter subscriptions",
+        ],
+      },
+      {
+        name: "Casa in Ordine",
+        period: "2025-2026",
+        highlights: [
+          "Multilingual (IT/EN/ES) home-organization site for a Rome-based business",
+          "Next.js 16 + React 19 + Tailwind v4, with 9-step Preventivo quote wizard",
+          "Brevo email integration, Umami analytics, GDPR cookie consent",
+        ],
+      },
+      {
+        name: "FreeMock",
+        period: "2025-present",
+        highlights: [
+          "Meme creator and social platform with web3 wallet auth (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + Fabric.js editor + WebSocket chat with Signal Protocol",
+          "Go + govips image-rendering microservice; CI/CD with SonarQube and Codecov",
+        ],
+      },
+      {
+        name: "Cubita Producciones",
+        period: "2025",
+        highlights: [
+          "Trilingual (ES/EN/IT) Cuban talent agency site with artist catalog and booking flow",
+          "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
+          "Strapi v5 CMS scaffolded for eventual editorial cutover",
+        ],
+      },
+    ],
     educationTitle: "Education",
     education: {
       school: "UCI University",
@@ -120,8 +160,8 @@ const cvData = {
     skillsTitle: "Technical Skills",
     skills: {
       "Core Stack": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Proficient: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma",
-      "Working Knowledge": "Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor, Canvas/SVG animations",
+      Proficient: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
+      "Working Knowledge": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG animations, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Tools: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Languages",
@@ -141,7 +181,7 @@ const cvData = {
     linkedin: "eduardo-castillo-dev",
     profileTitle: "Perfil Profesional",
     profile:
-      "Desarrollador Frontend con m\u00e1s de 6 a\u00f1os de experiencia en el dise\u00f1o y desarrollo de aplicaciones web modernas, de alto rendimiento y orientadas al usuario. Especializado en Vue.js, Nuxt.js y TypeScript, con fuerte enfoque en la calidad del c\u00f3digo, accesibilidad y optimizaci\u00f3n del rendimiento. Experiencia colaborando con dise\u00f1adores y equipos backend para transformar sistemas de dise\u00f1o en interfaces fluidas, escalables y responsive.",
+      "Desarrollador Frontend con m\u00e1s de 6 a\u00f1os de experiencia en el dise\u00f1o y desarrollo de aplicaciones web modernas, de alto rendimiento y orientadas al usuario. Especializado en Vue.js, Nuxt.js y TypeScript, con trabajo web abarcando agencias de la ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), ONGs y startups. Fuerte enfoque en la calidad del c\u00f3digo, accesibilidad, optimizaci\u00f3n del rendimiento e implementaci\u00f3n de sistemas de dise\u00f1o. Experiencia colaborando con dise\u00f1adores y equipos backend para entregar interfaces fluidas, escalables y responsive.",
     experienceTitle: "Experiencia Laboral",
     jobs: [
       {
@@ -175,10 +215,10 @@ const cvData = {
         location: "Remoto, Espa\u00f1a",
         period: "Sep 2023 - Jun 2024",
         highlights: [
-          "Interfaces animadas e interactivas con Canvas y SVG",
-          "De Figma/Zeplin a layouts responsive y cross-browser",
-          "Integraci\u00f3n de contenidos din\u00e1micos mediante Prismic CMS y WordPress",
-          "Optimizaci\u00f3n de tiempos de carga y animaciones en dispositivos variados",
+          "Trabaj\u00e9 junto a dos desarrolladores frontend senior en proyectos para clientes enterprise",
+          "Agencias de la ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Herramienta UHC), IOM Migraci\u00f3n Clim\u00e1tica, IFAD RIDE 2023, Peace Begins With Me",
+          "Otros clientes: EBU Eurovision News (microsite de noticias), Covenant House (integraci\u00f3n de WordPress como CMS sobre frontend vanilla existente)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
@@ -187,6 +227,7 @@ const cvData = {
         location: "Remoto, Reino Unido",
         period: "Ago 2022 - Sep 2023",
         highlights: [
+          "UTIQ -- sitio corporativo (Vue.js + TypeScript) acompa\u00f1ando el rebrand TrustPid-a-UTIQ y la expansi\u00f3n por mercados europeos",
           "Mantenimiento y desarrollo de plataforma admin para gesti\u00f3n de usuarios y datos",
           "Migraci\u00f3n de JavaScript a TypeScript para mayor estabilidad",
           "Componentes Vue reutilizables e implementaci\u00f3n de tests automatizados",
@@ -199,6 +240,7 @@ const cvData = {
         location: "Remoto, Cuba",
         period: "Nov 2022 - Jul 2023",
         highlights: [
+          "Luna Tour -- SPA Vue 3 + Vite para descubrimiento de destinos de viaje (multiling\u00fce, mobile-first, handoff a WhatsApp)",
           "P\u00e1ginas CMS, optimizaci\u00f3n SEO y Google OAuth",
           "Layouts m\u00f3viles con Ionic y Capacitor",
           "Paneles de administraci\u00f3n e-commerce",
@@ -229,6 +271,44 @@ const cvData = {
         ],
       },
     ],
+    personalProjectsTitle: "Proyectos Personales",
+    personalProjects: [
+      {
+        name: "ZenO -- Mejoras del Sitio e Integraci\u00f3n de Email",
+        period: "2026",
+        highlights: [
+          "Mejoras de responsividad, configuraci\u00f3n de DNS y redirecciones",
+          "Integraci\u00f3n de Resend para entrega de cuestionarios al cliente y suscripciones al newsletter",
+        ],
+      },
+      {
+        name: "Casa in Ordine",
+        period: "2025-2026",
+        highlights: [
+          "Sitio multiling\u00fce (IT/EN/ES) de organizaci\u00f3n del hogar para un negocio romano",
+          "Next.js 16 + React 19 + Tailwind v4, con wizard de Preventivo de 9 pasos",
+          "Integraci\u00f3n de Brevo para email, anal\u00edtica Umami, consentimiento de cookies GDPR",
+        ],
+      },
+      {
+        name: "FreeMock",
+        period: "2025-presente",
+        highlights: [
+          "Creador de memes y plataforma social con autenticaci\u00f3n web3 (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con Signal Protocol",
+          "Microservicio Go + govips para renderizado de im\u00e1genes; CI/CD con SonarQube y Codecov",
+        ],
+      },
+      {
+        name: "Cubita Producciones",
+        period: "2025",
+        highlights: [
+          "Sitio triling\u00fce (ES/EN/IT) para agencia de talento cubano con cat\u00e1logo de artistas y flujo de booking",
+          "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
+          "CMS Strapi v5 scaffolded para eventual cambio editorial",
+        ],
+      },
+    ],
     educationTitle: "Formaci\u00f3n",
     education: {
       school: "Universidad UCI",
@@ -244,8 +324,8 @@ const cvData = {
     skillsTitle: "Competencias T\u00e9cnicas",
     skills: {
       "Stack Principal": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma",
-      "Conocimiento Pr\u00e1ctico": "Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor, Canvas/SVG",
+      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
+      "Conocimiento Pr\u00e1ctico": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Herramientas: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Idiomas",
@@ -265,7 +345,7 @@ const cvData = {
     linkedin: "eduardo-castillo-dev",
     profileTitle: "Profilo Professionale",
     profile:
-      "Sviluppatore Frontend con oltre 6 anni di esperienza nella progettazione e nello sviluppo di applicazioni web moderne, performanti e orientate all'utente. Specializzato in Vue.js, Nuxt.js e TypeScript, con forte attenzione alla pulizia del codice, all'accessibilit\u00e0 e all'ottimizzazione delle prestazioni. Abituato a collaborare con designer e team backend per trasformare sistemi di design in interfacce fluide, scalabili e responsive.",
+      "Sviluppatore Frontend con oltre 6 anni di esperienza nella progettazione e nello sviluppo di applicazioni web moderne, performanti e orientate all'utente. Specializzato in Vue.js, Nuxt.js e TypeScript, con lavori web che spaziano da agenzie ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), ONG e startup. Forte attenzione alla qualit\u00e0 del codice, accessibilit\u00e0, ottimizzazione delle performance e implementazione di design system. Abituato a collaborare con designer e team backend per consegnare interfacce fluide, scalabili e responsive.",
     experienceTitle: "Esperienza Lavorativa",
     jobs: [
       {
@@ -299,10 +379,10 @@ const cvData = {
         location: "Remoto, Spagna",
         period: "Set 2023 - Giu 2024",
         highlights: [
-          "Creazione interfacce animate e interattive con Canvas e SVG",
-          "Traduzione design da Figma e Zeplin in layout responsive e cross-browser",
-          "Integrazione contenuti dinamici tramite Prismic CMS e WordPress",
-          "Ottimizzazione tempi di caricamento e animazioni su dispositivi vari",
+          "Ho lavorato insieme a due sviluppatori frontend senior su progetti per clienti enterprise",
+          "Agenzie ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Strumento UHC), IOM Migrazione Climatica, IFAD RIDE 2023, Peace Begins With Me",
+          "Altri clienti: EBU Eurovision News (microsito di notizie), Covenant House (integrazione di WordPress come CMS su frontend vanilla esistente)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
@@ -311,6 +391,7 @@ const cvData = {
         location: "Remoto, Regno Unito",
         period: "Ago 2022 - Set 2023",
         highlights: [
+          "UTIQ -- sito corporate (Vue.js + TypeScript) a supporto del rebrand da TrustPid a UTIQ e dell'espansione nei mercati europei",
           "Manutenzione e sviluppo piattaforma admin per gestione utenti e dati",
           "Migrazione codice JavaScript a TypeScript per maggiore stabilit\u00e0",
           "Creazione componenti Vue riutilizzabili e implementazione test automatici",
@@ -323,6 +404,7 @@ const cvData = {
         location: "Remoto, Cuba",
         period: "Nov 2022 - Lug 2023",
         highlights: [
+          "Luna Tour -- SPA Vue 3 + Vite per la scoperta di destinazioni di viaggio (multilingue, mobile-first, handoff a WhatsApp)",
           "Implementazione pagine CMS e ottimizzazione SEO",
           "Integrazione autenticazione Google OAuth e API dinamiche",
           "Creazione layout mobile con Ionic e Capacitor",
@@ -353,6 +435,44 @@ const cvData = {
         ],
       },
     ],
+    personalProjectsTitle: "Progetti Personali",
+    personalProjects: [
+      {
+        name: "ZenO -- Miglioramenti del Sito e Integrazione Email",
+        period: "2026",
+        highlights: [
+          "Miglioramenti di responsività, configurazione DNS e redirect",
+          "Integrazione di Resend per la consegna dei questionari al cliente e le iscrizioni alla newsletter",
+        ],
+      },
+      {
+        name: "Casa in Ordine",
+        period: "2025-2026",
+        highlights: [
+          "Sito multilingue (IT/EN/ES) di organizzazione della casa per un'attività romana",
+          "Next.js 16 + React 19 + Tailwind v4, con wizard Preventivo di 9 step",
+          "Integrazione Brevo per email, analytics Umami, consenso cookie GDPR",
+        ],
+      },
+      {
+        name: "FreeMock",
+        period: "2025-presente",
+        highlights: [
+          "Creatore di meme e piattaforma social con autenticazione web3 (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con Signal Protocol",
+          "Microservizio Go + govips per rendering immagini; CI/CD con SonarQube e Codecov",
+        ],
+      },
+      {
+        name: "Cubita Producciones",
+        period: "2025",
+        highlights: [
+          "Sito trilingue (ES/EN/IT) per agenzia di talento cubano con catalogo artisti e flusso di booking",
+          "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
+          "CMS Strapi v5 scaffolded per eventuale switch editoriale",
+        ],
+      },
+    ],
     educationTitle: "Formazione",
     education: {
       school: "Universit\u00e0 UCI",
@@ -368,8 +488,8 @@ const cvData = {
     skillsTitle: "Competenze Tecniche",
     skills: {
       "Stack Principale": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma",
-      "Conoscenza Pratica": "Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor, Canvas/SVG",
+      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
+      "Conoscenza Pratica": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Strumenti: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Lingue",
@@ -442,6 +562,23 @@ function generateCV(lang) {
       doc.text(`  -  ${h}`, MARGIN + 5, doc.y, { width: CONTENT_WIDTH - 10, lineGap: 1 });
     }
     doc.moveDown(0.5);
+  }
+
+  // Personal Projects
+  if (data.personalProjects && data.personalProjects.length) {
+    if (doc.y > 650) doc.addPage();
+    sectionTitle(doc, data.personalProjectsTitle);
+    for (const p of data.personalProjects) {
+      if (doc.y > 700) doc.addPage();
+      doc.fontSize(10).font("Helvetica-Bold").text(p.name, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.7 });
+      doc.fontSize(9).font("Helvetica-Oblique").text(p.period, { align: "right", width: CONTENT_WIDTH });
+      doc.fontSize(9).font("Helvetica");
+      for (const h of p.highlights) {
+        if (doc.y > 750) doc.addPage();
+        doc.text(`  -  ${h}`, MARGIN + 5, doc.y, { width: CONTENT_WIDTH - 10, lineGap: 1 });
+      }
+      doc.moveDown(0.5);
+    }
   }
 
   // Education
