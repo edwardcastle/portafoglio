@@ -26,8 +26,8 @@ export function buildSystemPrompt(dict: Dictionary, locale: Locale): string {
 
   const skills = [
     `Core Stack (daily use, 6+ years): Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git`,
-    `Proficient: React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma`,
-    `Working Knowledge: Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor, Canvas/SVG animations`,
+    `Proficient: React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, Canvas/SVG animations`,
+    `Working Knowledge: Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor`,
     `Tools: VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux`,
   ].join("\n");
 

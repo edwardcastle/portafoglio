@@ -170,8 +170,8 @@ const cvData = {
     skillsTitle: "Technical Skills",
     skills: {
       "Core Stack": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Proficient: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
-      "Working Knowledge": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG animations, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      Proficient: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG animations",
+      "Working Knowledge": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Tools: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Languages",
@@ -344,8 +344,8 @@ const cvData = {
     skillsTitle: "Competencias T\u00e9cnicas",
     skills: {
       "Stack Principal": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
-      "Conocimiento Pr\u00e1ctico": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG",
+      "Conocimiento Pr\u00e1ctico": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Herramientas: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Idiomas",
@@ -518,8 +518,8 @@ const cvData = {
     skillsTitle: "Competenze Tecniche",
     skills: {
       "Stack Principale": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion",
-      "Conoscenza Pratica": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Canvas/SVG, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG",
+      "Conoscenza Pratica": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Strumenti: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Lingue",
