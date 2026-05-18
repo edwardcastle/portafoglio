@@ -73,9 +73,10 @@
         "period": "Set 2023 — Giu 2024",
         "location": "Remoto, Spagna",
         "highlights": [
-          "Interfacce animate e interattive con Canvas e SVG",
-          "Da Figma/Zeplin a layout responsive e cross-browser",
-          "Contenuti dinamici tramite Prismic CMS e WordPress"
+          "Ho lavorato insieme a due sviluppatori frontend senior su progetti per clienti enterprise",
+          "Agenzie ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Strumento UHC), IOM Migrazione Climatica, IFAD RIDE 2023, Peace Begins With Me",
+          "Altri clienti: EBU Eurovision News (microsito di notizie), Covenant House (integrazione di WordPress come CMS su frontend vanilla esistente)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite"
         ],
         "links": [
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
@@ -91,9 +92,11 @@
         "period": "Ago 2022 — Set 2023",
         "location": "Remoto, Regno Unito",
         "highlights": [
-          "Piattaforma amministrativa per gestione utenti e dati",
-          "Migrazione da JavaScript a TypeScript",
-          "Componenti Vue riutilizzabili e testing automatizzato"
+          "UTIQ — sito corporate (Vue.js + TypeScript) a supporto del rebrand da TrustPid a UTIQ e dell'espansione nei mercati europei",
+          "Manutenzione e sviluppo piattaforma admin per gestione utenti e dati",
+          "Migrazione codice JavaScript a TypeScript per maggiore stabilità",
+          "Creazione componenti Vue riutilizzabili e implementazione test automatici",
+          "Collaborazione con backend per ottimizzazione API e caching"
         ],
         "links": [
           { "label": "Utiq", "url": "https://utiq.com/" }
@@ -106,6 +109,7 @@
         "period": "Nov 2022 — Lug 2023",
         "location": "Remoto, Cuba",
         "highlights": [
+          "Luna Tour — SPA Vue 3 + Vite per la scoperta di destinazioni di viaggio (multilingue, mobile-first, handoff a WhatsApp)",
           "Pagine CMS, ottimizzazione SEO e Google OAuth",
           "Layout mobile con Ionic e Capacitor",
           "Pannelli di amministrazione e-commerce"
@@ -121,9 +125,11 @@
         "period": "Set 2019 — Ago 2022",
         "location": "Ibrido, Cuba",
         "highlights": [
-          "Progettazione e sviluppo UI per sistemi amministrativi",
-          "Integrazione API REST e GraphQL",
-          "Miglioramenti UX basati su feedback degli utenti"
+          "Sviluppatore frontend su sistemi amministrativi interni per l'Ufficio Nazionale di Amministrazione Tributaria (ONAT) di Cuba",
+          "Ho costruito e mantenuto una libreria di componenti Vue riutilizzabili condivisa tra più moduli admin",
+          "Integrazione di API REST e GraphQL con caching lato client e ottimizzazione del rendering",
+          "Iterazione UX basata su feedback diretto dei team operativi interni",
+          "Permanenza di tre anni con proprietà progressiva di superfici e aree funzionali più ampie"
         ]
       },
       {
@@ -133,9 +139,12 @@
         "period": "Ago 2019 — Set 2020",
         "location": "Remoto, Cuba",
         "highlights": [
-          "Componenti UI interattivi con Vue.js e Nuxt.js",
-          "Integrazione API GraphQL e aggiornamenti in tempo reale",
-          "Ambienti Docker per il deployment frontend"
+          "Ho costruito il frontend della prima piattaforma e-commerce indipendente di Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy su un client Apollo GraphQL",
+          "Vetrine venditori, catalogo prodotti, carrello, checkout e dashboard di analytics con ApexCharts",
+          "Chat e notifiche in tempo reale su WebSocket basate su Django Channels + Redis",
+          "Autenticazione federata: verifica telefonica Firebase, OAuth Facebook/Google, JWT",
+          "Ottimizzazione PWA + SSR calibrata per le condizioni di rete cubane; ritaglio immagini e generazione QR",
+          "Supporto al backend Django + Graphene come contributore secondario (non sviluppatore backend principale)"
         ]
       }
     ]

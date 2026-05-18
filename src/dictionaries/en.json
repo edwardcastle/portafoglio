@@ -73,9 +73,10 @@
         "period": "Sep 2023 — Jun 2024",
         "location": "Remote, Spain",
         "highlights": [
-          "Animated and interactive interfaces with Canvas and SVG",
-          "Figma/Zeplin to responsive, cross-browser layouts",
-          "Dynamic content via Prismic CMS and WordPress"
+          "Worked alongside two senior frontend developers on enterprise client engagements",
+          "UN agencies: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
+          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration on existing vanilla frontend)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite"
         ],
         "links": [
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
@@ -91,9 +92,11 @@
         "period": "Aug 2022 — Sep 2023",
         "location": "Remote, UK",
         "highlights": [
-          "Admin platform for user and data management",
-          "JavaScript to TypeScript migration",
-          "Reusable Vue components and automated testing"
+          "UTIQ — corporate marketing site (Vue.js + TypeScript) supporting the TrustPid-to-UTIQ rebrand and expansion across European markets",
+          "Admin platform maintenance and development for user and data management",
+          "JavaScript to TypeScript migration for improved stability",
+          "Reusable Vue components and automated testing implementation",
+          "Backend collaboration for API optimization and caching"
         ],
         "links": [
           { "label": "Utiq", "url": "https://utiq.com/" }
@@ -106,7 +109,8 @@
         "period": "Nov 2022 — Jul 2023",
         "location": "Remote, Cuba",
         "highlights": [
-          "CMS pages, SEO optimization, and Google OAuth",
+          "Luna Tour — Vue 3 + Vite SPA for travel destination discovery (multilingual, mobile-first, WhatsApp handoff)",
+          "CMS pages, SEO optimization, and Google OAuth integration",
           "Mobile layouts with Ionic and Capacitor",
           "E-commerce admin panels"
         ],
@@ -121,9 +125,11 @@
         "period": "Sep 2019 — Aug 2022",
         "location": "Hybrid, Cuba",
         "highlights": [
-          "UI design and development for administrative systems",
-          "REST and GraphQL API integration",
-          "UX improvements based on user feedback"
+          "Frontend developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
+          "Built and maintained a reusable Vue component library shared across multiple admin modules",
+          "REST and GraphQL API integration with client-side caching and rendering optimization",
+          "Iterated UX based on direct feedback from internal operational teams",
+          "Three-year tenure with progressive ownership of larger surfaces and feature areas"
         ]
       },
       {
@@ -133,9 +139,12 @@
         "period": "Aug 2019 — Sep 2020",
         "location": "Remote, Cuba",
         "highlights": [
-          "Interactive UI components with Vue.js and Nuxt.js",
-          "GraphQL API integration and real-time updates",
-          "Docker environments for frontend deployment"
+          "Built the frontend of Cuba's first independent e-commerce platform: Nuxt 2 + Vue 2 + Vuex + Buefy on an Apollo GraphQL client",
+          "Seller storefronts, product catalog, cart, checkout, and seller analytics dashboards with ApexCharts",
+          "Real-time chat and notifications over WebSockets backed by Django Channels + Redis",
+          "Federated auth: Firebase phone verification, Facebook/Google OAuth, JWT",
+          "PWA + SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
+          "Backend support on Django + Graphene as secondary contributor (not the primary backend developer)"
         ]
       }
     ]

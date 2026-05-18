@@ -73,9 +73,10 @@
         "period": "Sep 2023 — Jun 2024",
         "location": "Remoto, España",
         "highlights": [
-          "Interfaces animadas e interactivas con Canvas y SVG",
-          "De Figma/Zeplin a layouts responsive y cross-browser",
-          "Contenido dinámico mediante Prismic CMS y WordPress"
+          "Trabajé junto a dos desarrolladores frontend senior en proyectos para clientes enterprise",
+          "Agencias de la ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Herramienta UHC), IOM Migración Climática, IFAD RIDE 2023, Peace Begins With Me",
+          "Otros clientes: EBU Eurovision News (microsite de noticias), Covenant House (integración de WordPress como CMS sobre frontend vanilla existente)",
+          "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite"
         ],
         "links": [
           { "label": "UNAIDS – Let Communities Lead", "url": "https://letcommunitieslead.unaids.org/" },
@@ -91,9 +92,11 @@
         "period": "Ago 2022 — Sep 2023",
         "location": "Remoto, Reino Unido",
         "highlights": [
-          "Plataforma administrativa para gestión de usuarios y datos",
-          "Migración de JavaScript a TypeScript",
-          "Componentes Vue reutilizables y testing automatizado"
+          "UTIQ — sitio corporativo (Vue.js + TypeScript) acompañando el rebrand TrustPid-a-UTIQ y la expansión por mercados europeos",
+          "Mantenimiento y desarrollo de plataforma admin para gestión de usuarios y datos",
+          "Migración de JavaScript a TypeScript para mayor estabilidad",
+          "Componentes Vue reutilizables e implementación de tests automatizados",
+          "Colaboración con backend para optimización de API y caching"
         ],
         "links": [
           { "label": "Utiq", "url": "https://utiq.com/" }
@@ -106,6 +109,7 @@
         "period": "Nov 2022 — Jul 2023",
         "location": "Remoto, Cuba",
         "highlights": [
+          "Luna Tour — SPA Vue 3 + Vite para descubrimiento de destinos de viaje (multilingüe, mobile-first, handoff a WhatsApp)",
           "Páginas CMS, optimización SEO y Google OAuth",
           "Layouts móviles con Ionic y Capacitor",
           "Paneles de administración e-commerce"
@@ -121,9 +125,11 @@
         "period": "Sep 2019 — Ago 2022",
         "location": "Híbrido, Cuba",
         "highlights": [
-          "Diseño y desarrollo de UI para sistemas administrativos",
-          "Integración de APIs REST y GraphQL",
-          "Mejoras de UX basadas en feedback de usuarios"
+          "Desarrollador frontend en sistemas administrativos internos para la Oficina Nacional de Administración Tributaria (ONAT) de Cuba",
+          "Construí y mantuve una librería de componentes Vue reutilizables compartida entre múltiples módulos admin",
+          "Integración de APIs REST y GraphQL con caché del lado del cliente y optimización de rendering",
+          "Iteración de UX basada en feedback directo de equipos operativos internos",
+          "Tenencia de tres años con propiedad progresiva sobre superficies y áreas funcionales más amplias"
         ]
       },
       {
@@ -133,9 +139,12 @@
         "period": "Ago 2019 — Sep 2020",
         "location": "Remoto, Cuba",
         "highlights": [
-          "Componentes UI interactivos con Vue.js y Nuxt.js",
-          "Integración de API GraphQL y actualizaciones en tiempo real",
-          "Entornos Docker para despliegue frontend"
+          "Construí el frontend de la primera plataforma e-commerce independiente de Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy sobre un cliente Apollo GraphQL",
+          "Tiendas de vendedores, catálogo de productos, carrito, checkout y dashboards de analítica con ApexCharts",
+          "Chat y notificaciones en tiempo real sobre WebSockets respaldado por Django Channels + Redis",
+          "Autenticación federada: verificación telefónica de Firebase, OAuth de Facebook/Google, JWT",
+          "Optimización PWA + SSR ajustada para condiciones de red cubanas; recorte de imágenes y generación de QR",
+          "Soporte al backend en Django + Graphene como contribuidor secundario (no el desarrollador backend principal)"
         ]
       }
     ]
