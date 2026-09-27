@@ -24,12 +24,12 @@ const tiers: SkillTier[] = [
   {
     icon: Code2,
     titleKey: "proficient",
-    skills: ["React", "Next.js", "JavaScript (ES6+)", "Sass", "Vitest", "Jest", "Vite", "Webpack", "Docker", "PWA", "SEO", "Figma", "Canvas/SVG animations"],
+    skills: ["React", "Next.js", "JavaScript (ES6+)", "Python", "Sass", "Vitest", "Jest", "Cypress", "Vite", "Webpack", "Docker", "PWA", "SEO", "Figma", "WordPress", "Astro", "GSAP", "Framer Motion", "Canvas/SVG animations"],
   },
   {
     icon: BookOpen,
     titleKey: "workingKnowledge",
-    skills: ["Go", "Python", "Django", "GraphQL", "Solana/Web3", "Firebase", "Ionic/Capacitor"],
+    skills: ["FastAPI", "AWS (ECS/Fargate, OpenSearch, Redshift, SES)", "PostgreSQL", "Contentful", "Keycloak", "WebSocket (STOMP/SockJS)", "next-intl", "Go", "Django", "GraphQL", "Solana/Web3", "Reown AppKit", "Firebase", "Ionic/Capacitor", "Fabric.js", "shadcn-vue", "D3.js", "Prismic", "Strapi"],
   },
   {
     icon: Wrench,

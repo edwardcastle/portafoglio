@@ -45,6 +45,7 @@ export interface Dictionary {
       period: string;
       location: string;
       highlights: string[];
+      groups?: Array<{ title: string; highlights: string[] }>;
       links?: Array<{ label: string; url: string }>;
     }>;
   };

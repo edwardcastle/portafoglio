@@ -8,7 +8,7 @@
   "hero": {
     "greeting": "Frontend developer trusted by teams delivering to the UN, Eni, and Reply",
     "role": "Frontend Developer",
-    "description": "I specialize in Vue 3, Nuxt 3, and TypeScript, with 6+ years building enterprise web applications and high-performance websites. Available for freelance projects and full-time roles — remote or based in Italy.",
+    "description": "I specialize in Vue 3, Nuxt 3, and TypeScript, with 7+ years building enterprise web applications and high-performance websites. Available for freelance projects and full-time roles — remote or based in Italy.",
     "availability": "Currently open to: full-time frontend roles (Italy or remote within Europe) and selected freelance projects.",
     "cta": "Start a Project",
     "ctaSecondary": "See My Services",
@@ -19,7 +19,7 @@
     "subtitle": "Why clients trust me with their projects.",
     "p1Before": "I'm a ",
     "p1Emphasis": "Frontend Developer",
-    "p1After": " with over 6 years of experience building web applications for companies across Europe and the Americas. My core stack is Vue 3, Nuxt 3, and TypeScript. I also work with React/Next.js and have backend experience in Go and Python when projects require it.",
+    "p1After": " with over 7 years of experience building web applications for companies across Europe and the Americas. My core stack is Vue 3, Nuxt 3, and TypeScript. I also work full-stack with React/Next.js and Python/FastAPI backends when projects require it.",
     "p2Before": "I work with modern technologies like ",
     "p2Emphasis": "Vue 3, Nuxt 3, TypeScript, React, and Next.js",
     "p2After": " to build solutions that are fast, reliable, and easy to maintain. I focus on understanding your goals first, then choosing the right tools to get there.",
@@ -29,7 +29,7 @@
     "locationTitle": "Based in",
     "locationValue": "Italy (Remote)",
     "experienceTitle": "Experience",
-    "experienceValue": "6+ Years",
+    "experienceValue": "7+ Years",
     "educationTitle": "Education",
     "educationValue": "CS Degree — UCI",
     "languagesTitle": "Languages",
@@ -37,20 +37,43 @@
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "6+ years delivering results for companies across Europe, Latin America, and beyond.",
+    "subtitle": "7+ years delivering results for companies across Europe, Latin America, and beyond.",
     "jobs": [
       {
-        "company": "Frontend Developer — Enterprise Projects",
+        "company": "Frontend Developer / Web Engineer — Enterprise Projects",
         "role": "Employer: Dacomat S.r.l. · Delivery partner: Reply S.p.A.",
         "type": "Contract",
         "period": "Jun 2025 — Present",
         "location": "Remote, Italy",
         "highlights": [
-          "Frontend development for enterprise clients in the energy and industrial sectors",
-          "Interactive dashboards and data management interfaces built with Vue 3 and TypeScript",
-          "Dynamic tables with filtering, pagination, and optimized sorting",
-          "File import/export flows and large-dataset handling",
-          "Performance optimization: lazy loading, code splitting, reusable component libraries"
+          "Development for enterprise clients in the aerospace/logistics (Altec), industrial (Ferwood) and energy (Eni) sectors."
+        ],
+        "groups": [
+          {
+            "title": "LISUP (Altec) — web-based logistics / warehouse management system (Vue 3, PrimeVue 4, TypeScript, Tailwind)",
+            "highlights": [
+              "Interactive dashboards and data management interfaces for logistics modules (IWM, spare parts, shipments, inbound/outbound inspections, TRF)",
+              "Dynamic tables with filtering, pagination and optimized sorting",
+              "File import/export flows and handling of large data volumes",
+              "SSO authentication with Keycloak, internationalization (vue-i18n) and real-time updates via WebSocket (STOMP/SockJS)",
+              "Performance optimization (lazy loading, code splitting, reusable components); testing with Vitest and Cypress, code quality with SonarQube"
+            ]
+          },
+          {
+            "title": "Ferwood — e-commerce platform for refurbished industrial machinery (replacing the legacy Magento/Elasticsearch stack)",
+            "highlights": [
+              "New multi-market public website (Next.js 16, React 19, TypeScript, Tailwind): catalog with data-driven filters from OpenSearch, i18n across 10+ languages (next-intl), SEO overhaul (metadata, JSON-LD, hreflang, 301 redirects + proxy for legacy URLs), Contentful CMS, authentication and wishlist",
+              "Custom backend API (FastAPI, Python 3.13): Redshift-to-OpenSearch reindexing pipeline, catalog/search and recommendation APIs, write integration with Dynamics CRM, transactional emails (AWS SES / Microsoft 365)",
+              "Deployment on AWS ECS Fargate behind ALB via CodePipeline, Docker builds with test gates, automated reindexing via EventBridge Scheduler",
+              "Internal tools (Next.js, React, PrimeReact) replacing legacy Excel pricing tools (\"Prova Prezzi\" price calculator, unified price list)"
+            ]
+          },
+          {
+            "title": "Eni",
+            "highlights": [
+              "Bug fixing and maintenance of data management interfaces"
+            ]
+          }
         ]
       },
       {
@@ -73,9 +96,9 @@
         "period": "Sep 2023 — Jun 2024",
         "location": "Remote, Spain",
         "highlights": [
-          "Worked alongside two senior frontend developers on enterprise client engagements",
+          "Worked alongside two senior frontend developers on projects for enterprise clients",
           "UN agencies: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
-          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration on existing vanilla frontend)",
+          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration into an existing vanilla frontend)",
           "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite"
         ],
         "links": [
@@ -92,11 +115,11 @@
         "period": "Aug 2022 — Sep 2023",
         "location": "Remote, UK",
         "highlights": [
-          "UTIQ — corporate marketing site (Vue.js + TypeScript) supporting the TrustPid-to-UTIQ rebrand and expansion across European markets",
-          "Admin platform maintenance and development for user and data management",
-          "JavaScript to TypeScript migration for improved stability",
-          "Reusable Vue components and automated testing implementation",
-          "Backend collaboration for API optimization and caching"
+          "UTIQ — corporate marketing website (Vue.js + TypeScript) supporting the rebrand from TrustPid to UTIQ and expansion into European markets",
+          "Maintenance and development of the admin platform for user and data management",
+          "Migration from JavaScript to TypeScript for greater stability",
+          "Implementation of reusable Vue components and automated tests",
+          "Collaboration with the backend team on API optimization and caching"
         ],
         "links": [
           { "label": "Utiq", "url": "https://utiq.com/" }
@@ -109,8 +132,8 @@
         "period": "Nov 2022 — Jul 2023",
         "location": "Remote, Cuba",
         "highlights": [
-          "Luna Tour — Vue 3 + Vite SPA for travel destination discovery (multilingual, mobile-first, WhatsApp handoff)",
-          "CMS pages, SEO optimization, and Google OAuth integration",
+          "Luna Tour — Vue 3 + Vite SPA for discovering tourist destinations (multilingual, mobile-first, WhatsApp handoff)",
+          "CMS pages, SEO optimization and Google OAuth integration",
           "Mobile layouts with Ionic and Capacitor",
           "E-commerce admin panels"
         ],
@@ -120,31 +143,32 @@
       },
       {
         "company": "ONAT",
-        "role": "Frontend Developer",
+        "role": "Full Stack Developer",
         "type": "Full-time",
         "period": "Sep 2019 — Aug 2022",
         "location": "Hybrid, Cuba",
         "highlights": [
-          "Frontend developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
-          "Built and maintained a reusable Vue component library shared across multiple admin modules",
-          "REST and GraphQL API integration with client-side caching and rendering optimization",
-          "Iterated UX based on direct feedback from internal operational teams",
-          "Three-year tenure with progressive ownership of larger surfaces and feature areas"
+          "Full-stack developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
+          "Built and maintained a reusable Vue component library shared across multiple administrative modules",
+          "Backend development and database modeling with Django, exposing REST and GraphQL APIs",
+          "Client-side API integration with caching and rendering optimization",
+          "UX iteration based on direct feedback from internal operations teams",
+          "Three-year tenure with growing responsibility over broader areas and features"
         ]
       },
       {
         "company": "El Catre",
-        "role": "Frontend Developer",
+        "role": "Full Stack Developer",
         "type": "Full-time",
         "period": "Aug 2019 — Sep 2020",
         "location": "Remote, Cuba",
         "highlights": [
           "Built the frontend of Cuba's first independent e-commerce platform: Nuxt 2 + Vue 2 + Vuex + Buefy on an Apollo GraphQL client",
-          "Seller storefronts, product catalog, cart, checkout, and seller analytics dashboards with ApexCharts",
-          "Real-time chat and notifications over WebSockets backed by Django Channels + Redis",
-          "Federated auth: Firebase phone verification, Facebook/Google OAuth, JWT",
-          "PWA + SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
-          "Backend support on Django + Graphene as secondary contributor (not the primary backend developer)"
+          "Seller storefronts, product catalog, cart, checkout and seller analytics dashboards with ApexCharts",
+          "Real-time chat and notifications via WebSocket with Django Channels + Redis",
+          "Federated authentication: Firebase phone verification, Facebook/Google OAuth, JWT",
+          "PWA and SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
+          "Backend support with Django + Graphene (GraphQL): database modeling and API endpoints"
         ]
       }
     ]
@@ -153,8 +177,8 @@
     "title": "Skills",
     "subtitle": "Technologies behind your next project.",
     "coreStack": "Core Stack",
-    "coreStackLabel": "Daily use, 6+ years",
-    "proficient": "Proficient",
+    "coreStackLabel": "Daily use, 7+ years",
+    "proficient": "Advanced",
     "workingKnowledge": "Working Knowledge",
     "tools": "Tools"
   },
@@ -474,7 +498,7 @@
       "title": "El Catre — Cuba's First Independent E-Commerce Platform",
       "client": "Startup (Cuba)",
       "year": "2020",
-      "role": "Frontend Developer",
+      "role": "Full Stack Developer",
       "challenge": "El Catre set out to be Cuba's first independent e-commerce platform — a marketplace where small Cuban businesses could open storefronts, list products, run promotions, and accept payments. Building for Cuba meant working around US-embargo constraints on payment rails, designing for intermittent connectivity, and combining a social-commerce layer — real-time chat, push notifications, sharing — on top of a conventional cart and checkout.",
       "approach": "I built the frontend in Nuxt 2 with Vue 2, Vuex, and Buefy on top of an Apollo GraphQL client talking to a Django + Graphene backend. Auth federated Firebase phone verification with Facebook/Google OAuth and JWT tokens issued by the backend. Real-time chat and live notifications ran over Django Channels via vue-native-websocket, push notifications went through OneSignal, and ApexCharts powered the seller analytics dashboards. PWA support and server-side rendering kept the app usable on slow connections.",
       "stack": "Nuxt 2, Vue 2, Vuex, Buefy, Apollo GraphQL, vue-native-websocket, OneSignal, Firebase phone auth, Facebook/Google OAuth, Vuelidate, ApexCharts, PWA, Vue I18n, reCAPTCHA",
@@ -674,8 +698,8 @@
   },
   "meta": {
     "title": "Eduardo Castillo | Frontend Developer — Vue 3, Nuxt 3, TypeScript",
-    "description": "Frontend Developer with 6+ years of experience building enterprise web applications. Specializing in Vue 3, Nuxt 3, and TypeScript. Available for hire — remote from Italy.",
-    "ogDescription": "Frontend Developer specializing in Vue 3, Nuxt 3, and TypeScript. 6+ years building enterprise web apps for teams delivering to UN agencies, EBU, and Reply.",
+    "description": "Frontend Developer with 7+ years of experience building enterprise web applications. Specializing in Vue 3, Nuxt 3, and TypeScript. Available for hire — remote from Italy.",
+    "ogDescription": "Frontend Developer specializing in Vue 3, Nuxt 3, and TypeScript. 7+ years building enterprise web apps for teams delivering to UN agencies, EBU, and Reply.",
     "keywords": ["Frontend Developer", "Frontend Developer", "Freelance Web Developer", "Vue.js Developer", "Nuxt.js Developer", "TypeScript Developer", "React Developer", "Next.js Developer", "Golang Developer", "Hire Frontend Developer", "Hire Web Developer", "Web Application Development", "Custom Website Development", "Web Engineer", "Remote Developer Italy", "Website Development Services", "SPA Development", "Progressive Web App Developer", "UI UX Developer", "Eduardo Castillo", "Hire Frontend Developer", "Freelance Frontend Developer Italy", "Web Developer for Startups", "JavaScript Developer for Hire", "Python Django Developer", "GraphQL API Developer", "Docker DevOps Developer", "Responsive Website Design", "E-commerce Web Developer", "Web App Development Services", "Remote Software Engineer Europe", "Vue.js Consultant", "React Consultant", "Website Performance Optimization", "Technical Consulting Web Development", "Figma to Code Developer", "Cross-Browser Development", "REST API Developer", "Tailwind CSS Developer", "Single Page Application Developer"],
     "workTitle": "Work — Eduardo Castillo | Frontend Developer",
     "workDescription": "Explore websites and web applications I've worked on for clients including UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, NGOs, AdTech (UTIQ), e-commerce, and startups — with detailed case studies.",

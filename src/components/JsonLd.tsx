@@ -10,7 +10,7 @@ export function JsonLd({ locale }: { locale: string }) {
     familyName: "Castillo",
     jobTitle: "Frontend Developer",
     description:
-      "Frontend Developer with 6+ years of experience specializing in Vue 3, Nuxt 3, React, Next.js, and TypeScript. Has contributed to enterprise web work for UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, NGOs (Covenant House), and AdTech platforms (UTIQ). Available for hire — remote from Italy.",
+      "Frontend Developer with 7+ years of experience specializing in Vue 3, Nuxt 3, React, Next.js, and TypeScript. Has contributed to enterprise web work for UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, NGOs (Covenant House), and AdTech platforms (UTIQ). Available for hire — remote from Italy.",
     url: `${baseUrl}/${locale}`,
     sameAs: [
       "https://github.com/edwardcastle",
@@ -99,7 +99,7 @@ export function JsonLd({ locale }: { locale: string }) {
     areaServed: "Worldwide",
     serviceType: "Web Development",
     description:
-      "Frontend web development, UI/UX implementation, DevOps & deployment, and technical consulting. 6+ years of experience serving companies across Europe and the Americas.",
+      "Frontend web development, UI/UX implementation, DevOps & deployment, and technical consulting. 7+ years of experience serving companies across Europe and the Americas.",
     priceRange: "$$",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -203,7 +203,7 @@ export function JsonLd({ locale }: { locale: string }) {
         name: "How much experience does Eduardo have?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Eduardo has over 6 years of professional experience and has worked with 8+ companies across different industries and countries.",
+          text: "Eduardo has over 7 years of professional experience and has worked with 8+ companies across different industries and countries.",
         },
       },
       {

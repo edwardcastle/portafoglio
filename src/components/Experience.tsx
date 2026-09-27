@@ -12,7 +12,21 @@ interface Job {
   period: string;
   location: string;
   highlights: string[];
+  groups?: Array<{ title: string; highlights: string[] }>;
   links?: Array<{ label: string; url: string }>;
+}
+
+function HighlightList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-1.5">
+      {items.map((item, i) => (
+        <li key={i} className="text-sm text-muted flex items-start gap-2">
+          <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-accent" />
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function TimelineItem({ job, index }: { job: Job; index: number }) {
@@ -56,14 +70,14 @@ function TimelineItem({ job, index }: { job: Job; index: number }) {
           </div>
         </div>
 
-        <ul className="space-y-1.5">
-          {job.highlights.map((item, i) => (
-            <li key={i} className="text-sm text-muted flex items-start gap-2">
-              <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-accent" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <HighlightList items={job.highlights} />
+
+        {job.groups?.map((group) => (
+          <div key={group.title} className="mt-4">
+            <h4 className="text-sm font-semibold text-foreground mb-2">{group.title}</h4>
+            <HighlightList items={group.highlights} />
+          </div>
+        ))}
 
         {job.links && job.links.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-3 pt-3 border-t border-border">

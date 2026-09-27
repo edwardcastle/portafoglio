@@ -25,9 +25,9 @@ export function buildSystemPrompt(dict: Dictionary, locale: Locale): string {
   const lang = localeNames[locale];
 
   const skills = [
-    `Core Stack (daily use, 6+ years): Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git`,
-    `Proficient: React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, Canvas/SVG animations`,
-    `Working Knowledge: Go, Python, Django, GraphQL, Solana/Web3, Firebase, Ionic/Capacitor`,
+    `Core Stack (daily use, 7+ years): Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git`,
+    `Advanced: React, Next.js, JavaScript (ES6+), Python, Sass, Vitest, Jest, Cypress, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG animations`,
+    `Working Knowledge: FastAPI, AWS (ECS/Fargate, OpenSearch, Redshift, SES), PostgreSQL, Contentful, Keycloak, WebSocket (STOMP/SockJS), next-intl, Go, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi`,
     `Tools: VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux`,
   ].join("\n");
 
@@ -36,7 +36,10 @@ export function buildSystemPrompt(dict: Dictionary, locale: Locale): string {
     .join("\n");
 
   const experience = dict.experience.jobs
-    .map((j) => `- ${j.company} | ${j.role} | ${j.period} | ${j.location}\n  ${j.highlights.join("; ")}`)
+    .map((j) => {
+      const groups = (j.groups ?? []).map((g) => `\n  ${g.title}: ${g.highlights.join("; ")}`).join("");
+      return `- ${j.company} | ${j.role} | ${j.period} | ${j.location}\n  ${j.highlights.join("; ")}${groups}`;
+    })
     .join("\n");
 
   const projects = dict.work.sites
