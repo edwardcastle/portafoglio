@@ -2,646 +2,755 @@ const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const path = require("path");
 
-const MARGIN = 50;
+const MARGIN = 56;
 const PAGE_WIDTH = 595.28; // A4
+const PAGE_HEIGHT = 841.89;
 const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2;
+const CONTENT_BOTTOM = PAGE_HEIGHT - 60;
+
+const BLUE = "#1F4E79";
+const TEXT = "#222222";
+const GRAY = "#555555";
+
+const BULLET_INDENT = 8;
+const BULLET_TEXT_INDENT = 18;
+const LINE_GAP = 1.5;
+
+const contact = {
+  name: "Eduardo Castillo",
+  title: "Frontend Developer / Web Engineer",
+  phone: "+39 348 3448387",
+  email: "sir.edwardcastle@gmail.com",
+  github: "github.com/edwardcastle",
+  linkedin: "linkedin.com/in/eduardo-castillo-dev",
+};
 
 const cvData = {
   en: {
-    name: "Eduardo Castillo",
-    title: "Frontend Developer / Web Engineer",
+    ...contact,
     location: "Remote, Italy",
-    phone: "+39 348 3448387",
-    email: "sir.edwardcastle@gmail.com",
-    github: "edwardcastle",
-    linkedin: "eduardo-castillo-dev",
-    profileTitle: "Professional Profile",
+    profileTitle: "Professional Summary",
     profile:
-      "Frontend Developer with over 6 years of experience designing and developing modern, high-performance, user-oriented web applications. Specialized in Vue.js, Nuxt.js, and TypeScript, with web work spanning UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), NGOs, and startups. Strong focus on code quality, accessibility, performance optimization, and design-system implementation. Experienced collaborating with designers and backend teams to deliver fluid, scalable, responsive interfaces.",
+      "Frontend Developer with 7+ years of experience designing and building modern, high-performance, user-centered web applications. Specialized in Vue.js, Nuxt.js and TypeScript, with full-stack experience in React/Next.js and Python/FastAPI backends. Project experience for UN agencies (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), aerospace/logistics (Altec), industry, NGOs and startups. Strong focus on code quality, accessibility, performance optimization and design system implementation. Experienced in collaborating with designers and backend teams to deliver fluid, scalable and responsive interfaces.",
     experienceTitle: "Work Experience",
     jobs: [
       {
-        company: "Frontend Developer -- Enterprise Projects",
-        role: "Employer: Dacomat S.r.l. - Delivery partner: Reply S.p.A.",
-        location: "Remote, Italy",
-        period: "Jun 2025 - Present",
+        title: "Frontend Developer / Web Engineer — Enterprise Projects",
+        org: "Employer: Dacomat S.r.l. — Delivery partner: Reply S.p.A.",
+        period: "Jun 2025 – Present",
         highlights: [
-          "Frontend development for enterprise clients in the energy and industrial sectors",
-          "Interactive dashboards and data management interfaces built with Vue 3 and TypeScript",
-          "Dynamic tables with filtering, pagination, and optimized sorting",
-          "File import/export flows and large-dataset handling",
-          "Performance optimization: lazy loading, code splitting, reusable component libraries",
+          "Development for enterprise clients in the aerospace/logistics (Altec), industrial (Ferwood) and energy (Eni) sectors.",
+        ],
+        groups: [
+          {
+            title: "LISUP (Altec) — web-based logistics / warehouse management system (Vue 3, PrimeVue 4, TypeScript, Tailwind):",
+            highlights: [
+              "Interactive dashboards and data management interfaces for logistics modules (IWM, spare parts, shipments, inbound/outbound inspections, TRF)",
+              "Dynamic tables with filtering, pagination and optimized sorting",
+              "File import/export flows and handling of large data volumes",
+              "SSO authentication with Keycloak, internationalization (vue-i18n) and real-time updates via WebSocket (STOMP/SockJS)",
+              "Performance optimization (lazy loading, code splitting, reusable components); testing with Vitest and Cypress, code quality with SonarQube",
+            ],
+          },
+          {
+            title: "Ferwood — e-commerce platform for refurbished industrial machinery (replacing the legacy Magento/Elasticsearch stack):",
+            highlights: [
+              "New multi-market public website (Next.js 16, React 19, TypeScript, Tailwind): catalog with data-driven filters from OpenSearch, i18n across 10+ languages (next-intl), SEO overhaul (metadata, JSON-LD, hreflang, 301 redirects + proxy for legacy URLs), Contentful CMS, authentication and wishlist",
+              "Custom backend API (FastAPI, Python 3.13): Redshift-to-OpenSearch reindexing pipeline, catalog/search and recommendation APIs, write integration with Dynamics CRM, transactional emails (AWS SES / Microsoft 365)",
+              "Deployment on AWS ECS Fargate behind ALB via CodePipeline, Docker builds with test gates, automated reindexing via EventBridge Scheduler",
+              "Internal tools (Next.js, React, PrimeReact) replacing legacy Excel pricing tools (\"Prova Prezzi\" price calculator, unified price list)",
+            ],
+          },
+          {
+            title: "Eni:",
+            highlights: ["Bug fixing and maintenance of data management interfaces"],
+          },
         ],
       },
       {
-        company: "Elkanodata",
-        role: "Frontend Developer",
-        location: "Remote, Spain",
-        period: "Sep 2023 - Jun 2024",
+        title: "Frontend Developer",
+        org: "Elkanodata — Remote, Spain",
+        period: "Sep 2023 – Jun 2024",
         highlights: [
-          "Worked alongside two senior frontend developers on enterprise client engagements",
+          "Worked alongside two senior frontend developers on projects for enterprise clients",
           "UN agencies: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
-          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration on existing vanilla frontend)",
+          "Other clients: EBU Eurovision News (newsroom microsite), Covenant House (WordPress CMS integration into an existing vanilla frontend)",
           "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
-        company: "Teavaro",
-        role: "Frontend Developer",
-        location: "Remote, UK",
-        period: "Aug 2022 - Sep 2023",
+        title: "Frontend Developer",
+        org: "Teavaro — Remote, United Kingdom",
+        period: "Aug 2022 – Sep 2023",
         highlights: [
-          "UTIQ -- corporate marketing site (Vue.js + TypeScript) supporting the TrustPid-to-UTIQ rebrand and expansion across European markets",
-          "Admin platform maintenance and development for user and data management",
-          "JavaScript to TypeScript migration for improved stability",
-          "Reusable Vue components and automated testing implementation",
-          "Backend collaboration for API optimization and caching",
+          "UTIQ — corporate marketing website (Vue.js + TypeScript) supporting the rebrand from TrustPid to UTIQ and expansion into European markets",
+          "Maintenance and development of the admin platform for user and data management",
+          "Migration from JavaScript to TypeScript for greater stability",
+          "Implementation of reusable Vue components and automated tests",
+          "Collaboration with the backend team on API optimization and caching",
         ],
       },
       {
-        company: "JADE Solutions",
-        role: "Frontend Developer (Freelance, part-time)",
-        location: "Remote, Cuba",
-        period: "Nov 2022 - Jul 2023",
+        title: "Frontend Developer (Freelance, part-time)",
+        org: "JADE Solutions — Remote, Cuba",
+        period: "Nov 2022 – Jul 2023",
         highlights: [
-          "Luna Tour -- Vue 3 + Vite SPA for travel destination discovery (multilingual, mobile-first, WhatsApp handoff)",
-          "CMS pages, SEO optimization, and Google OAuth integration",
+          "Luna Tour — Vue 3 + Vite SPA for discovering tourist destinations (multilingual, mobile-first, WhatsApp handoff)",
+          "CMS pages, SEO optimization and Google OAuth integration",
           "Mobile layouts with Ionic and Capacitor",
           "E-commerce admin panels",
         ],
       },
       {
-        company: "ONAT",
-        role: "Frontend Developer",
-        location: "Hybrid, Cuba",
-        period: "Sep 2019 - Aug 2022",
+        title: "Full Stack Developer",
+        org: "ONAT — Hybrid, Cuba",
+        period: "Sep 2019 – Aug 2022",
         highlights: [
-          "Frontend developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
-          "Built and maintained a reusable Vue component library shared across multiple admin modules",
-          "REST and GraphQL API integration with client-side caching and rendering optimization",
-          "Iterated UX based on direct feedback from internal operational teams",
-          "Three-year tenure with progressive ownership of larger surfaces and feature areas",
+          "Full-stack developer on internal administrative systems for Cuba's National Tax Administration Office (ONAT)",
+          "Built and maintained a reusable Vue component library shared across multiple administrative modules",
+          "Backend development and database modeling with Django, exposing REST and GraphQL APIs",
+          "Client-side API integration with caching and rendering optimization",
+          "UX iteration based on direct feedback from internal operations teams",
+          "Three-year tenure with growing responsibility over broader areas and features",
         ],
       },
       {
-        company: "El Catre",
-        role: "Frontend Developer",
-        location: "Remote, Cuba",
-        period: "Aug 2019 - Sep 2020",
+        title: "Full Stack Developer",
+        org: "El Catre — Remote, Cuba",
+        period: "Aug 2019 – Sep 2020",
         highlights: [
           "Built the frontend of Cuba's first independent e-commerce platform: Nuxt 2 + Vue 2 + Vuex + Buefy on an Apollo GraphQL client",
-          "Seller storefronts, product catalog, cart, checkout, and seller analytics dashboards with ApexCharts",
-          "Real-time chat and notifications over WebSockets backed by Django Channels + Redis",
-          "Federated auth: Firebase phone verification, Facebook/Google OAuth, JWT",
-          "PWA + SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
-          "Backend support on Django + Graphene as secondary contributor (not the primary backend developer)",
+          "Seller storefronts, product catalog, cart, checkout and seller analytics dashboards with ApexCharts",
+          "Real-time chat and notifications via WebSocket with Django Channels + Redis",
+          "Federated authentication: Firebase phone verification, Facebook/Google OAuth, JWT",
+          "PWA and SSR optimization tuned for Cuban network conditions; image cropping and QR code generation",
+          "Backend support with Django + Graphene (GraphQL): database modeling and API endpoints",
         ],
       },
     ],
-    personalProjectsTitle: "Freelance Projects",
-    personalProjects: [
+    projectsTitle: "Freelance Projects",
+    projects: [
       {
-        name: "ZenO -- Site Improvements & Email Integration",
+        title: "ZenO — Website improvements and email integration",
         period: "2026",
         highlights: [
-          "Responsiveness improvements, DNS and redirect setup",
-          "Resend integration for questionnaire delivery to client and newsletter subscriptions",
+          "Responsiveness improvements, DNS configuration and redirects",
+          "Resend integration for sending client questionnaires and newsletter sign-ups",
         ],
       },
       {
-        name: "Casa in Ordine",
-        period: "2025-2026",
+        title: "Casa in Ordine",
+        period: "2025 – 2026",
         highlights: [
-          "Multilingual (IT/EN/ES) home-organization site for a Rome-based business",
-          "Next.js 16 + React 19 + Tailwind v4, with 9-step Preventivo quote wizard",
+          "Multilingual website (IT/EN/ES) for a Rome-based home organizing business",
+          "Next.js 16 + React 19 + Tailwind v4, with a 9-step quote wizard",
           "Brevo email integration, Umami analytics, GDPR cookie consent",
         ],
       },
       {
-        name: "FreeMock",
-        period: "2025-present",
+        title: "FreeMock",
+        period: "2025 – Present",
         highlights: [
-          "Meme creator and social platform with web3 wallet auth (Reown AppKit)",
-          "Nuxt 3 + Pinia + shadcn-vue + Fabric.js editor + WebSocket chat with Signal Protocol",
-          "Go + govips image-rendering microservice; CI/CD with SonarQube and Codecov",
+          "Meme creator and social platform with web3 wallet authentication (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + Fabric.js editor + WebSocket chat with Signal protocol",
+          "Image rendering microservice in Go + govips; CI/CD with SonarQube and Codecov",
         ],
       },
       {
-        name: "BattleBucks -- Play-to-Earn on Solana",
+        title: "BattleBucks — Play-to-Earn on Solana",
         period: "2025",
         highlights: [
-          "Real-money battle royale and 1v1 PvP game on Solana, distributed as PWA and native iOS/Android",
-          "Nuxt 3 + Pinia + Reown AppKit for Solana wallet connect and SIWX authentication",
-          "Custom WebSocket store for real-time match flow and chat with reconnect logic",
-          "Capacitor for native iOS/Android builds from a single Nuxt source; Sentry for observability",
+          "Real-money battle royale and 1v1 PvP game on Solana, shipped as a PWA and native iOS/Android app",
+          "Nuxt 3 + Pinia + Reown AppKit for Solana wallet connection and SIWX authentication",
+          "Custom WebSocket store for real-time gameplay flow and chat with reconnection logic",
+          "Capacitor for native iOS/Android builds from a single Nuxt codebase; Sentry for observability",
         ],
       },
       {
-        name: "Cubita Producciones",
+        title: "Cubita Producciones",
         period: "2025",
         highlights: [
-          "Trilingual (ES/EN/IT) Cuban talent agency site with artist catalog and booking flow",
+          "Trilingual website (ES/EN/IT) for a Cuban talent agency, with artist catalog and booking flow",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
-          "Strapi v5 CMS scaffolded for eventual editorial cutover",
+          "Strapi v5 CMS set up for a future editorial handover",
         ],
       },
       {
-        name: "Gitfast",
+        title: "Gitfast",
         period: "2024",
         highlights: [
-          "Mexico-based freelance engagement",
-          "New features and reusable UI component library",
+          "Freelance collaboration with a client in Mexico",
+          "New features and a reusable UI component library",
           "Performance optimization and frontend refactoring for scalability and readability",
         ],
       },
     ],
     educationTitle: "Education",
     education: {
-      school: "UCI University",
-      degree: "Computer Science Degree",
-      location: "Cuba",
-      period: "2013 - 2019",
+      title: "B.Sc. in Computer Science",
+      org: "Universidad de las Ciencias Informáticas (UCI), Cuba",
+      period: "2013 – 2019",
       highlights: [
         "Specialization in Java and object-oriented programming",
-        "ACM-ICPC competition participation",
-        "Thesis: CAD system development with C++ and Qt",
+        "Participation in the ACM-ICPC programming contest",
+        "Thesis: development of a CAD system with C++ and Qt",
       ],
     },
     skillsTitle: "Technical Skills",
     skills: {
-      "Core Stack": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Proficient: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG animations",
-      "Working Knowledge": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      "Core stack": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
+      Advanced: "React, Next.js, JavaScript (ES6+), Python, Sass, Vitest, Jest, Cypress, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG animations",
+      "Working knowledge": "FastAPI, AWS (ECS/Fargate, OpenSearch, Redshift, SES), PostgreSQL, Contentful, Keycloak, WebSocket (STOMP/SockJS), next-intl, Go, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Tools: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Languages",
     languages: {
       Spanish: "Native",
-      English: "Professional (written and spoken)",
+      English: "Professional working proficiency (written and spoken)",
       Italian: "Intermediate (written and spoken)",
     },
   },
   es: {
-    name: "Eduardo Castillo",
-    title: "Frontend Developer / Web Engineer",
+    ...contact,
     location: "Remoto, Italia",
-    phone: "+39 348 3448387",
-    email: "sir.edwardcastle@gmail.com",
-    github: "edwardcastle",
-    linkedin: "eduardo-castillo-dev",
     profileTitle: "Perfil Profesional",
     profile:
-      "Desarrollador Frontend con m\u00e1s de 6 a\u00f1os de experiencia en el dise\u00f1o y desarrollo de aplicaciones web modernas, de alto rendimiento y orientadas al usuario. Especializado en Vue.js, Nuxt.js y TypeScript, con trabajo web abarcando agencias de la ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), ONGs y startups. Fuerte enfoque en la calidad del c\u00f3digo, accesibilidad, optimizaci\u00f3n del rendimiento e implementaci\u00f3n de sistemas de dise\u00f1o. Experiencia colaborando con dise\u00f1adores y equipos backend para entregar interfaces fluidas, escalables y responsive.",
+      "Desarrollador Frontend con más de 7 años de experiencia en el diseño y desarrollo de aplicaciones web modernas, de alto rendimiento y centradas en el usuario. Especializado en Vue.js, Nuxt.js y TypeScript, con experiencia full-stack en React/Next.js y backends Python/FastAPI. Experiencia en proyectos para agencias de la ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), sector aeroespacial/logístico (Altec), industria, ONG y startups. Fuerte enfoque en la calidad del código, la accesibilidad, la optimización del rendimiento y la implementación de design systems. Experiencia colaborando con diseñadores y equipos backend para entregar interfaces fluidas, escalables y responsive.",
     experienceTitle: "Experiencia Laboral",
     jobs: [
       {
-        company: "Frontend Developer -- Proyectos Enterprise",
-        role: "Empleador: Dacomat S.r.l. - Partner de entrega: Reply S.p.A.",
-        location: "Remoto, Italia",
-        period: "Jun 2025 - Presente",
+        title: "Frontend Developer / Web Engineer — Proyectos Enterprise",
+        org: "Empleador: Dacomat S.r.l. — Partner de entrega: Reply S.p.A.",
+        period: "Jun 2025 – Presente",
         highlights: [
-          "Desarrollo frontend para clientes enterprise en los sectores de energ\u00eda e industria",
-          "Dashboards interactivos e interfaces de gesti\u00f3n de datos con Vue 3 y TypeScript",
-          "Tablas din\u00e1micas con filtrado, paginaci\u00f3n y ordenaci\u00f3n optimizada",
-          "Flujos de importaci\u00f3n/exportaci\u00f3n de archivos y manejo de grandes vol\u00famenes de datos",
-          "Optimizaci\u00f3n de rendimiento: lazy loading, code splitting, librer\u00edas de componentes reutilizables",
+          "Desarrollo para clientes enterprise en los sectores aeroespacial/logístico (Altec), industrial (Ferwood) y energético (Eni).",
+        ],
+        groups: [
+          {
+            title: "LISUP (Altec) — sistema web de logística / gestión de almacén (Vue 3, PrimeVue 4, TypeScript, Tailwind):",
+            highlights: [
+              "Dashboards interactivos e interfaces de gestión de datos para los módulos logísticos (IWM, repuestos, envíos, inspecciones de entrada/salida, TRF)",
+              "Tablas dinámicas con filtrado, paginación y ordenación optimizada",
+              "Flujos de importación/exportación de archivos y manejo de grandes volúmenes de datos",
+              "Autenticación SSO con Keycloak, internacionalización (vue-i18n) y actualizaciones en tiempo real vía WebSocket (STOMP/SockJS)",
+              "Optimización del rendimiento (lazy loading, code splitting, componentes reutilizables); testing con Vitest y Cypress, calidad de código con SonarQube",
+            ],
+          },
+          {
+            title: "Ferwood — plataforma e-commerce de maquinaria industrial reacondicionada (en sustitución del stack legacy Magento/Elasticsearch):",
+            highlights: [
+              "Nuevo sitio público multimercado (Next.js 16, React 19, TypeScript, Tailwind): catálogo con filtros data-driven desde OpenSearch, i18n en más de 10 idiomas (next-intl), renovación SEO (metadata, JSON-LD, hreflang, redirecciones 301 + proxy para URLs legacy), CMS Contentful, autenticación y wishlist",
+              "API backend a medida (FastAPI, Python 3.13): pipeline de reindexación de Redshift a OpenSearch, APIs de catálogo/búsqueda y recomendación, integración de escritura con Dynamics CRM, emails transaccionales (AWS SES / Microsoft 365)",
+              "Despliegue en AWS ECS Fargate detrás de ALB mediante CodePipeline, builds Docker con gates de tests, reindexación automatizada vía EventBridge Scheduler",
+              "Herramientas internas (Next.js, React, PrimeReact) en sustitución de las antiguas herramientas Excel de pricing (calculadora \"Prova Prezzi\", lista de precios unificada)",
+            ],
+          },
+          {
+            title: "Eni:",
+            highlights: ["Corrección de bugs y mantenimiento de interfaces de gestión de datos"],
+          },
         ],
       },
       {
-        company: "Elkanodata",
-        role: "Frontend Developer",
-        location: "Remoto, Espa\u00f1a",
-        period: "Sep 2023 - Jun 2024",
+        title: "Frontend Developer",
+        org: "Elkanodata — Remoto, España",
+        period: "Sep 2023 – Jun 2024",
         highlights: [
-          "Trabaj\u00e9 junto a dos desarrolladores frontend senior en proyectos para clientes enterprise",
-          "Agencias de la ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Herramienta UHC), IOM Migraci\u00f3n Clim\u00e1tica, IFAD RIDE 2023, Peace Begins With Me",
-          "Otros clientes: EBU Eurovision News (microsite de noticias), Covenant House (integraci\u00f3n de WordPress como CMS sobre frontend vanilla existente)",
+          "Trabajo junto a dos desarrolladores frontend senior en proyectos para clientes enterprise",
+          "Agencias de la ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
+          "Otros clientes: EBU Eurovision News (micrositio de redacción), Covenant House (integración de WordPress como CMS sobre un frontend vanilla existente)",
           "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
-        company: "Teavaro",
-        role: "Frontend Developer",
-        location: "Remoto, Reino Unido",
-        period: "Ago 2022 - Sep 2023",
+        title: "Frontend Developer",
+        org: "Teavaro — Remoto, Reino Unido",
+        period: "Ago 2022 – Sep 2023",
         highlights: [
-          "UTIQ -- sitio corporativo (Vue.js + TypeScript) acompa\u00f1ando el rebrand TrustPid-a-UTIQ y la expansi\u00f3n por mercados europeos",
-          "Mantenimiento y desarrollo de plataforma admin para gesti\u00f3n de usuarios y datos",
-          "Migraci\u00f3n de JavaScript a TypeScript para mayor estabilidad",
-          "Componentes Vue reutilizables e implementaci\u00f3n de tests automatizados",
-          "Colaboraci\u00f3n con backend para optimizaci\u00f3n de API y caching",
+          "UTIQ — sitio corporativo de marketing (Vue.js + TypeScript) en apoyo al rebranding de TrustPid a UTIQ y a la expansión en los mercados europeos",
+          "Mantenimiento y desarrollo de la plataforma de administración para la gestión de usuarios y datos",
+          "Migración de JavaScript a TypeScript para una mayor estabilidad",
+          "Implementación de componentes Vue reutilizables y tests automatizados",
+          "Colaboración con el equipo backend en la optimización de APIs y caching",
         ],
       },
       {
-        company: "JADE Solutions",
-        role: "Frontend Developer (Freelance, medio tiempo)",
-        location: "Remoto, Cuba",
-        period: "Nov 2022 - Jul 2023",
+        title: "Frontend Developer (Freelance, medio tiempo)",
+        org: "JADE Solutions — Remoto, Cuba",
+        period: "Nov 2022 – Jul 2023",
         highlights: [
-          "Luna Tour -- SPA Vue 3 + Vite para descubrimiento de destinos de viaje (multiling\u00fce, mobile-first, handoff a WhatsApp)",
-          "P\u00e1ginas CMS, optimizaci\u00f3n SEO y Google OAuth",
-          "Layouts m\u00f3viles con Ionic y Capacitor",
-          "Paneles de administraci\u00f3n e-commerce",
+          "Luna Tour — SPA Vue 3 + Vite para descubrir destinos turísticos (multilingüe, mobile-first, handoff a WhatsApp)",
+          "Páginas CMS, optimización SEO e integración de Google OAuth",
+          "Layouts móviles con Ionic y Capacitor",
+          "Paneles de administración e-commerce",
         ],
       },
       {
-        company: "ONAT",
-        role: "Frontend Developer",
-        location: "H\u00edbrido, Cuba",
-        period: "Sep 2019 - Ago 2022",
+        title: "Full Stack Developer",
+        org: "ONAT — Híbrido, Cuba",
+        period: "Sep 2019 – Ago 2022",
         highlights: [
-          "Desarrollador frontend en sistemas administrativos internos para la Oficina Nacional de Administraci\u00f3n Tributaria (ONAT) de Cuba",
-          "Constru\u00ed y mantuve una librer\u00eda de componentes Vue reutilizables compartida entre m\u00faltiples m\u00f3dulos admin",
-          "Integraci\u00f3n de APIs REST y GraphQL con cach\u00e9 del lado del cliente y optimizaci\u00f3n de rendering",
-          "Iteraci\u00f3n de UX basada en feedback directo de equipos operativos internos",
-          "Tenencia de tres a\u00f1os con propiedad progresiva sobre superficies y \u00e1reas funcionales m\u00e1s amplias",
+          "Desarrollador full-stack en sistemas administrativos internos para la Oficina Nacional de Administración Tributaria (ONAT) de Cuba",
+          "Construcción y mantenimiento de una librería de componentes Vue reutilizables, compartida entre múltiples módulos administrativos",
+          "Desarrollo backend y modelado de bases de datos con Django, exponiendo APIs REST y GraphQL",
+          "Integración de APIs del lado del cliente con caché y optimización del rendering",
+          "Iteración de UX basada en el feedback directo de los equipos operativos internos",
+          "Permanencia de tres años con responsabilidad creciente sobre áreas y funcionalidades más amplias",
         ],
       },
       {
-        company: "El Catre",
-        role: "Frontend Developer",
-        location: "Remoto, Cuba",
-        period: "Ago 2019 - Sep 2020",
+        title: "Full Stack Developer",
+        org: "El Catre — Remoto, Cuba",
+        period: "Ago 2019 – Sep 2020",
         highlights: [
-          "Constru\u00ed el frontend de la primera plataforma e-commerce independiente de Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy sobre un cliente Apollo GraphQL",
-          "Tiendas de vendedores, cat\u00e1logo de productos, carrito, checkout y dashboards de anal\u00edtica con ApexCharts",
-          "Chat y notificaciones en tiempo real sobre WebSockets respaldado por Django Channels + Redis",
-          "Autenticaci\u00f3n federada: verificaci\u00f3n telef\u00f3nica de Firebase, OAuth de Facebook/Google, JWT",
-          "Optimizaci\u00f3n PWA + SSR ajustada para condiciones de red cubanas; recorte de im\u00e1genes y generaci\u00f3n de QR",
-          "Soporte al backend en Django + Graphene como contribuidor secundario (no el desarrollador backend principal)",
+          "Desarrollo del frontend de la primera plataforma e-commerce independiente de Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy sobre un cliente Apollo GraphQL",
+          "Tiendas de vendedores, catálogo de productos, carrito, checkout y dashboards de analítica para vendedores con ApexCharts",
+          "Chat y notificaciones en tiempo real vía WebSocket con Django Channels + Redis",
+          "Autenticación federada: verificación telefónica de Firebase, OAuth de Facebook/Google, JWT",
+          "PWA y optimización SSR ajustadas a las condiciones de red cubanas; recorte de imágenes y generación de códigos QR",
+          "Soporte backend con Django + Graphene (GraphQL): modelado de bases de datos y endpoints de API",
         ],
       },
     ],
-    personalProjectsTitle: "Proyectos Freelance",
-    personalProjects: [
+    projectsTitle: "Proyectos Freelance",
+    projects: [
       {
-        name: "ZenO -- Mejoras del Sitio e Integraci\u00f3n de Email",
+        title: "ZenO — Mejoras del sitio e integración de email",
         period: "2026",
         highlights: [
-          "Mejoras de responsividad, configuraci\u00f3n de DNS y redirecciones",
-          "Integraci\u00f3n de Resend para entrega de cuestionarios al cliente y suscripciones al newsletter",
+          "Mejoras de responsividad, configuración de DNS y redirecciones",
+          "Integración de Resend para el envío de cuestionarios al cliente y las suscripciones a la newsletter",
         ],
       },
       {
-        name: "Casa in Ordine",
-        period: "2025-2026",
+        title: "Casa in Ordine",
+        period: "2025 – 2026",
         highlights: [
-          "Sitio multiling\u00fce (IT/EN/ES) de organizaci\u00f3n del hogar para un negocio romano",
-          "Next.js 16 + React 19 + Tailwind v4, con wizard de Preventivo de 9 pasos",
-          "Integraci\u00f3n de Brevo para email, anal\u00edtica Umami, consentimiento de cookies GDPR",
+          "Sitio multilingüe (IT/EN/ES) para un negocio de organización del hogar con sede en Roma",
+          "Next.js 16 + React 19 + Tailwind v4, con un wizard de presupuesto de 9 pasos",
+          "Integración de email con Brevo, analítica Umami, consentimiento de cookies GDPR",
         ],
       },
       {
-        name: "FreeMock",
-        period: "2025-presente",
+        title: "FreeMock",
+        period: "2025 – Presente",
         highlights: [
-          "Creador de memes y plataforma social con autenticaci\u00f3n web3 (Reown AppKit)",
-          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con Signal Protocol",
-          "Microservicio Go + govips para renderizado de im\u00e1genes; CI/CD con SonarQube y Codecov",
+          "Creador de memes y plataforma social con autenticación mediante wallet web3 (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con protocolo Signal",
+          "Microservicio de renderizado de imágenes en Go + govips; CI/CD con SonarQube y Codecov",
         ],
       },
       {
-        name: "BattleBucks -- Play-to-Earn en Solana",
+        title: "BattleBucks — Play-to-Earn en Solana",
         period: "2025",
         highlights: [
-          "Juego battle royale y 1v1 PvP con dinero real sobre Solana, distribuido como PWA y nativo iOS/Android",
-          "Nuxt 3 + Pinia + Reown AppKit para wallet connect Solana y autenticaci\u00f3n SIWX",
-          "Store WebSocket propio para flujo de partida en tiempo real y chat con l\u00f3gica de reconexi\u00f3n",
-          "Capacitor para builds nativas iOS/Android desde \u00fanica fuente Nuxt; Sentry para observabilidad",
+          "Juego battle royale y 1v1 PvP con dinero real en Solana, distribuido como PWA y app nativa iOS/Android",
+          "Nuxt 3 + Pinia + Reown AppKit para la conexión de wallets Solana y la autenticación SIWX",
+          "Store WebSocket a medida para el flujo de juego en tiempo real y chat con lógica de reconexión",
+          "Capacitor para builds nativas iOS/Android desde una única base de código Nuxt; Sentry para observabilidad",
         ],
       },
       {
-        name: "Cubita Producciones",
+        title: "Cubita Producciones",
         period: "2025",
         highlights: [
-          "Sitio triling\u00fce (ES/EN/IT) para agencia de talento cubano con cat\u00e1logo de artistas y flujo de booking",
+          "Sitio trilingüe (ES/EN/IT) para una agencia de talento cubano, con catálogo de artistas y flujo de reservas",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
-          "CMS Strapi v5 scaffolded para eventual cambio editorial",
+          "CMS Strapi v5 preparado para un futuro traspaso editorial",
         ],
       },
       {
-        name: "Gitfast",
+        title: "Gitfast",
         period: "2024",
         highlights: [
-          "Engagement freelance con cliente basado en M\u00e9xico",
-          "Nuevas funcionalidades y librer\u00eda de componentes UI reutilizables",
-          "Optimizaci\u00f3n de rendimiento y refactorizaci\u00f3n frontend para escalabilidad y legibilidad",
+          "Colaboración freelance con un cliente en México",
+          "Nuevas funcionalidades y una librería de componentes UI reutilizables",
+          "Optimización del rendimiento y refactorización del frontend para escalabilidad y legibilidad",
         ],
       },
     ],
-    educationTitle: "Formaci\u00f3n",
+    educationTitle: "Formación",
     education: {
-      school: "Universidad UCI",
-      degree: "Licenciatura en Inform\u00e1tica",
-      location: "Cuba",
-      period: "2013 - 2019",
+      title: "Licenciatura en Informática",
+      org: "Universidad de las Ciencias Informáticas (UCI), Cuba",
+      period: "2013 – 2019",
       highlights: [
-        "Especializaci\u00f3n en Java y programaci\u00f3n orientada a objetos",
-        "Participaci\u00f3n en competiciones ACM-ICPC",
-        "Tesis: desarrollo de sistema CAD en C++ con Qt",
+        "Especialización en Java y programación orientada a objetos",
+        "Participación en la competición de programación ACM-ICPC",
+        "Tesis: desarrollo de un sistema CAD con C++ y Qt",
       ],
     },
-    skillsTitle: "Competencias T\u00e9cnicas",
+    skillsTitle: "Competencias Técnicas",
     skills: {
-      "Stack Principal": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG",
-      "Conocimiento Pr\u00e1ctico": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      "Stack principal": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, APIs REST, Git",
+      Avanzado: "React, Next.js, JavaScript (ES6+), Python, Sass, Vitest, Jest, Cypress, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, animaciones Canvas/SVG",
+      "Conocimiento práctico": "FastAPI, AWS (ECS/Fargate, OpenSearch, Redshift, SES), PostgreSQL, Contentful, Keycloak, WebSocket (STOMP/SockJS), next-intl, Go, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Herramientas: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Idiomas",
     languages: {
-      "Espa\u00f1ol": "Nativo",
-      "Ingl\u00e9s": "Profesional (escrito y hablado)",
+      Español: "Nativo",
+      Inglés: "Competencia profesional (escrito y hablado)",
       Italiano: "Intermedio (escrito y hablado)",
     },
   },
   it: {
-    name: "Eduardo Castillo",
-    title: "Frontend Developer / Web Engineer",
-    location: "Remoto, Italia",
-    phone: "+39 348 3448387",
-    email: "sir.edwardcastle@gmail.com",
-    github: "edwardcastle",
-    linkedin: "eduardo-castillo-dev",
+    ...contact,
+    location: "Remote, Italia",
     profileTitle: "Profilo Professionale",
     profile:
-      "Sviluppatore Frontend con oltre 6 anni di esperienza nella progettazione e nello sviluppo di applicazioni web moderne, performanti e orientate all'utente. Specializzato in Vue.js, Nuxt.js e TypeScript, con lavori web che spaziano da agenzie ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), ONG e startup. Forte attenzione alla qualit\u00e0 del codice, accessibilit\u00e0, ottimizzazione delle performance e implementazione di design system. Abituato a collaborare con designer e team backend per consegnare interfacce fluide, scalabili e responsive.",
+      "Frontend Developer con oltre 7 anni di esperienza nella progettazione e sviluppo di applicazioni web moderne, performanti e orientate all'utente. Specializzato in Vue.js, Nuxt.js e TypeScript, con esperienza full-stack in React/Next.js e backend Python/FastAPI. Esperienza in progetti per agenzie ONU (UNAIDS, UNFPA, IOM, IFAD), EBU Eurovision, AdTech (UTIQ), settore aerospaziale/logistico (Altec), industria, oltre a ONG e startup. Forte attenzione alla qualità del codice, all'accessibilità, all'ottimizzazione delle performance e all'implementazione di design system. Esperienza nella collaborazione con designer e team backend per realizzare interfacce fluide, scalabili e responsive.",
     experienceTitle: "Esperienza Lavorativa",
     jobs: [
       {
-        company: "Frontend Developer -- Progetti Enterprise",
-        role: "Datore di lavoro: Dacomat S.r.l. - Partner di delivery: Reply S.p.A.",
-        location: "Remoto, Italia",
-        period: "Giu 2025 - Presente",
+        title: "Frontend Developer / Web Engineer — Progetti Enterprise",
+        org: "Datore di lavoro: Dacomat S.r.l. — Partner di delivery: Reply S.p.A.",
+        period: "Giu 2025 – Presente",
         highlights: [
-          "Sviluppo frontend per clienti enterprise nei settori energia e industria",
-          "Dashboard interattive e interfacce di gestione dati con Vue 3 e TypeScript",
-          "Tabelle dinamiche con filtri, paginazione e ordinamento ottimizzato",
-          "Flussi di import/export di file e gestione di grandi volumi di dati",
-          "Ottimizzazione delle performance: lazy loading, code splitting, librerie di componenti riutilizzabili",
+          "Sviluppo per clienti enterprise nei settori aerospaziale/logistico (Altec), industriale (Ferwood) ed energetico (Eni).",
+        ],
+        groups: [
+          {
+            title: "LISUP (Altec) — sistema web di logistica/gestione magazzino (Vue 3, PrimeVue 4, TypeScript, Tailwind):",
+            highlights: [
+              "Dashboard interattive e interfacce di gestione dati per i moduli logistici (IWM, ricambi, spedizioni, ispezioni in entrata/uscita, TRF)",
+              "Tabelle dinamiche con filtri, paginazione e ordinamento ottimizzato",
+              "Flussi di importazione/esportazione file e gestione di grandi volumi di dati",
+              "Autenticazione SSO con Keycloak, internazionalizzazione (vue-i18n) e aggiornamenti in tempo reale via WebSocket (STOMP/SockJS)",
+              "Ottimizzazione delle performance (lazy loading, code splitting, componenti riutilizzabili); test con Vitest e Cypress, qualità del codice con SonarQube",
+            ],
+          },
+          {
+            title: "Ferwood — piattaforma e-commerce per macchinari industriali rigenerati (sostituzione dello stack legacy Magento/Elasticsearch):",
+            highlights: [
+              "Nuovo sito pubblico multi-mercato (Next.js 16, React 19, TypeScript, Tailwind): catalogo con filtri data-driven da OpenSearch, i18n su oltre 10 lingue (next-intl), revisione SEO (metadata, JSON-LD, hreflang, redirect 301 + proxy per URL legacy), CMS Contentful, autenticazione e wishlist",
+              "API backend custom (FastAPI, Python 3.13): pipeline di reindicizzazione da Redshift a OpenSearch, API di catalogo/ricerca e raccomandazione, integrazione in scrittura con Dynamics CRM, email transazionali (AWS SES / Microsoft 365)",
+              "Deploy su AWS ECS Fargate dietro ALB tramite CodePipeline, build Docker con gate di test, reindicizzazione automatizzata via EventBridge Scheduler",
+              "Strumenti interni (Next.js, React, PrimeReact) in sostituzione dei vecchi tool Excel per il pricing (calcolatore \"Prova Prezzi\", listino prezzi unificato)",
+            ],
+          },
+          {
+            title: "Eni:",
+            highlights: ["Bug fixing e manutenzione su interfacce di gestione dati"],
+          },
         ],
       },
       {
-        company: "Elkanodata",
-        role: "Frontend Developer",
-        location: "Remoto, Spagna",
-        period: "Set 2023 - Giu 2024",
+        title: "Frontend Developer",
+        org: "Elkanodata — Remote, Spagna",
+        period: "Set 2023 – Giu 2024",
         highlights: [
-          "Ho lavorato insieme a due sviluppatori frontend senior su progetti per clienti enterprise",
-          "Agenzie ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, Strumento UHC), IOM Migrazione Climatica, IFAD RIDE 2023, Peace Begins With Me",
-          "Altri clienti: EBU Eurovision News (microsito di notizie), Covenant House (integrazione di WordPress come CMS su frontend vanilla esistente)",
+          "Lavoro a fianco di due frontend developer senior su progetti per clienti enterprise",
+          "Agenzie ONU: UNAIDS (Let Communities Lead, GCAI), UNFPA (Equity 2030, UHC Assessment Tool), IOM Climate-Related Migration, IFAD RIDE 2023, Peace Begins With Me",
+          "Altri clienti: EBU Eurovision News (microsito newsroom), Covenant House (integrazione CMS WordPress su frontend vanilla esistente)",
           "Stack: Nuxt 3, Vue 3, TypeScript, Prismic CMS, WordPress, D3.js, GSAP, Lenis, Swiper, Webpack, Vite",
         ],
       },
       {
-        company: "Teavaro",
-        role: "Frontend Developer",
-        location: "Remoto, Regno Unito",
-        period: "Ago 2022 - Set 2023",
+        title: "Frontend Developer",
+        org: "Teavaro — Remote, Regno Unito",
+        period: "Ago 2022 – Set 2023",
         highlights: [
-          "UTIQ -- sito corporate (Vue.js + TypeScript) a supporto del rebrand da TrustPid a UTIQ e dell'espansione nei mercati europei",
-          "Manutenzione e sviluppo piattaforma admin per gestione utenti e dati",
-          "Migrazione codice JavaScript a TypeScript per maggiore stabilit\u00e0",
-          "Creazione componenti Vue riutilizzabili e implementazione test automatici",
-          "Collaborazione con backend per ottimizzazione API e caching",
+          "UTIQ — sito corporate marketing (Vue.js + TypeScript) a supporto del rebranding da TrustPid a UTIQ e dell'espansione nei mercati europei",
+          "Manutenzione e sviluppo della piattaforma di amministrazione per la gestione utenti e dati",
+          "Migrazione da JavaScript a TypeScript per una maggiore stabilità",
+          "Implementazione di componenti Vue riutilizzabili e test automatizzati",
+          "Collaborazione con il backend per l'ottimizzazione delle API e il caching",
         ],
       },
       {
-        company: "JADE Solutions",
-        role: "Frontend Developer (Freelance, part-time)",
-        location: "Remoto, Cuba",
-        period: "Nov 2022 - Lug 2023",
+        title: "Frontend Developer (Freelance, part-time)",
+        org: "JADE Solutions — Remote, Cuba",
+        period: "Nov 2022 – Lug 2023",
         highlights: [
-          "Luna Tour -- SPA Vue 3 + Vite per la scoperta di destinazioni di viaggio (multilingue, mobile-first, handoff a WhatsApp)",
-          "Implementazione pagine CMS e ottimizzazione SEO",
-          "Integrazione autenticazione Google OAuth e API dinamiche",
-          "Creazione layout mobile con Ionic e Capacitor",
+          "Luna Tour — SPA Vue 3 + Vite per la scoperta di destinazioni turistiche (multilingua, mobile-first, handoff su WhatsApp)",
+          "Pagine CMS, ottimizzazione SEO e integrazione Google OAuth",
+          "Layout mobile con Ionic e Capacitor",
+          "Pannelli di amministrazione e-commerce",
         ],
       },
       {
-        company: "ONAT",
-        role: "Frontend Developer",
-        location: "Ibrido, Cuba",
-        period: "Set 2019 - Ago 2022",
+        title: "Full Stack Developer",
+        org: "ONAT — Ibrido, Cuba",
+        period: "Set 2019 – Ago 2022",
         highlights: [
-          "Sviluppatore frontend su sistemi amministrativi interni per l'Ufficio Nazionale di Amministrazione Tributaria (ONAT) di Cuba",
-          "Ho costruito e mantenuto una libreria di componenti Vue riutilizzabili condivisa tra più moduli admin",
-          "Integrazione di API REST e GraphQL con caching lato client e ottimizzazione del rendering",
-          "Iterazione UX basata su feedback diretto dei team operativi interni",
-          "Permanenza di tre anni con proprietà progressiva di superfici e aree funzionali più ampie",
+          "Full-stack developer su sistemi amministrativi interni per l'Ufficio Nazionale dell'Amministrazione Tributaria di Cuba (ONAT)",
+          "Realizzazione e manutenzione di una libreria di componenti Vue riutilizzabile, condivisa tra più moduli amministrativi",
+          "Sviluppo backend e modellazione database con Django, esponendo API REST e GraphQL",
+          "Integrazione API lato client con caching e ottimizzazione del rendering",
+          "Iterazione UX basata sul feedback diretto dei team operativi interni",
+          "Permanenza di tre anni con crescente responsabilità su aree e funzionalità più ampie",
         ],
       },
       {
-        company: "El Catre",
-        role: "Frontend Developer",
-        location: "Remoto, Cuba",
-        period: "Ago 2019 - Set 2020",
+        title: "Full Stack Developer",
+        org: "El Catre — Remote, Cuba",
+        period: "Ago 2019 – Set 2020",
         highlights: [
-          "Ho costruito il frontend della prima piattaforma e-commerce indipendente di Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy su un client Apollo GraphQL",
-          "Vetrine venditori, catalogo prodotti, carrello, checkout e dashboard di analytics con ApexCharts",
-          "Chat e notifiche in tempo reale su WebSocket basate su Django Channels + Redis",
+          "Sviluppo del frontend della prima piattaforma e-commerce indipendente di Cuba: Nuxt 2 + Vue 2 + Vuex + Buefy su client Apollo GraphQL",
+          "Storefront per venditori, catalogo prodotti, carrello, checkout e dashboard di analisi per i venditori con ApexCharts",
+          "Chat e notifiche in tempo reale via WebSocket con Django Channels + Redis",
           "Autenticazione federata: verifica telefonica Firebase, OAuth Facebook/Google, JWT",
-          "Ottimizzazione PWA + SSR calibrata per le condizioni di rete cubane; ritaglio immagini e generazione QR",
-          "Supporto al backend Django + Graphene come contributore secondario (non sviluppatore backend principale)",
+          "PWA e ottimizzazione SSR calibrate per le condizioni di rete cubane; ritaglio immagini e generazione QR code",
+          "Supporto backend su Django + Graphene (GraphQL): modellazione database ed endpoint API",
         ],
       },
     ],
-    personalProjectsTitle: "Progetti Freelance",
-    personalProjects: [
+    projectsTitle: "Progetti Freelance",
+    projects: [
       {
-        name: "ZenO -- Miglioramenti del Sito e Integrazione Email",
+        title: "ZenO — Miglioramenti al sito e integrazione email",
         period: "2026",
         highlights: [
-          "Miglioramenti di responsività, configurazione DNS e redirect",
-          "Integrazione di Resend per la consegna dei questionari al cliente e le iscrizioni alla newsletter",
+          "Miglioramenti alla responsività, configurazione DNS e redirect",
+          "Integrazione Resend per l'invio dei questionari al cliente e per le iscrizioni alla newsletter",
         ],
       },
       {
-        name: "Casa in Ordine",
-        period: "2025-2026",
+        title: "Casa in Ordine",
+        period: "2025 – 2026",
         highlights: [
-          "Sito multilingue (IT/EN/ES) di organizzazione della casa per un'attività romana",
-          "Next.js 16 + React 19 + Tailwind v4, con wizard Preventivo di 9 step",
-          "Integrazione Brevo per email, analytics Umami, consenso cookie GDPR",
+          "Sito multilingua (IT/EN/ES) per il riordino domestico, per un'attività con sede a Roma",
+          "Next.js 16 + React 19 + Tailwind v4, con wizard di preventivo a 9 step",
+          "Integrazione email Brevo, analytics Umami, cookie consent GDPR",
         ],
       },
       {
-        name: "FreeMock",
-        period: "2025-presente",
+        title: "FreeMock",
+        period: "2025 – Presente",
         highlights: [
-          "Creatore di meme e piattaforma social con autenticazione web3 (Reown AppKit)",
-          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con Signal Protocol",
-          "Microservizio Go + govips per rendering immagini; CI/CD con SonarQube e Codecov",
+          "Meme creator e piattaforma social con autenticazione wallet web3 (Reown AppKit)",
+          "Nuxt 3 + Pinia + shadcn-vue + editor Fabric.js + chat WebSocket con protocollo Signal",
+          "Microservizio di rendering immagini in Go + govips; CI/CD con SonarQube e Codecov",
         ],
       },
       {
-        name: "BattleBucks -- Play-to-Earn su Solana",
+        title: "BattleBucks — Play-to-Earn su Solana",
         period: "2025",
         highlights: [
-          "Gioco battle royale e 1v1 PvP con denaro reale su Solana, distribuito come PWA e nativo iOS/Android",
-          "Nuxt 3 + Pinia + Reown AppKit per wallet connect Solana e autenticazione SIWX",
-          "Store WebSocket custom per il flusso di partita in tempo reale e chat con logica di riconnessione",
-          "Capacitor per build native iOS/Android da unica sorgente Nuxt; Sentry per l'osservabilità",
+          "Gioco battle royale e 1v1 PvP con soldi reali su Solana, distribuito come PWA e app nativa iOS/Android",
+          "Nuxt 3 + Pinia + Reown AppKit per la connessione wallet Solana e l'autenticazione SIWX",
+          "Store WebSocket custom per il flusso di gioco in tempo reale e chat con logica di riconnessione",
+          "Capacitor per build native iOS/Android da un'unica base Nuxt; Sentry per l'osservabilità",
         ],
       },
       {
-        name: "Cubita Producciones",
+        title: "Cubita Producciones",
         period: "2025",
         highlights: [
-          "Sito trilingue (ES/EN/IT) per agenzia di talento cubano con catalogo artisti e flusso di booking",
+          "Sito trilingue (ES/EN/IT) per un'agenzia di talenti cubani, con catalogo artisti e flusso di prenotazione",
           "Next.js 16 + App Router + Tailwind v4 + next-intl + Framer Motion",
-          "CMS Strapi v5 scaffolded per eventuale switch editoriale",
+          "CMS Strapi v5 predisposto per un futuro passaggio editoriale",
         ],
       },
       {
-        name: "Gitfast",
+        title: "Gitfast",
         period: "2024",
         highlights: [
-          "Engagement freelance con cliente basato in Messico",
+          "Collaborazione freelance con cliente in Messico",
           "Nuove funzionalità e libreria di componenti UI riutilizzabili",
-          "Ottimizzazione delle performance e refactoring frontend per scalabilità e leggibilità",
+          "Ottimizzazione delle performance e refactoring del frontend per scalabilità e leggibilità",
         ],
       },
     ],
     educationTitle: "Formazione",
     education: {
-      school: "Universit\u00e0 UCI",
-      degree: "Laurea in Informatica",
-      location: "Cuba",
-      period: "2013 - 2019",
+      title: "Laurea in Informatica",
+      org: "Universidad de las Ciencias Informáticas (UCI), Cuba",
+      period: "2013 – 2019",
       highlights: [
         "Specializzazione in Java e programmazione orientata agli oggetti",
-        "Partecipazione competizioni ACM-ICPC",
-        "Tesi: sviluppo sistema CAD in C++ con Qt",
+        "Partecipazione alla competizione ACM-ICPC",
+        "Tesi: sviluppo di un sistema CAD con C++ e Qt",
       ],
     },
     skillsTitle: "Competenze Tecniche",
     skills: {
-      "Stack Principale": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, REST APIs, Git",
-      Competente: "React, Next.js, JavaScript (ES6+), Sass, Vitest, Jest, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, Canvas/SVG",
-      "Conoscenza Pratica": "Go, Python, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
+      "Stack principale": "Vue 3, Nuxt 3, TypeScript, Tailwind CSS, PrimeVue, Pinia, API REST, Git",
+      "Competenza avanzata": "React, Next.js, JavaScript (ES6+), Python, Sass, Vitest, Jest, Cypress, Vite, Webpack, Docker, PWA, SEO, Figma, WordPress, Astro, GSAP, Framer Motion, animazioni Canvas/SVG",
+      "Conoscenza operativa": "FastAPI, AWS (ECS/Fargate, OpenSearch, Redshift, SES), PostgreSQL, Contentful, Keycloak, WebSocket (STOMP/SockJS), next-intl, Go, Django, GraphQL, Solana/Web3, Reown AppKit, Firebase, Ionic/Capacitor, Fabric.js, shadcn-vue, D3.js, Prismic, Strapi",
       Strumenti: "VS Code, IntelliJ IDEA, Postman, Insomnia, Trello, Linux",
     },
     languagesTitle: "Lingue",
     languages: {
       Spagnolo: "Madrelingua",
-      Inglese: "Professionale (scritto e parlato)",
-      Italiano: "Intermedio (scritto e parlato)",
+      Inglese: "Livello professionale (scritto e parlato)",
+      Italiano: "Livello intermedio (scritto e parlato)",
     },
   },
 };
 
-function drawLine(doc, y) {
-  doc
-    .moveTo(MARGIN, y)
-    .lineTo(PAGE_WIDTH - MARGIN, y)
-    .strokeColor("#999999")
-    .lineWidth(0.5)
-    .stroke();
+function ensureSpace(doc, height) {
+  if (doc.y + height > CONTENT_BOTTOM) doc.addPage();
+}
+
+function bulletStyle(doc) {
+  return doc.fontSize(9).font("Helvetica").fillColor(TEXT);
+}
+
+function bulletHeight(doc, text) {
+  return bulletStyle(doc).heightOfString(text, { width: CONTENT_WIDTH - BULLET_TEXT_INDENT, lineGap: LINE_GAP }) + 1;
+}
+
+function bullet(doc, text) {
+  ensureSpace(doc, bulletHeight(doc, text));
+  const y = doc.y;
+  doc.circle(MARGIN + BULLET_INDENT + 2, y + 4.2, 1.3).fill(TEXT);
+  bulletStyle(doc).text(text,MARGIN + BULLET_TEXT_INDENT, y, { width: CONTENT_WIDTH - BULLET_TEXT_INDENT, lineGap: LINE_GAP });
+  doc.y += 1;
+}
+
+function groupTitleHeight(doc, title) {
+  return doc.fontSize(9).font("Helvetica-Bold").heightOfString(title, { width: CONTENT_WIDTH, lineGap: LINE_GAP }) + 5;
 }
 
 function sectionTitle(doc, title) {
+  ensureSpace(doc, 70);
+  doc.y += 10;
+  doc.fontSize(11).font("Helvetica-Bold").fillColor(BLUE).text(title.toUpperCase(), MARGIN, doc.y);
+  const lineY = doc.y + 1;
+  doc.moveTo(MARGIN, lineY).lineTo(PAGE_WIDTH - MARGIN, lineY).strokeColor(BLUE).lineWidth(0.75).stroke();
+  doc.y = lineY + 7;
+}
+
+// Entry = bold title with right-aligned period, optional italic org line, bullets and optional titled bullet groups
+function entry(doc, { title, org, period, highlights, groups = [] }) {
+  const periodWidth = doc.fontSize(9).font("Helvetica-Bold").widthOfString(period);
+  const titleWidth = CONTENT_WIDTH - periodWidth - 12;
+  const headerHeight =
+    doc.fontSize(10).font("Helvetica-Bold").heightOfString(title, { width: titleWidth }) +
+    (org ? 13 : 2);
+  const bulletsHeight = highlights.reduce((sum, h) => sum + bulletHeight(doc, h), 0);
+
+  // Short entries stay on one page; grouped ones only keep the header with its first bullets
+  ensureSpace(doc, headerHeight + bulletsHeight + (groups.length ? groupTitleHeight(doc, groups[0].title) : 0));
+
   const y = doc.y;
-  doc.fontSize(13).font("Helvetica-Bold").text(title, MARGIN, y);
-  drawLine(doc, doc.y + 2);
-  doc.moveDown(0.5);
+  doc.fontSize(9).font("Helvetica-Bold").fillColor(GRAY).text(period, MARGIN, y + 1, { width: CONTENT_WIDTH, align: "right", lineBreak: false });
+  doc.fontSize(10).font("Helvetica-Bold").fillColor(TEXT).text(title, MARGIN, y, { width: titleWidth });
+  if (org) {
+    doc.fontSize(9).font("Helvetica-Oblique").fillColor(GRAY).text(org, MARGIN + BULLET_INDENT, doc.y + 1, { width: CONTENT_WIDTH - BULLET_INDENT });
+  }
+  doc.y += 2;
+
+  for (const h of highlights) bullet(doc, h);
+
+  for (const group of groups) {
+    ensureSpace(doc, groupTitleHeight(doc, group.title) + bulletHeight(doc, group.highlights[0]));
+    doc.y += 3;
+    doc.fontSize(9).font("Helvetica-Bold").fillColor(TEXT).text(group.title, MARGIN + BULLET_INDENT, doc.y, { width: CONTENT_WIDTH - BULLET_INDENT, lineGap: LINE_GAP });
+    doc.y += 1;
+    for (const h of group.highlights) bullet(doc, h);
+  }
+
+  doc.y += 8;
+}
+
+function header(doc, data) {
+  doc.fontSize(26).font("Helvetica-Bold").fillColor(BLUE).text(data.name, MARGIN, doc.y);
+  doc.fontSize(13).font("Helvetica").fillColor(TEXT).text(data.title, MARGIN, doc.y);
+  doc.y += 3;
+
+  const separator = "  |  ";
+  const parts = [
+    { text: data.location },
+    { text: data.phone },
+    { text: data.email, link: `mailto:${data.email}` },
+    { text: data.github, link: `https://${data.github}` },
+    { text: data.linkedin, link: `https://www.${data.linkedin}` },
+  ];
+  doc.fontSize(9).font("Helvetica").fillColor(GRAY);
+  const lineHeight = doc.currentLineHeight() + 3;
+  const separatorWidth = doc.widthOfString(separator);
+  let x = MARGIN;
+  let y = doc.y;
+  // Placed part by part so a line only ever breaks at a separator, never inside a URL
+  parts.forEach((part, i) => {
+    const width = doc.widthOfString(part.text);
+    if (x + width > PAGE_WIDTH - MARGIN) {
+      x = MARGIN;
+      y += lineHeight;
+    }
+    doc.text(part.text, x, y, { lineBreak: false });
+    if (part.link) doc.link(x, y, width, doc.currentLineHeight(), part.link);
+    x += width;
+    if (i < parts.length - 1) {
+      doc.text(separator, x, y, { lineBreak: false });
+      x += separatorWidth;
+    }
+  });
+  doc.x = MARGIN;
+  doc.y = y + lineHeight + 2;
+}
+
+function footer(doc, data) {
+  const range = doc.bufferedPageRange();
+  for (let i = 0; i < range.count; i++) {
+    doc.switchToPage(range.start + i);
+    // Footer sits inside the bottom margin; zero it so pdfkit doesn't push the text to a new page
+    doc.page.margins.bottom = 0;
+    doc
+      .fontSize(8)
+      .font("Helvetica")
+      .fillColor(GRAY)
+      .text(`${data.name} — CV — ${i + 1}`, MARGIN, PAGE_HEIGHT - 42, { width: CONTENT_WIDTH, align: "right", lineBreak: false });
+  }
 }
 
 function generateCV(lang) {
   const data = cvData[lang];
-  const doc = new PDFDocument({ size: "A4", margin: MARGIN });
+  const doc = new PDFDocument({
+    size: "A4",
+    margins: { top: 50, bottom: 50, left: MARGIN, right: MARGIN },
+    bufferPages: true,
+    info: { Title: `${data.name} — CV`, Author: data.name },
+  });
   const outPath = path.join(__dirname, "..", "public", "cv", `eduardo-castillo-cv-${lang}.pdf`);
   const stream = fs.createWriteStream(outPath);
   doc.pipe(stream);
 
-  // Header
-  doc.fontSize(24).font("Helvetica-Bold").text("Eduardo ", { continued: true });
-  doc.font("Helvetica-Bold").text("Castillo", { continued: true });
-  doc.font("Helvetica").fontSize(24).text(` | ${data.title}`, { align: "center" });
-  doc.moveDown(0.2);
-  doc.fontSize(10).font("Helvetica").fillColor("#555555");
-  doc.text(data.location, { align: "center" });
-  doc.text(
-    `${data.phone}  |  ${data.email}  |  github.com/${data.github}  |  linkedin.com/in/${data.linkedin}`,
-    { align: "center" }
-  );
-  doc.fillColor("#000000");
-  doc.moveDown(1);
+  header(doc, data);
 
   // Profile
   sectionTitle(doc, data.profileTitle);
-  doc.fontSize(9.5).font("Helvetica").text(data.profile, { lineGap: 2 });
-  doc.moveDown(0.8);
+  doc.fontSize(9).font("Helvetica").fillColor(TEXT).text(data.profile, MARGIN, doc.y, { width: CONTENT_WIDTH, lineGap: 2 });
+  doc.y += 4;
 
   // Experience
   sectionTitle(doc, data.experienceTitle);
-  for (const job of data.jobs) {
-    // Check if we need a new page
-    if (doc.y > 700) doc.addPage();
+  for (const job of data.jobs) entry(doc, job);
 
-    doc.fontSize(10).font("Helvetica-Bold").text(job.company, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.6 });
-    doc.font("Helvetica").text(job.location, { align: "right", width: CONTENT_WIDTH });
-
-    // Reset x position after right-aligned text
-    doc.fontSize(9).font("Helvetica-Oblique").text(job.role, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.6 });
-    doc.font("Helvetica-Oblique").text(job.period, { align: "right", width: CONTENT_WIDTH });
-
-    doc.fontSize(9).font("Helvetica");
-    for (const h of job.highlights) {
-      if (doc.y > 750) doc.addPage();
-      doc.text(`  -  ${h}`, MARGIN + 5, doc.y, { width: CONTENT_WIDTH - 10, lineGap: 1 });
-    }
-    doc.moveDown(0.5);
-  }
-
-  // Personal Projects
-  if (data.personalProjects && data.personalProjects.length) {
-    if (doc.y > 650) doc.addPage();
-    sectionTitle(doc, data.personalProjectsTitle);
-    for (const p of data.personalProjects) {
-      if (doc.y > 700) doc.addPage();
-      doc.fontSize(10).font("Helvetica-Bold").text(p.name, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.7 });
-      doc.fontSize(9).font("Helvetica-Oblique").text(p.period, { align: "right", width: CONTENT_WIDTH });
-      doc.fontSize(9).font("Helvetica");
-      for (const h of p.highlights) {
-        if (doc.y > 750) doc.addPage();
-        doc.text(`  -  ${h}`, MARGIN + 5, doc.y, { width: CONTENT_WIDTH - 10, lineGap: 1 });
-      }
-      doc.moveDown(0.5);
-    }
-  }
+  // Freelance projects
+  sectionTitle(doc, data.projectsTitle);
+  for (const project of data.projects) entry(doc, project);
 
   // Education
-  if (doc.y > 650) doc.addPage();
   sectionTitle(doc, data.educationTitle);
-  doc.fontSize(10).font("Helvetica-Bold").text(data.education.school, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.6 });
-  doc.font("Helvetica").text(data.education.location, { align: "right", width: CONTENT_WIDTH });
-  doc.fontSize(9).font("Helvetica-Oblique").text(data.education.degree, MARGIN, doc.y, { continued: true, width: CONTENT_WIDTH * 0.6 });
-  doc.text(data.education.period, { align: "right", width: CONTENT_WIDTH });
-  doc.font("Helvetica");
-  for (const h of data.education.highlights) {
-    doc.text(`  -  ${h}`, MARGIN + 5, doc.y, { width: CONTENT_WIDTH - 10, lineGap: 1 });
-  }
-  doc.moveDown(0.8);
+  entry(doc, data.education);
 
   // Skills
-  if (doc.y > 650) doc.addPage();
   sectionTitle(doc, data.skillsTitle);
-  doc.fontSize(9).font("Helvetica");
-  for (const [cat, skills] of Object.entries(data.skills)) {
-    doc.font("Helvetica-Bold").text(`${cat}: `, { continued: true });
-    doc.font("Helvetica").text(skills);
-    doc.moveDown(0.2);
+  for (const [category, skills] of Object.entries(data.skills)) {
+    const options = { width: CONTENT_WIDTH, lineGap: LINE_GAP };
+    ensureSpace(doc, doc.fontSize(9).font("Helvetica").heightOfString(`${category}: ${skills}`, options));
+    doc.font("Helvetica-Bold").fillColor(TEXT).text(`${category}: `, MARGIN, doc.y, { ...options, continued: true });
+    doc.font("Helvetica").text(skills, options);
+    doc.y += 3;
   }
-  doc.moveDown(0.5);
 
   // Languages
   sectionTitle(doc, data.languagesTitle);
-  doc.fontSize(9).font("Helvetica");
-  for (const [lang2, level] of Object.entries(data.languages)) {
-    doc.font("Helvetica-Bold").text(`${lang2}: `, { continued: true });
-    doc.font("Helvetica").text(level);
-  }
+  const languages = Object.entries(data.languages);
+  languages.forEach(([language, level], i) => {
+    const last = i === languages.length - 1;
+    const options = { width: CONTENT_WIDTH, lineGap: LINE_GAP, continued: true };
+    doc.fontSize(9).font("Helvetica-Bold").fillColor(TEXT);
+    if (i === 0) doc.text(`${language}: `, MARGIN, doc.y, options);
+    else doc.text(`${language}: `, options);
+    doc.font("Helvetica").text(last ? level : `${level}   |   `, { ...options, continued: !last });
+  });
+
+  footer(doc, data);
 
   doc.end();
   return new Promise((resolve) => stream.on("finish", () => { console.log(`Generated: ${outPath}`); resolve(); }));
@@ -652,4 +761,6 @@ async function main() {
   await Promise.all([generateCV("en"), generateCV("es"), generateCV("it")]);
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { cvData };
